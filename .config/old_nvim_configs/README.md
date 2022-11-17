@@ -1,6 +1,6 @@
-#README
+# README
 
-##Dear reader,
+## Dear reader,
 
 Sadly Vimscript is and outdated way to setup your Vim especially Neovim.
 If you read this you should make the switch to Lua an actual programming language!
