@@ -1,4 +1,3 @@
-
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
@@ -27,22 +26,22 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- TABS
-keymap("n","te", ":tabnew<CR>",opts) --open a new tab --tabedit and tabnew are similiar 
-keymap("n","tx", ":tabclose<CR>",opts) --close current tab
-keymap("n","tl", ":tabn<CR>",opts) --so to previous tab
-keymap("n","th", ":tabprevious<CR>",opts) --go to next tab
+keymap("n", "te", ":tabnew<CR>", opts) --open a new tab --tabedit and tabnew are similiar
+keymap("n", "tx", ":tabclose<CR>", opts) --close current tab
+keymap("n", "tl", ":tabn<CR>", opts) --so to previous tab
+keymap("n", "th", ":tabprevious<CR>", opts) --go to next tab
 -- keymap("n","<C-c>",'"+y',opts) --copy into system clipboard
 
 -- Paste/hightlight/yank
-keymap("n","x",'"_x',opts) -- Do not yank with x
-keymap("n","db",'vb"_d',opts) -- Delete a word backwards (includes selected char)
-keymap("n","<C-a>", "gg<S-v>G",opts) --higlight all
+keymap("n", "x", '"_x', opts) -- Do not yank with x
+keymap("n", "db", 'vb"_d', opts) -- Delete a word backwards (includes selected char)
+keymap("n", "<C-a>", "gg<S-v>G", opts) --higlight all
 
 -- Split window
-keymap("n","<leader>vs",":vsplit<CR>",opts) --vertical split
-keymap("n","<leader>ss",":split<CR>",opts) --horizontal split
-keymap("n","<leader>so","<C-w>o",opts) -- close all splits
-keymap("n","<leader>sx",":close<CR>",opts) -- close current split
+keymap("n", "<leader>vs", ":vsplit<CR>", opts) --vertical split
+keymap("n", "<leader>ss", ":split<CR>", opts) --horizontal split
+keymap("n", "<leader>so", "<C-w>o", opts) -- close all splits
+keymap("n", "<leader>sx", ":close<CR>", opts) -- close current split
 -- keymap("n","<leader>so",)
 
 -- Resize split window
@@ -51,11 +50,11 @@ keymap("n","<leader>sx",":close<CR>",opts) -- close current split
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) --netrw disabled, if enabled: <:Lex 25>
 
 -- Filemanangemant
-keymap("n","<C-q>",":q<CR>", opts) -- ctrl q to exit
-keymap("n","<C-s>",":w<CR>", opts) -- ctrl s to save 
+keymap("n", "<C-q>", ":q<CR>", opts) -- ctrl q to exit
+keymap("n", "<C-s>", ":w<CR>", opts) -- ctrl s to save
 
-keymap("n","+","<C-a>",opts) --increment
-keymap("n","-","<C-x>",opts) --decrement
+keymap("n", "+", "<C-a>", opts) --increment
+keymap("n", "-", "<C-x>", opts) --decrement
 
 -- Visual --
 keymap("n", "<C-Up>", ":resize +19<CR>", opts)

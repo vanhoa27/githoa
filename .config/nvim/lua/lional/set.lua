@@ -5,14 +5,14 @@ local g = vim.g --:%s/<word>/<replacement>
 -- [ [ CONTEXT ] ]
 opt.nu = true
 opt.rnu = true
-vim.cmd("set nocul")
+-- vim.cmd("set nocul") -- call for vimscript commands in lua
+opt.cul = false -- disable/enable cursorline
 opt.mouse = ""
 opt.signcolumn = "yes"
+-- opt.colorcolumn = "80"
 opt.scrolloff = 8
 opt.sidescrolloff = 8
-opt.cul = true -- enable cursorline
 opt.wrap = true -- line wrap
--- opt.colorcolumn = "80"
 
 -- [ [ THEME ] ]
 opt.syntax = "ON"
@@ -36,7 +36,7 @@ opt.breakindent = true
 opt.backspace = "start,eol,indent"
 
 -- [ [ SEARCH ] ]
-opt.hlsearch = false
+opt.hlsearch = true -- enable/disable highlightsearch
 opt.errorbells = false
 opt.incsearch = true
 opt.ignorecase = true

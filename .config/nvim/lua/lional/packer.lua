@@ -57,11 +57,14 @@ return require("packer").startup(function(use)
 	use("gruvbox-community/gruvbox") -- colorscheme gruvbox
 	use("Mofiqul/dracula.nvim") -- colorscheme dracula
 	use("krivahtoo/nightfly.nvim") -- colorscheme nightfly
+	use("svrana/neosolarized.nvim")
+	use("tjdevries/colorbuddy.nvim")
 
 	-- autocompletion (RIP Conqueror of Completion)
 	use("hrsh7th/nvim-cmp") -- completion plugin
 	use("hrsh7th/cmp-buffer") -- source for text in buffer
 	use("hrsh7th/cmp-path") -- source for file system paths
+	use("windwp/nvim-autopairs") --automatically closes brackets
 	-- use({ "neoclide/coc.nvim", branch = "release" }) --autocompletiion
 
 	-- commentary
