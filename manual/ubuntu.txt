@@ -11,4 +11,4 @@ use different shell
 -- "specify shell" /usr/bin/("shell e.g. zsh")
 
 access wsl "Ubuntu" through windows
--- "type \\wsl$\" into Fileexplorer address bar
+-- type "\\wsl$\" into Fileexplorer address bar
