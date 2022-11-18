@@ -15,7 +15,8 @@ ya( -> "yank everything enclosed by brackets (only on current line)
 w -> "go beginning of the to next word"
 b -> "go to the back of the line"
 e -> "go to the end of the line"
-viw -> "select the whole word" (seperated by whitespace)
+viw -> "select whole word" (seperated by whitespace)
+diw -> "delete whole word" (seperated by whitespace)
 
 
 

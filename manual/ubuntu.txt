@@ -9,3 +9,6 @@ Uninstall programs by running:
 use different shell
 -- "type command" chsh
 -- "specify shell" /usr/bin/("shell e.g. zsh")
+
+access wsl "Ubuntu" through windows
+-- "type \\wsl$\" into Fileexplorer address bar
