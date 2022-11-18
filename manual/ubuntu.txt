@@ -1,0 +1,11 @@
+
+You can remove a directory by writing:
+-- rm -fr <filename>
+-- rm -r <filename>
+
+Uninstall programs by running:
+-- sudo apt remove - <program>
+
+use different shell
+-- "type command" chsh
+-- "specify shell" /usr/bin/("shell e.g. zsh")
