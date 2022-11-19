@@ -1,0 +1,3 @@
+DOOM EMACS
+
+-- <Space>-h-r-r -> restart and resync doom EMACS
