@@ -1,3 +1,13 @@
 DOOM EMACS
 
+SHORTCUTS
+
 -- <Space>-h-r-r -> restart and resync doom EMACS
+-- <Space><Space> -> open directory manager
+-- <Space>w v -> open a vertical split
+-- <Space>w s -> open a horizontal split
+-- <Space>w c -> close current split
+-- <Space>b k -> kill current buffer
+-- <Space>b n -> go to next buffer
+-- <Space>b p -> go to previous buffer
+
