@@ -11,7 +11,13 @@ use different shell
 -- "specify shell" /usr/bin/("shell e.g. zsh")
 
 access wsl "Ubuntu" through windows
--- type "\\wsl$\" into Fileexplorer address bar
+-- type "\\wsl$\" into Fileexplorer addressbar
 
 Shortcuts
 -- <C-l> -> clear
+-- <C-c> -> abort current task
+-- <C-z> -> suspend current task
+-- up and down arrow keys, select previous commands
+-- tab -> autocomplete filename
+-- tab tab -> show file list
+
