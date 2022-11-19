@@ -47,6 +47,7 @@ windowskey, ctrl, shift -> open task manager
 META SHORTCUTS
 
 <alt> <tab> -> navigate arround windows
+<alt> (left, right arrow) -> go back/forth in history
 
 
 MISCELLEANEOUS SHORTSCUTS
