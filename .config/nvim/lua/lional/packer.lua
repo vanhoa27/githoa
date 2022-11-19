@@ -119,6 +119,14 @@ return require("packer").startup(function(use)
 
 	-- bufferline
 	use("akinsho/bufferline.nvim")
+
+	-- dashboard
+	use({
+		"goolord/alpha-nvim",
+		config = function()
+			require("alpha").setup(require("alpha.themes.dashboard").config)
+		end,
+	})
 end)
 
 -- you must run this or `packersync` whenever you make changes to your plugin configuration

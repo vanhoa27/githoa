@@ -7,7 +7,7 @@ opt.nu = true
 opt.rnu = true
 -- vim.cmd("set nocul") -- call for vimscript commands in lua
 opt.cul = false -- disable/enable cursorline
-opt.mouse = ""
+opt.mouse = "a"
 opt.signcolumn = "yes"
 -- opt.colorcolumn = "80"
 opt.scrolloff = 8
