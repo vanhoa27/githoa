@@ -1,4 +1,6 @@
-<C-j> -> open download folder
+WINDOWS SHORTSCUTS WITH CTRL 
+
+<C-j> -> open download folder 
 <C-h> -> open browser history
 <C-w> -> close current tab
 <C-Shift-W> -> close window
@@ -18,3 +20,9 @@
 <C-'-' -> minimize font
 <C-'+' -> maximize font
 <C-"number" -> select "n" window
+
+
+
+WINDOWS SHORTCUT
+
+use j and k to scroll the browser search results
