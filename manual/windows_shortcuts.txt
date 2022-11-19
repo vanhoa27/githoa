@@ -5,10 +5,11 @@ WINDOWS SHORTSCUTS WITH CTRL
 <C-w> -> close current tab
 <C-Shift-W> -> close window
 <C-e> -> open search bar 
+<C-k> -> "same as <C-e>" 
 <C-t> -> open new tab
 <C-r> -> reload current window
 <C-x> -> cut
-<C-c> -> yank 
+<C-c> -> copy 
 <C-v> -> paste
 <C-l> -> select search bar
 <C-p> -> print
@@ -20,9 +21,31 @@ WINDOWS SHORTSCUTS WITH CTRL
 <C-'-' -> minimize font
 <C-'+' -> maximize font
 <C-"number" -> select "n" window
-
-
+<C-b> -> make text bold
+<C-Shift-arrow> -> select text
+<C-arrow> -> skip through one word
+<C-a> -> select all text
 
 WINDOWS SHORTCUT
 
-use j and k to scroll the browser search results
+windowskey, s, shitft -> screenhot
+use j and k to scroll search results
+windowskey, m, minimize all windows
+windowskey, d, instantly minimize all windows
+windowskey, tab -> navigate arround windows
+windowskey, v -> shows clipboard  history 
+windowskey, alt, r -> start recording your screen
+windowskey, g -> acess your recordings
+windowskey, x ,uu -> shutdown windows
+
+META SHORTCUT
+
+<alt> <tab> -> navigate arround windows
+
+
+MOUSE SHORTCUTS
+
+ctrl mouseclick ("select all files in between your clicks")
+
+
+
