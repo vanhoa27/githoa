@@ -1,0 +1,20 @@
+<C-j> -> open download folder
+<C-h> -> open browser history
+<C-w> -> close current tab
+<C-Shift-W> -> close window
+<C-e> -> open search bar 
+<C-t> -> open new tab
+<C-r> -> reload current window
+<C-x> -> cut
+<C-c> -> yank 
+<C-v> -> paste
+<C-l> -> select search bar
+<C-p> -> print
+<C-s> -> save file
+<C-z> -> undo
+<C-y> -> redo
+<C-u> -> view source code 
+<C-n> -> open new window
+<C-'-' -> minimize font
+<C-'+' -> maximize font
+<C-"number" -> select "n" window
