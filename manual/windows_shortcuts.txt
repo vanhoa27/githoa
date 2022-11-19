@@ -26,6 +26,7 @@ WINDOWS SHORTSCUTS WITH CTRL
 <C-arrow> -> skip through one word
 <C-a> -> select all text
 
+
 WINDOWSKEY SHORTCUTS
 
 windowskey, s, shitft -> screenhot
@@ -39,6 +40,7 @@ windowskey, g -> acess your recordings
 windowskey, x ,uu -> shutdown windows
 windowskey, ctrl, shift -> open task manager
 
+
 META SHORTCUTS
 
 <alt> <tab> -> navigate arround windows
@@ -50,5 +52,7 @@ ctrl mouseclick ("select all files in between your clicks")
 f11 -> toggle full screen mode
 alt f4 -> close current window
 
+
+CREATE YOUR OWN SHORTSCUTS 
 
 
