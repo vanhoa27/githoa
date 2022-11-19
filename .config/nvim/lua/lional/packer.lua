@@ -116,6 +116,9 @@ return require("packer").startup(function(use)
 	use("nvim-tree/nvim-tree.lua")
 	use("nvim-tree/nvim-web-devicons")
 	use("LunarVim/Colorschemes")
+
+	-- bufferline
+	use("akinsho/bufferline.nvim")
 end)
 
 -- you must run this or `packersync` whenever you make changes to your plugin configuration

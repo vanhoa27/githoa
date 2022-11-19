@@ -26,10 +26,10 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- TABS
-keymap("n", "te", ":tabnew<CR>", opts) --open a new tab --tabedit and tabnew are similiar
-keymap("n", "tx", ":tabclose<CR>", opts) --close current tab
-keymap("n", "tl", ":tabn<CR>", opts) --so to previous tab
-keymap("n", "th", ":tabprevious<CR>", opts) --go to next tab
+keymap("n", "<leader>te", ":tabnew<CR>", opts) --open a new tab --tabedit and tabnew are similiar
+keymap("n", "<leader>tx", ":tabclose<CR>", opts) --close current tab
+keymap("n", "<leader>tl", ":tabn<CR>", opts) --so to previous tab
+keymap("n", "<leader>th", ":tabprevious<CR>", opts) --go to next tab
 -- keymap("n","<C-c>",'"+y',opts) --copy into system clipboard
 
 -- Paste/hightlight/yank
