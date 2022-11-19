@@ -25,6 +25,7 @@ WINDOWS SHORTSCUTS WITH CTRL
 <C-Shift-arrow> -> select text
 <C-arrow> -> skip through one word
 <C-a> -> select all text
+<C-o> -> open a file from your computer
 
 
 WINDOWSKEY SHORTCUTS
