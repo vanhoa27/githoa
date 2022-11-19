@@ -8,11 +8,32 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
--- lualine theme
--- lvim.builtin.lualine.options.theme = "gruvbox"
+vim.opt.rnu= true
+vim.opt.cul = false
+vim.opt.fileencoding = "utf-8"
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4 vim.opt.softtabstop = 4
+vim.opt.hidden  = true
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+vim.opt.expandtab = true
+vim.opt.breakindent = true
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.opt.spell= true
+vim.opt.spelllang = "en"
+vim.opt.syntax = "ON"
+vim.opt.swapfile = false
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.title = true
+vim.opt.updatetime = 300
+vim.opt.guifont = "monospace:h17"
 
--- [[Personal sets]]
-vim.opt.rnu = true
 
 -- general
 lvim.log.level = "warn"
@@ -25,10 +46,6 @@ lvim.colorscheme = "lunar"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<leader>te"] = ":tabedit<CR>"
-lvim.keys.normal_mode["<leader>tl"] = ":tabnext<CR>"
-lvim.keys.normal_mode["<leader>th"] = ":tabprevious<CR>"
-
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping

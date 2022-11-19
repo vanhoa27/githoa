@@ -115,11 +115,6 @@ _G.packer_plugins = {
     path = "/home/supertoaster/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["colorbuddy.nvim"] = {
-    loaded = true,
-    path = "/home/supertoaster/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
-    url = "https://github.com/tjdevries/colorbuddy.nvim"
-  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/home/supertoaster/.local/share/nvim/site/pack/packer/start/dracula.nvim",
@@ -174,11 +169,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/supertoaster/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["neosolarized.nvim"] = {
-    loaded = true,
-    path = "/home/supertoaster/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
-    url = "https://github.com/svrana/neosolarized.nvim"
   },
   ["nightfly.nvim"] = {
     loaded = true,
