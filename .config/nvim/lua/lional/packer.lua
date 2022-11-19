@@ -118,7 +118,7 @@ return require("packer").startup(function(use)
 	use("LunarVim/Colorschemes")
 
 	-- bufferline
-	use("akinsho/bufferline.nvim")
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
 	-- dashboard
 	use({

@@ -28,8 +28,9 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- TABS
 keymap("n", "<leader>te", ":tabnew<CR>", opts) --open a new tab --tabedit and tabnew are similiar
 keymap("n", "<leader>tx", ":tabclose<CR>", opts) --close current tab
-keymap("n", "<leader>tl", ":tabn<CR>", opts) --so to previous tab
-keymap("n", "<leader>th", ":tabprevious<CR>", opts) --go to next tab
+keymap("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", {}) --scroll forward
+keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {}) --scroll backward
+
 -- keymap("n","<C-c>",'"+y',opts) --copy into system clipboard
 
 -- Paste/hightlight/yank
