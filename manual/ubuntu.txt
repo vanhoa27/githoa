@@ -12,3 +12,6 @@ use different shell
 
 access wsl "Ubuntu" through windows
 -- type "\\wsl$\" into Fileexplorer address bar
+
+Shortcuts
+-- <C-l> -> clear
