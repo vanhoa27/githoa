@@ -26,7 +26,7 @@ WINDOWS SHORTSCUTS WITH CTRL
 <C-arrow> -> skip through one word
 <C-a> -> select all text
 
-WINDOWS SHORTCUT
+WINDOWSKEY SHORTCUTS
 
 windowskey, s, shitft -> screenhot
 use j and k to scroll search results
@@ -37,15 +37,18 @@ windowskey, v -> shows clipboard  history
 windowskey, alt, r -> start recording your screen
 windowskey, g -> acess your recordings
 windowskey, x ,uu -> shutdown windows
+windowskey, ctrl, shift -> open task manager
 
-META SHORTCUT
+META SHORTCUTS
 
 <alt> <tab> -> navigate arround windows
 
 
-MOUSE SHORTCUTS
+MISCELLEANEOUS SHORTSCUTS
 
 ctrl mouseclick ("select all files in between your clicks")
+f11 -> toggle full screen mode
+alt f4 -> close current window
 
 
 
