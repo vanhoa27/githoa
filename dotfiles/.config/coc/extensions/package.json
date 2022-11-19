@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "coc-clangd": ">=0.27.0",
+    "coc-python": ">=1.2.13",
+    "coc-pairs": ">=1.4.0"
+  },
+  "lastUpdate": 1668253448745
+}
