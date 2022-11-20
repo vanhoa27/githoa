@@ -48,6 +48,7 @@ return require("packer").startup(function(use)
 		run = ":TSUpdate",
 	})
 	use("p00f/nvim-ts-rainbow") -- rainbow brackets, extension to treesitter
+	use("nvim-treesitter/nvim-treesitter-angular")
 
 	-- perfomance booster(faster runtime)
 	use("lewis6991/impatient.nvim")

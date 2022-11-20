@@ -42,6 +42,7 @@ opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.path:append({ "**" }) --Finding Files -> search down into subfolder
+opt.hidden = true
 
 -- [ [ SPLITS ] ]
 opt.splitright = true

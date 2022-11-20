@@ -205,6 +205,11 @@ _G.packer_plugins = {
     path = "/home/supertoaster/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-angular"] = {
+    loaded = true,
+    path = "/home/supertoaster/.local/share/nvim/site/pack/packer/start/nvim-treesitter-angular",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-angular"
+  },
   ["nvim-ts-rainbow"] = {
     loaded = true,
     path = "/home/supertoaster/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
