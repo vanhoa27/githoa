@@ -93,17 +93,17 @@ return require("packer").startup(function(use)
 	-- Gitsigns
 	use("lewis6991/gitsigns.nvim")
 
-	-- telescope
+	-- TELESCOPE
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	-- lua function that many plugins use
-	use("nvim-lua/plenary.nvim")
-
 	-- fuzzyfinder telescope
 	use("nvim-telescope/telescope-file-browser.nvim")
+
+	-- lua function that many plugins use
+	use("nvim-lua/plenary.nvim")
 
 	-- toggle Terminal in nvim
 	use("akinsho/toggleterm.nvim")
@@ -128,7 +128,7 @@ return require("packer").startup(function(use)
 	})
 end)
 
--- you must run this or `packersync` whenever you make changes to your plugin configuration
+-- ou must run this or `packersync` whenever you make changes to your plugin configuration
 -- regenerate compiled loader file
 -- :packercompile
 
