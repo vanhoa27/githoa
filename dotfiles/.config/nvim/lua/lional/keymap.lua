@@ -2,15 +2,15 @@ local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
 
--- Shorten function name
+-- shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
-keymap("n", "<Space>", "<Nop>", opts)
+--remap space as leader key
+keymap("n", "<space>", "<nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
+-- modes
 --   normal_mode = "n",
 --   insert_mode = "i",
 --   visual_mode = "v",
@@ -18,56 +18,59 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- normal --
+-- better window navigation
+keymap("n", "<c-h>", "<c-w>h", opts)
+keymap("n", "<c-j>", "<c-w>j", opts)
+keymap("n", "<c-k>", "<c-w>k", opts)
+keymap("n", "<c-l>", "<c-w>l", opts)
 
--- TABS
-keymap("n", "<leader>te", ":tabnew<CR>", opts) --open a new tab --tabedit and tabnew are similiar
-keymap("n", "<leader>tx", ":tabclose<CR>", opts) --close current tab
-keymap("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", {}) --scroll forward
-keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {}) --scroll backward
+-- tabs
+keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and tabnew are similiar
+keymap("n", "<leader>tx", ":tabclose<cr>", opts) --close current tab
+keymap("n", "<tab>", "<cmd>bufferlinecyclenext<cr>", {}) --scroll forward
+keymap("n", "<s-tab>", "<cmd>bufferlinecycleprev<cr>", {}) --scroll backward
 
--- keymap("n","<C-c>",'"+y',opts) --copy into system clipboard
+-- keymap("n","<c-c>",'"+y',opts) --copy into system clipboard
 
--- Paste/hightlight/yank
-keymap("n", "x", '"_x', opts) -- Do not yank with x
-keymap("n", "db", 'vb"_d', opts) -- Delete a word backwards (includes selected char)
-keymap("n", "<C-a>", "gg<S-v>G", opts) --higlight all
-keymap("n", "<leader>h", ":noh<CR>", opts) --clear all hightlighting until next search
+-- paste/hightlight/yank
+keymap("n", "x", '"_x', opts) -- do not yank with x
+keymap("n", "db", 'vb"_d', opts) -- delete a word backwards (includes selected char)
+keymap("n", "<leader>y", '"+y', opts) -- yank into system clipboard
+keymap("n", "<leader>d", '"_d', opts) -- delete without copying into system clipboard
+keymap("v", "<leader>d", '"_d', opts) -- same but in visual_mode
+keymap("n", "<c-a>", "gg<s-v>g", opts) --higlight all
+keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
 
--- Split window
-keymap("n", "<leader>vs", ":vsplit<CR>", opts) --vertical split
-keymap("n", "<leader>ss", ":split<CR>", opts) --horizontal split
-keymap("n", "<leader>so", "<C-w>o", opts) -- close all splits
-keymap("n", "<leader>sx", ":close<CR>", opts) -- close current split
+-- split window
+keymap("n", "<leader>vs", ":vsplit<cr>", opts) --vertical split
+keymap("n", "<leader>ss", ":split<cr>", opts) --horizontal split
+keymap("n", "<leader>so", "<c-w>o", opts) -- close all splits
+keymap("n", "<leader>sx", ":close<cr>", opts) -- close current split
 -- keymap("n","<leader>so",)
 
--- Buffers
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts) -- lists open buffers
-keymap("n", "<leader>bk", ":bw<CR>", opts) -- kills current buffer
+-- buffers
+keymap("n", "<leader>fb", ":telescope buffers<cr>", opts) -- lists open buffers
+keymap("n", "<leader>bk", ":bw<cr>", opts) -- kills current buffer
 
--- Resize split window
+-- resize split window
 
--- open Explorer
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) --netrw disabled, if enabled: <:Lex 25>
+-- open explorer
+keymap("n", "<leader>e", ":nvimtreetoggle<cr>", opts) --netrw disabled, if enabled: <:lex 25>
 
--- Filemanangemant
-keymap("n", "<C-q>", ":q<CR>", opts) -- ctrl q to exit
-keymap("n", "<C-s>", ":w<CR>", opts) -- ctrl s to save
+-- quit and save like a normie
+keymap("n", "<c-q>", ":q<cr>", opts) -- ctrl q to exit
+keymap("n", "<c-s>", ":w<cr>", opts) -- ctrl s to save
 
-keymap("n", "+", "<C-a>", opts) --increment
-keymap("n", "-", "<C-x>", opts) --decrement
+keymap("n", "+", "<c-a>", opts) --increment
+keymap("n", "-", "<c-x>", opts) --decrement
 
--- Visual --
-keymap("n", "<C-Up>", ":resize +19<CR>", opts)
-keymap("n", "<C-Down>", ":resize 15<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize 15<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +19<CR>", opts)
+-- visual --
+keymap("n", "<c-up>", ":resize +19<cr>", opts)
+keymap("n", "<c-down>", ":resize 15<cr>", opts)
+keymap("n", "<c-left>", ":vertical resize 15<cr>", opts)
+keymap("n", "<c-right>", ":vertical resize +19<cr>", opts)
 
--- Stay in indent mode
+-- stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
