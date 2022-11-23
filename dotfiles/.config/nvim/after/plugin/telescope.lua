@@ -1,10 +1,14 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
+local status, telescope = pcall(require, "telescope")
+if not status then
 	return
 end
-
-local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
+local builtin = require("telescope.builtin")
+
+-- no idea what it does exactly, but it improves fzfs search results
+local function telescope_buffer_dir()
+	return vim.fn.expand("%:p:h")
+end
 
 telescope.setup({
 	defaults = {
@@ -88,24 +92,55 @@ telescope.setup({
 		-- builtin picker
 	},
 	extensions = {
-		file_browser = {
-			theme = "ivy",
-			-- hijack_netrw = true
-			--disables netrw and use telescope-file-browser in its place
-			-- Your extension configuration goes here:
-			-- extension_name = {
-			--   extension_config_key = value,
-			-- }
-			-- please take a look at the readme of the extension you want to configure
-		},
+		-- Your extension configuration goes here:
+		-- extension_name = {
+		--   extension_config_key = value,
+		-- }
+		-- please take a look at the readme of the extension you want to configure
 	},
 })
+telescope.load_extension("file_browser")
 
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- find files
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- find word
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {}) -- look for current open buffers
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {}) -- search for help
-vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {}) -- search for recently used files
-vim.keymap.set("n", "<leader>fw", ":Telescope file_browser<CR>") -- browse through files in your current directory
+vim.keymap.set("n", "<leader>ff", function()
+	builtin.find_files({
+		no_ignore = false,
+		-- previewer = false,
+		hidden = true,
+	})
+end)
+vim.keymap.set("n", "<leader>fg", function()
+	builtin.live_grep()
+end)
+vim.keymap.set("n", "<leader>fb", function()
+	builtin.buffers({
+		previewer = false,
+	})
+end)
+vim.keymap.set("n", "<leader>fh", function()
+	builtin.help_tags()
+end)
+vim.keymap.set("n", ";;", function()
+	builtin.resume()
+end)
+vim.keymap.set("n", ";e", function()
+	builtin.diagnostics()
+end)
+vim.keymap.set("n", "<leader>fs", function()
+	telescope.extensions.file_browser.file_browser({
+		path = "%:p:h",
+		cwd = telescope_buffer_dir(),
+		respect_gitignore = false,
+		hidden = true,
+		grouped = true,
+		previewer = false,
+		initial_mode = "normal",
+		layout_config = { height = 40 },
+	})
+end)
 
-require("telescope").load_extension("file_browser")
+-- vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- find files
+-- vim.keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- find word
+-- vim.keymap.set("n", "<leader>fb", builtin.buffers, {}) -- look for current open buffers
+-- vim.keymap.set("n", "<leader>fh", builtin.help_tags, {}) -- search for help
+-- vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {}) -- search for recently used files
+-- vim.keymap.set("n", "<leader>fs", ":Telescope file_browser<CR>") -- browse through files in your current directory

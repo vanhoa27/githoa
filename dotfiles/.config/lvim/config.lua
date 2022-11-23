@@ -34,6 +34,8 @@ vim.opt.splitright = true
 vim.opt.title = true
 vim.opt.updatetime = 300
 vim.opt.guifont = "monospace:h17"
+vim.opt.wildmenu = true
+vim.opt.cmdheight = 1
 
 -- general
 lvim.log.level = "warn"

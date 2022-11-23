@@ -37,6 +37,7 @@ keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {}) --scroll backward
 keymap("n", "x", '"_x', opts) -- Do not yank with x
 keymap("n", "db", 'vb"_d', opts) -- Delete a word backwards (includes selected char)
 keymap("n", "<C-a>", "gg<S-v>G", opts) --higlight all
+keymap("n", "<leader>h", ":noh<CR>", opts) --clear all hightlighting until next search
 
 -- Split window
 keymap("n", "<leader>vs", ":vsplit<CR>", opts) --vertical split
@@ -44,6 +45,10 @@ keymap("n", "<leader>ss", ":split<CR>", opts) --horizontal split
 keymap("n", "<leader>so", "<C-w>o", opts) -- close all splits
 keymap("n", "<leader>sx", ":close<CR>", opts) -- close current split
 -- keymap("n","<leader>so",)
+
+-- Buffers
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts) -- lists open buffers
+keymap("n", "<leader>bk", ":bw<CR>", opts) -- kills current buffer
 
 -- Resize split window
 
@@ -66,16 +71,3 @@ keymap("n", "<C-Right>", ":vertical resize +19<CR>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
--- Move text up and down
--- keymap("v", "<A-j>", ":m.+1<CR>==", opts)
--- keymap("v", "<A-k>", ":m.-2<CR>==", opts)
-
--- Visual Block --
--- Move text up and down
--- keymap("x", "J", ":move '>+18<CR>gv-gv", opts)
--- keymap("x", "K", ":move '<15<CR>gv-gv", opts)
--- keymap("x", "<A-j>", ":move '>+18<CR>gv-gv", opts)
--- keymap("x", "<A-k>", ":move '<15<CR>gv-gv", opts)
-
--- keymap("v", "p", '"_dP', opts)

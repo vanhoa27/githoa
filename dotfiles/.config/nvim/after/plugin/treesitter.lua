@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "c", "lua", "rust", "python", "java" }, -- write all insted of {""} to maintain all
+	ensure_installed = { "markdown", "c", "lua", "rust", "python", "java" }, -- write all insted of {""} to maintain all
 	sync_install = false,
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {

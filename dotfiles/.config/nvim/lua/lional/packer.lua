@@ -58,6 +58,7 @@ return require("packer").startup(function(use)
 	use("gruvbox-community/gruvbox") -- colorscheme gruvbox
 	use("Mofiqul/dracula.nvim") -- colorscheme dracula
 	use("krivahtoo/nightfly.nvim") -- colorscheme nightfly
+	use("catppuccin/nvim")
 
 	-- autocompletion (RIP Conqueror of Completion)
 	use("hrsh7th/nvim-cmp") -- completion plugin
