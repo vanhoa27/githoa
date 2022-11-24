@@ -43,6 +43,8 @@ packer.init({
 -- [ [ PACKER_PLUGINS ] ]
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim") -- Packer can manage itself, Plug-Installer
+
+	--treesitter highlighting
 	use({
 		"nvim-treesitter/nvim-treesitter", -- Syntax highlighting
 		run = ":TSUpdate",
