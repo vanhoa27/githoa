@@ -1,4 +1,13 @@
 
+note: 
+- zf -> create fold
+- zd -> delete fold
+- zo -> open fold
+- zc -> close fold
+- :mkview -> save foldview
+- :loadview -> make folds visable
+
+--SHORTCUTS
 ZZ -> "save and quit file" (:wq)
 ZQ -> "discard changes and quit" (:q!)
 <C-w>o -> "close all split tabs" 
