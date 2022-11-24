@@ -5,7 +5,6 @@ local g = vim.g --:%s/<word>/<replacement>
 -- [ [ CONTEXT ] ]
 opt.nu = true
 opt.rnu = true
--- vim.cmd("set nocul") -- call for vimscript commands in lua
 opt.cul = false -- disable/enable cursorline
 opt.mouse = "a"
 opt.signcolumn = "yes"
@@ -53,22 +52,20 @@ opt.splitbelow = true
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
+
+-- [ [ quality of life changes ] ]
 opt.updatetime = 50
-
--- Give more space for displaying messages.
 opt.cmdheight = 1
-
 opt.iskeyword:append("-") --considers dash ("-") as part of word
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 
 -- set to Systemclipboard
 -- opt.clipboard:append("unnamedplus")
 
+--Mapleader
 g.mapleadr = " "
 g.localleader = " "
 
 -- Netrw Explorer
 g.netrw_banner = "0" -- Disables the banner
 g.netrw_liststyle = "3" -- Tree view
--- set editor transparent
--- highlight Normal guibg=none

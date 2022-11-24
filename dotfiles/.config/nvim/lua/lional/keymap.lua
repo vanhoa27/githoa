@@ -18,7 +18,6 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- normal --
 -- better window navigation
 keymap("n", "<c-h>", "<c-w>h", opts)
 keymap("n", "<c-j>", "<c-w>j", opts)
@@ -30,8 +29,6 @@ keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and ta
 keymap("n", "<leader>tx", ":tabclose<cr>", opts) --close current tab
 keymap("n", "<tab>", "<cmd>bufferlinecyclenext<cr>", {}) --scroll forward
 keymap("n", "<s-tab>", "<cmd>bufferlinecycleprev<cr>", {}) --scroll backward
-
--- keymap("n","<c-c>",'"+y',opts) --copy into system clipboard
 
 -- paste/hightlight/yank
 keymap("n", "x", '"_x', opts) -- do not yank with x
@@ -53,15 +50,14 @@ keymap("n", "<leader>sx", ":close<cr>", opts) -- close current split
 keymap("n", "<leader>fb", ":telescope buffers<cr>", opts) -- lists open buffers
 keymap("n", "<leader>bk", ":bw<cr>", opts) -- kills current buffer
 
--- resize split window
-
 -- open explorer
-keymap("n", "<leader>e", ":nvimtreetoggle<cr>", opts) --netrw disabled, if enabled: <:lex 25>
+keymap("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", opts) --netrw disabled, if enabled: <:lex 25>
 
 -- quit and save like a normie
 keymap("n", "<c-q>", ":q<cr>", opts) -- ctrl q to exit
 keymap("n", "<c-s>", ":w<cr>", opts) -- ctrl s to save
 
+--increment
 keymap("n", "+", "<c-a>", opts) --increment
 keymap("n", "-", "<c-x>", opts) --decrement
 
