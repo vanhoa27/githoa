@@ -24,6 +24,11 @@ keymap("n", "<c-j>", "<c-w>j", opts)
 keymap("n", "<c-k>", "<c-w>k", opts)
 keymap("n", "<c-l>", "<c-w>l", opts)
 
+-- [[BUFFERS]]
+keymap("n", "<leader>bn", ":bn<CR>", opts) -- go to next buffer
+keymap("n", "<leader>bp", ":bp<CR>", opts) -- go to previous buffer
+keymap("n", "<leader>bw", ":bw<CR>", opts) -- wipe out current buffer
+
 -- linting/formating/folding
 keymap("n", "<leader>lw", ":loadview<CR>", opts)
 
