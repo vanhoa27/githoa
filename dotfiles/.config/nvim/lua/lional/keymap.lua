@@ -39,6 +39,7 @@ keymap("n", "db", 'vb"_d', opts) -- delete a word backwards (includes selected c
 keymap("n", "<leader>y", '"+y', opts) -- yank into system clipboard
 keymap("n", "<leader>d", '"_d', opts) -- delete without copying into system clipboard
 keymap("v", "<leader>d", '"_d', opts) -- same but in visual_mode
+keymap("n", "<leader>p", '"+p', opts) -- paste from clipboard
 keymap("n", "<c-a>", "gg<s-v>g", opts) --higlight all
 keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
 
