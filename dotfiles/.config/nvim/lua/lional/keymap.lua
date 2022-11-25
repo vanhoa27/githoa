@@ -42,6 +42,7 @@ keymap("n", "<s-tab>", "<cmd>bufferlinecycleprev<cr>", {}) --scroll backward
 keymap("n", "x", '"_x', opts) -- do not yank with x
 keymap("n", "db", 'vb"_d', opts) -- delete a word backwards (includes selected char)
 keymap("n", "<leader>y", '"+y', opts) -- yank into system clipboard
+keymap("v", "<leader>y", '"+y', opts) -- same but in visual_mode
 keymap("n", "<leader>d", '"_d', opts) -- delete without copying into system clipboard
 keymap("v", "<leader>d", '"_d', opts) -- same but in visual_mode
 keymap("n", "<leader>p", '"+p', opts) -- paste from clipboard
