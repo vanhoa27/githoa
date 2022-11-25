@@ -24,6 +24,9 @@ keymap("n", "<c-j>", "<c-w>j", opts)
 keymap("n", "<c-k>", "<c-w>k", opts)
 keymap("n", "<c-l>", "<c-w>l", opts)
 
+-- linting/formating/folding
+keymap("n", "<leader>lw", ":loadview<CR>", opts)
+
 -- tabs
 keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and tabnew are similiar
 keymap("n", "<leader>tx", ":tabclose<cr>", opts) --close current tab

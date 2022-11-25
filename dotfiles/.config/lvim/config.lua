@@ -6,8 +6,8 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
+-- [[SETS]]
 vim.opt.rnu = true
 vim.opt.cul = false
 vim.opt.fileencoding = "utf-8"
@@ -41,12 +41,12 @@ vim.opt.cmdheight = 1
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
 lvim.colorscheme = "lunar"
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
--- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<tab>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-tab>"] = ":BufferLineCyclePrev<CR>"
@@ -55,8 +55,8 @@ lvim.keys.normal_mode["<S-tab>"] = ":BufferLineCyclePrev<CR>"
 -- override a default keymapping
 lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 
+
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
 	-- for input mode
@@ -198,6 +198,7 @@ lvim.plugins = {
 		cmd = "TroubleToggle",
 	},
 	{ "nvim-treesitter/nvim-treesitter-angular" },
+    {},
 }
 
 require("lvim.lsp.manager").setup("angularls")
