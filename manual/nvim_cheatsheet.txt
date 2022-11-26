@@ -15,8 +15,8 @@ ZQ -> "discard changes and quit" (:q!)
 fa -> "find the next occuring a"
 o -> "begin new line below in insert mode" 
 O -> "begin new line above in insert mode"
-<C-o> -> "change to previous buffer"
-<C-i> -> "change to the next buffer"
+<C-o> -> "change to previous place"
+<C-i> -> "change to the next place"
 <C-j> -> "begin a new line" (only in insert mode)
 ya( -> "yank everything enclosed by brackets (only on current line)
 <C-i> "indent line, same as <tab>"
