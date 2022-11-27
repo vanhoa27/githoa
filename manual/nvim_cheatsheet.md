@@ -139,6 +139,8 @@
 - ZQ -> quit and discard changes
 - <C-z> -> suspend current session (fg in Terminal to reopen)
 
+---
+
 ## [[INDENTATION]]
 
 - <C-i> -> indent current line (insert mode)
