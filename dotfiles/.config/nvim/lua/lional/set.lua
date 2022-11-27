@@ -44,6 +44,7 @@ opt.path:append({ "**" }) -- Finding Files -> search down into subfolder
 opt.wildignore:append({ "*/.git/*", "*/node_modules/*" }) --list of patterns to ignore files for file name completion
 opt.wildmenu = true --command-line completion shows a list of matches (not very useful with lsp on)
 opt.wildignorecase = true --ignore case when completing files names
+opt.complete:append({ ".", "w", "b", "u", "t", "kspell" }) -- prioritize completion
 opt.hidden = true
 
 -- [ [ SPLITS ] ]

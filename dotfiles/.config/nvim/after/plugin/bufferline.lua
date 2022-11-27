@@ -5,8 +5,8 @@ end
 
 bufferline.setup({
 	options = {
-		mode = "tabs",
-		numbers = "ordinal",
+		mode = "tabs", -- "buffers" to show buffers as tabs
+		numbers = "ordinal", -- display buffer_id, or both to display buffer_id and ordinal
 		buffer_close_icon = "",
 		separator_style = "padded_slant",
 		always_show_bufferline = false,

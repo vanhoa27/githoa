@@ -12,6 +12,7 @@ end
 
 telescope.setup({
 	defaults = {
+		layout_stratey = "horizontal",
 
 		prompt_prefix = " ",
 		selection_caret = " ",
@@ -129,15 +130,15 @@ end)
 vim.keymap.set("n", "<leader>;e", function()
 	builtin.diagnostics()
 end)
-vim.keymap.set("n", "<leader>fs", function()
+vim.keymap.set("n", "<leader>.", function()
 	telescope.extensions.file_browser.file_browser({
 		path = "%:p:h",
 		cwd = telescope_buffer_dir(),
 		respect_gitignore = false,
 		hidden = true,
 		grouped = true,
-		previewer = false,
-		initial_mode = "normal",
+		-- previewer = false,
+		initial_mode = "insert",
 		layout_config = { height = 40 },
 	})
 end)
