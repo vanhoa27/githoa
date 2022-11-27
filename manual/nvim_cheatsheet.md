@@ -69,6 +69,17 @@
 ## [[INSERTION-MODE SHORTCUTS]]
 
 - <C-w> -> delete word backwards
+- <C-u> -> delete upto cursor backwards
+- <C-j> -> start a new line
+
+- <C-a> -> paste from "." register
+- <C-r> -> paste from specified register
+- <C-n> -> select next complete
+- <C-p> -> select previous complete
+
+- <C-x> <C-l> -> complete a line
+- <C-x> <C-f> -> complete from file
+- <C-x> <C-o> -> omincomplete
 
 ---
 
