@@ -25,9 +25,12 @@ set nocompatible ":b <tab> to navigate through buffers
 set incsearch 
 set ignorecase
 set smartcase
-set scrolloff =10
-set sidescrolloff =10
+set scrolloff =8
+set sidescrolloff =8
 set path +=**
+
+"completion
+set complete=.,w,b,u,t,i,kspell
 
 "keymaps
 let g:mapleader =' '
@@ -37,6 +40,10 @@ nnoremap <leader>ss :split<CR>
 nnoremap <leader>so <C-w>o
 nnoremap <leader>vs :vsplit<CR>
 nnoremap <leader>h :noh<CR>
+nnoremap <leader>lw :loadview<CR>
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+
 " nnoremap <C-k> :bn<CR>a 
 " nnoremap <C-j> :bp<CR>a 
 " nnoremap <leader>bk :bw<CR>a 
@@ -67,7 +74,6 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "Plugins
-
 call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
