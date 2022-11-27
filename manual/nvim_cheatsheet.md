@@ -4,10 +4,19 @@
 
 - i -> enter insert mode before cursor
 - a -> enter insert mode behind cursor
+
+---
+
 - I -> enter insert mode at the start of the line
 - A -> enter insert mode at the end of the line
+
+---
+
 - o -> enter insert mode below cursor (on a new line)
 - O -> enter insert mode above cursor (on a new line)
+
+---
+
 - esc -> enter normal mode
 - v -> enter visual mode
 - V -> enter visual line mode
@@ -15,23 +24,38 @@
 ## [[UNDO/REDO]]
 
 - u -> undo change
-- <C-r> -> redo change
+- /<C-r> -> redo change
 
 ## [[MOTIONS]]
 
 - hjkl -> move left,up,down,right
+
+---
+
 - w -> go to beginning of next word
 - b -> go to back of next word
 - e -> go to end of word
+
+---
+
 - W -> go to beginning of next word (seperated by whitespace)
 - B -> go to back of next word (seperated by whitespace)
 - E -> go to end of word (seperated by whitespace)
+
+---
+
 - gg -> go to beginning of file
 - G -> go to end of file
+- <number>gg -> go the specified line
+
+---
+
 - 0 -> go to beginning of line
 - \_ -> go to beginning of line (no whitespace)
 - $ -> go to end of line
-- <number>gg -> go the specified line
+
+---
+
 - H -> go to top of screen
 - M -> go to middle of screen
 - L -> go to end of screen
@@ -42,10 +66,19 @@
 - yy -> yank a line
 - yw -> yank a word
 - "+y -> yank to system clipboard
+
+---
+
 - p -> paste
 - "+p -> paste from system clipboard
+
+---
+
 - dd -> delete a line
 - dw -> delete a word
+
+---
+
 - cc -> change a line
 - cw -> change a word
 
@@ -59,6 +92,9 @@
 - x -> delete one char (keymap "x" to "\_x" to avoid pasting into clipboard)
 - s -> delete one char and go into insert mode
 - S -> delete contents of one line and go into insert mode (same as cc)
+
+---
+
 - :%s/<text>/<replacement -> replace <text>
 - :%s/<text>/<replacement/g -> replace <text> globally
 - :%s/<text>/<replacement/gc -> replace <text> globally and ask for confirmation
@@ -69,6 +105,9 @@
 - diw -> delete whole word (no matter cursor position)
 - ciw -> change a whole word (no matter cursor position)
 - yiw -> yank a whole word (no matter cursor position)
+
+---
+
 - vi( -> select all inside brackets (va includes the brackets)
 - di( -> delete all inside brackets (da includes the brackets)
 - ci( -> change all inside brackets (ya includes the brackets)
@@ -99,8 +138,14 @@
 
 - zf -> create fold
 - zd -> delete fold
+
+---
+
 - zo -> open fold
 - zc -> close fold
+
+---
+
 - :mkview -> save foldview
 - :loadview -> make folds visable
 
@@ -114,8 +159,11 @@
 
 - <C-i> -> indent current line (insert mode)
 - <C-d> -> deindent current line (insert mode)
+
+---
+
 - < ap -> indent all text in the paragraph to the left
-- > ap -> indent all text in the paragraph to the right
+- /> ap -> indent all text in the paragraph to the right
 
 ## [[JUMPS]]
 
