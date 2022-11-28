@@ -14,6 +14,7 @@
 - esc -> enter normal mode
 - v -> enter visual mode
 - V -> enter visual line mode
+- o -> jumps between selected end in visual mode
 
 ---
 
@@ -159,6 +160,7 @@
 
 - < ap -> indent all text in the paragraph to the left
 - /> ap -> indent all text in the paragraph to the right
+- = ap -> autoindent paragraph
 
 ---
 
