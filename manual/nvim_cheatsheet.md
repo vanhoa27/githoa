@@ -61,9 +61,11 @@
 
 - dd -> delete a line
 - dw -> delete a word
+- D -> delete starting from cursor to end
 
 - cc -> change a line
 - cw -> change a word
+- C -> change starting from cursor to end
 
 ---
 
