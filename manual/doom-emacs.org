@@ -9,3 +9,11 @@
 + <Space>b k -> kill current buffer
 + <Space>b n -> go to next buffer
 + <Space>b p -> go to previous buffer
+
+** ORG_MODE
++ "+" to start a list
++ <Space>-m-d-s -> start org schedule
++ <Space>-m-t-t -> mark as "TODO" item
++ <Space>-m-t -> to look for all options
++ <Space>-m-x or <C-c>-<C-c> to check a tick box
+   + [ ] Try HERE

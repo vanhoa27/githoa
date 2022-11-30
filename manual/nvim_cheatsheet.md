@@ -113,6 +113,19 @@
 
 ---
 
+## [[INCREMENT/DECREMENT/CAPITALISE/DECAPITALISE]]
+
+- <C-a> -> increment
+- <C-x> -> decrement
+- g<C-a> -> increment in order
+- g<C-x> -> decrement in order
+
+- guiw -> decapitalise word
+- gUiw -> capitalise word
+- guap -> decapitalise all words in paragraph
+
+---
+
 ## [[REPEATING]]
 
 - ; -> repeats last motion

@@ -46,7 +46,7 @@ keymap("v", "<leader>y", '"+y', opts) -- same but in visual_mode
 keymap("n", "<leader>d", '"_d', opts) -- delete without copying into clipboard
 keymap("v", "<leader>d", '"_d', opts) -- same but in visual_mode
 keymap("n", "<leader>p", '"+p', opts) -- paste from clipboard
-keymap("n", "<C-a>", "gg<S-v>G", opts) --higlight all
+keymap("n", "<leader><leader>a", "gg<S-v>G", opts) --higlight all
 keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
 
 -- split window
