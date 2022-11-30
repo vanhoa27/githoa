@@ -12,6 +12,7 @@ opt.signcolumn = "yes"
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 opt.wrap = true -- line wrap
+vim.cmd("set whichwrap+=<,>,[,],h,l")
 
 -- [ [ THEME ] ]
 opt.syntax = "ON"
@@ -26,7 +27,6 @@ opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
-opt.wrap = false
 
 -- [ [ Indentation ] ]
 opt.smartindent = true
@@ -58,7 +58,6 @@ opt.splitbelow = true
 opt.updatetime = 50
 opt.cmdheight = 1
 opt.iskeyword:append("-") --considers dash ("-") as part of word
-vim.cmd("set whichwrap+=<,>,[,],h,l")
 
 -- set to Systemclipboard
 -- opt.clipboard:append("unnamedplus")

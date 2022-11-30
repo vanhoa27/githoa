@@ -115,7 +115,7 @@ end)
 vim.keymap.set("n", "<leader>fb", function()
 	builtin.buffers({
 		previewer = false,
-		initial_mode = "normal",
+		initial_mode = "insert",
 	})
 end)
 vim.keymap.set("n", "<leader>fh", function()

@@ -60,7 +60,8 @@ return require("packer").startup(function(use)
 	use("gruvbox-community/gruvbox") -- colorscheme gruvbox
 	use("Mofiqul/dracula.nvim") -- colorscheme dracula
 	use("krivahtoo/nightfly.nvim") -- colorscheme nightfly
-	use("catppuccin/nvim")
+	use("catppuccin/nvim") -- catppuccin
+	use("sainnhe/sonokai") -- sonokai
 
 	-- autocompletion (RIP Conqueror of Completion)
 	use("hrsh7th/nvim-cmp") -- completion plugin
@@ -127,6 +128,18 @@ return require("packer").startup(function(use)
 		"goolord/alpha-nvim",
 		config = function()
 			require("alpha").setup(require("alpha.themes.dashboard").config)
+		end,
+	})
+
+	-- Zenmode && Twillight
+	use("folke/zen-mode.nvim")
+	use("folke/twilight.nvim")
+
+	-- Org-Mode
+	use({
+		"nvim-orgmode/orgmode",
+		config = function()
+			require("orgmode").setup({})
 		end,
 	})
 end)
