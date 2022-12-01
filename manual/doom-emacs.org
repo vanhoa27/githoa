@@ -12,8 +12,10 @@
 
 ** ORG_MODE
 + "+" to start a list
++ <C-c>[ -> add file to org-agenda
 + <Space>-m-d-s -> start org schedule
 + <Space>-m-t-t -> mark as "TODO" item
 + <Space>-m-t -> to look for all options
 + <Space>-m-x or <C-c>-<C-c> to check a tick box
    + [ ] Try HERE
++ <C-c> <C-e> -> export current org file
