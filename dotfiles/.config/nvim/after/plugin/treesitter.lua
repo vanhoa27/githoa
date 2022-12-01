@@ -6,11 +6,6 @@ end
 -- Load custom treesitter grammar for org filetype
 require("orgmode").setup_ts_grammar()
 
-require("orgmode").setup({
-	org_agenda_files = { "~/Dropbox/org/*", "~/my-orgs/**/*" },
-	org_default_notes_file = "~/Dropbox/org/refile.org",
-})
----------------------------------
 require("nvim-treesitter.configs").setup({
 	ensure_installed = { "markdown", "c", "lua", "rust", "python", "java", "org" }, -- write all insted of {""} to maintain all
 	sync_install = false,
@@ -33,6 +28,10 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
+require("orgmode").setup({
+	org_agenda_files = { "~/Dropbox/org/*", "~/my-orgs/**/*" },
+	org_default_notes_file = "~/Dropbox/org/refile.org",
+})
 -- VIMTREE --> fold EXPRESSION
 
 -- vim.opt.foldmethod     = 'expr'
