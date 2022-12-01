@@ -1,6 +1,7 @@
 * DOOM EMACS
 
 ** SHORTCUTS
+
 + <Space>-h-r-r -> restart and resync doom EMACS
 + <Space><Space> -> open directory manager
 + <Space>w v -> open a vertical split
@@ -11,6 +12,7 @@
 + <Space>b p -> go to previous buffer
 
 ** ORG_MODE
+*** Org Agenda
 + "+" to start a list
 + <C-c>[ -> add file to org-agenda
 + <Space>-m-d-s -> start org schedule
@@ -19,3 +21,14 @@
 + <Space>-m-x or <C-c>-<C-c> to check a tick box
    + [ ] Try HERE
 + <C-c> <C-e> -> export current org file
+
+*** Notes
+ | SHORTCUTS | meaning                      |
+ |-----------+------------------------------|
+ | <Space>nF | open Notefolder              |
+ | <Space>nS | look for all Agenda headings |
+ |           |                              |
+
+*** Folds
++ <tab> close/open fold (zc/zo)
++ <S-tab> close/open all tabs (zr/zR)
