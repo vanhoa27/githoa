@@ -27,7 +27,7 @@
  |-----------+------------------------------|
  | <Space>nF | open Notefolder              |
  | <Space>nS | look for all Agenda headings |
- |           |                              |
+ | <Space>is | insert snippets              |
 
 *** Folds
 + <tab> close/open fold (zc/zo)
