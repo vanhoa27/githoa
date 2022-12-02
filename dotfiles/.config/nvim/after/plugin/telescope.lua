@@ -10,7 +10,7 @@ local function telescope_buffer_dir()
 	return vim.fn.expand("%:p:h")
 end
 
-telescope.load_extension("media_files")
+telescope.load_extension("file_browser")
 
 telescope.setup({
 	defaults = {
