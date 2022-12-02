@@ -1,27 +1,32 @@
 * Ubuntu help
 
 ** You can remove a directory by writing:
-+ rm -fr <filename>
-+ rm -r <filename>
+   + rm -fr <filename>
+   + rm -r <filename>
 
 ** Uninstall programs by running:
-+ sudo apt remove - <program>
+   + sudo apt remove - <program>
 
 ** use different shell
-+ "type command" chsh
-+ "specify shell" /usr/bin/("shell e.g. zsh")
+   + "type command" chsh
+   + "specify shell" /usr/bin/("shell e.g. zsh")
 
 ** access wsl "Ubuntu" through windows
-+ type "\\wsl$\" into Fileexplorer addressbar
+   + type "\\wsl$\" into Fileexplorer addressbar
 
 ** Shortcuts
-+ <C-l> -> clear
-+ <C-c> -> abort current task
-+ <C-z> -> suspend current task
-+ <C-p> -> select previous command
-+ <C-n> -> selext next command
-+ <C-w> -> delete a word backward
-+ <C-u> -> delete backwards from cursor
-+ up and down arrow keys, select previous commands (pretty obsolete)
-+ tab -> autocomplete filename
-+ tab tab -> show file list
+   +<C-l> -> clear
+   + <C-c> -> abort current task
+   + <C-z> -> suspend current task
+   + <C-p> -> select previous command
+   + <C-n> -> selext next command
+   + <C-w> -> delete a word backward
+   + <C-u> -> delete backwards from cursor
+   + up and down arrow keys, select previous commands (pretty obsolete)
+   + tab -> autocomplete filename
+   + tab tab -> show file list
+
+** Appearance 
+   + settings -> Appearance -> Dock -> Autohide Dock
+   + settings -> display -> nightlight
+   + settings -> background -> new Wallpaper 
