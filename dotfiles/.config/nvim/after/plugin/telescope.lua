@@ -10,10 +10,12 @@ local function telescope_buffer_dir()
 	return vim.fn.expand("%:p:h")
 end
 
+telescope.load_extension("media_files")
+
 telescope.setup({
 	defaults = {
-		layout_stratey = "horizontal",
 
+		layout_strategy = "horizontal",
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
@@ -84,6 +86,7 @@ telescope.setup({
 		},
 	},
 	pickers = {
+
 		-- Default configuration for builtin pickers goes here:
 		-- picker_name = {
 		--   picker_config_key = value,
@@ -92,15 +95,8 @@ telescope.setup({
 		-- Now the picker_config_key will be applied every time you call this
 		-- builtin picker
 	},
-	extensions = {
-		-- Your extension configuration goes here:
-		-- extension_name = {
-		--   extension_config_key = value,
-		-- }
-		-- please take a look at the readme of the extension you want to configure
-	},
+	extensions = {},
 })
-telescope.load_extension("file_browser")
 
 vim.keymap.set("n", "<leader>ff", function()
 	builtin.find_files({
@@ -114,7 +110,7 @@ vim.keymap.set("n", "<leader>fg", function()
 end)
 vim.keymap.set("n", "<leader>fb", function()
 	builtin.buffers({
-		previewer = false,
+		-- previewer = false,
 		initial_mode = "insert",
 	})
 end)
@@ -143,9 +139,9 @@ vim.keymap.set("n", "<leader>.", function()
 	})
 end)
 
--- vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- find files
--- vim.keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- find word
--- vim.keymap.set("n", "<leader>fb", builtin.buffers, {}) -- look for current open buffers
--- vim.keymap.set("n", "<leader>fh", builtin.help_tags, {}) -- search for help
--- vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {}) -- search for recently used files
--- vim.keymap.set("n", "<leader>fs", ":Telescope file_browser<CR>") -- browse through files in your current directory
+-- -- vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- find files
+-- -- vim.keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- find word
+-- -- vim.keymap.set("n", "<leader>fb", builtin.buffers, {}) -- look for current open buffers
+-- -- vim.keymap.set("n", "<leader>fh", builtin.help_tags, {}) -- search for help
+-- -- vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {}) -- search for recently used files
+-- -- vim.keymap.set("n", "<leader>fs", ":Telescope file_browser<CR>") -- browse through files in your current directory

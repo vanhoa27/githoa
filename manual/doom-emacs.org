@@ -15,7 +15,8 @@
 *** Org Agenda
 + "+" to start a list
 + <C-c>[ -> add file to org-agenda
-+ <Space>-m-d-s -> start org schedule
++ <Space>-m-d-s -> schedule item
+  <Space>-m-d-d -> set deadline
 + <Space>-m-t-t -> mark as "TODO" item
 + <Space>-m-t -> to look for all options
 + <Space>-m-x or <C-c>-<C-c> to check a tick box

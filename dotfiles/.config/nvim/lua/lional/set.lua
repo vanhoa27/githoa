@@ -11,9 +11,9 @@ opt.signcolumn = "yes"
 -- opt.colorcolumn = "80"
 opt.scrolloff = 8
 opt.sidescrolloff = 8
-opt.wrap = true -- line wrap
-vim.cmd("set whichwrap+=<,>,[,],h,l")
-opt.linebreak = false -- wrap in a new line
+-- opt.wrap = true -- line wrap
+-- vim.cmd("set whichwrap+=<,>,[,],h,l")
+-- opt.linebreak = true -- wrap in a new line
 
 -- [ [ THEME ] ]
 opt.syntax = "ON"

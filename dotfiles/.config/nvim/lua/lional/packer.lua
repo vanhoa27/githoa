@@ -105,6 +105,7 @@ return require("packer").startup(function(use)
 	})
 	-- fuzzyfinder telescope
 	use("nvim-telescope/telescope-file-browser.nvim")
+	-- use("nvim-lua/popup.nvim")
 
 	-- lua function that many plugins use
 	use("nvim-lua/plenary.nvim")
@@ -127,7 +128,7 @@ return require("packer").startup(function(use)
 	use({
 		"goolord/alpha-nvim",
 		config = function()
-			require("alpha").setup(require("alpha.themes.dashboard").config)
+			require("alpha").setup(require("alpha.themes.dashboard").config) -- dashboard, startify
 		end,
 	})
 
