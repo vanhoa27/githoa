@@ -66,6 +66,8 @@
 - cc -> change a line
 - cw -> change a word
 - C -> change starting from cursor to end
+- cl -> change one character & enter insert mode
+- same as s
 
 ---
 
