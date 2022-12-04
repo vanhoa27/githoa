@@ -9,6 +9,7 @@ local keymap = vim.api.nvim_set_keymap
 keymap("n", "<space>", "<nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+keymap("n", "<leader>;", ":Alpha<CR>", opts)
 
 -- modes
 --   normal_mode = "n",
@@ -24,6 +25,14 @@ keymap("n", "<c-j>", "<c-w>j", opts)
 keymap("n", "<c-k>", "<c-w>k", opts)
 keymap("n", "<c-l>", "<c-w>l", opts)
 
+-- doom emacs window navigation
+keymap("n", "<leader>wh", "<c-w>h", opts)
+keymap("n", "<leader>wj", "<c-w>j", opts)
+keymap("n", "<leader>wk", "<c-w>k", opts)
+keymap("n", "<leader>wl", "<c-w>l", opts)
+keymap("n", "<leader>wl", "<c-w>l", opts)
+keymap("n", "<leader>ww", "<c-w>w", opts) -- go not next window
+
 -- [[BUFFERS]]
 keymap("n", "<leader>bn", ":bn<CR>", opts) -- go to next buffer
 keymap("n", "<leader>bp", ":bp<CR>", opts) -- go to previous buffer
@@ -34,9 +43,9 @@ keymap("n", "<leader>lw", ":loadview<CR>", opts)
 
 -- tabs
 keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and tabnew are similiar
-keymap("n", "<leader>tx", ":tabclose<cr>", opts) --close current tab
-keymap("n", "<tab>", "<cmd>bufferlinecyclenext<cr>", {}) --scroll forward
-keymap("n", "<s-tab>", "<cmd>bufferlinecycleprev<cr>", {}) --scroll backward
+keymap("n", "<leader>tc", ":tabclose<cr>", opts) --close current tab
+-- keymap("n", "<tab>", "<cmd>bufferlinecyclenext<cr>", {}) --scroll forward
+-- keymap("n", "<s-tab>", "<cmd>bufferlinecycleprev<cr>", {}) --scroll backward
 
 -- paste/hightlight/yank
 keymap("n", "x", '"_x', opts) -- do not yank with x
@@ -50,11 +59,10 @@ keymap("n", "<leader><leader>a", "gg<S-v>G", opts) --higlight all
 keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
 
 -- split window
-keymap("n", "<leader>vs", ":vsplit<cr>", opts) --vertical split
-keymap("n", "<leader>ss", ":split<cr>", opts) --horizontal split
-keymap("n", "<leader>so", "<c-w>o", opts) -- close all splits
-keymap("n", "<leader>sx", ":close<cr>", opts) -- close current split
--- keymap("n","<leader>so",)
+keymap("n", "<leader>wv", ":vsplit<cr>", opts) --vertical split
+keymap("n", "<leader>ws", ":split<cr>", opts) --horizontal split
+keymap("n", "<leader>wc", ":close<cr>", opts) -- close current split
+keymap("n", "<leader>wo", "<c-w><c-o>", opts) -- close all splits
 
 -- buffers
 keymap("n", "<leader>fb", ":telescope buffers<cr>", opts) -- lists open buffers

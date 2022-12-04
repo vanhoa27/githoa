@@ -136,6 +136,9 @@ return require("packer").startup(function(use)
 	use("folke/zen-mode.nvim")
 	use("folke/twilight.nvim")
 
+	-- The Primeagen :VimBeGood
+	use("ThePrimeagen/vim-be-good")
+
 	-- Org-Mode
 	use({
 		"nvim-orgmode/orgmode",
