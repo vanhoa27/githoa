@@ -1,5 +1,12 @@
 # NVIM_CHEATSHEET
 
+## Important Note
+
+- <C-i> and <tab> are stricly equivilant, overriding <tab>
+- as a keymap will disable <C-i>
+
+---
+
 ## [[BASICS]]
 
 - i -> enter insert mode before cursor
