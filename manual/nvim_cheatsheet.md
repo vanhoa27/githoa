@@ -198,6 +198,6 @@
 
 ## [[COMMAND]
 
-- :!gcc -o somename % && ./somename (CompileandRun current code)
-
+- :w <CR> :!gcc % && ./a.out <CR> (save CompileandRun current code)
+- :w <CR> :!gcc % -o %< && ./%< <CR> (save CompileandRun current code)
 
