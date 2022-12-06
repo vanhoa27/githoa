@@ -193,3 +193,11 @@
 - <C-o> -> jump back
 - <C-i> -> jump forward
 - ma -> set mark on a ; 'a -> jump back to mark a
+
+---
+
+## [[COMMAND]
+
+- :!gcc -o somename % && ./somename (CompileandRun current code)
+
+
