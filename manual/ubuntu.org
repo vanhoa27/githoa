@@ -39,3 +39,10 @@
    + mkdir -> create directory  
    + find
    + man -> open manual (flag(keywords): -k)
+
+** Path
+   + Rückverweise: ".."
+   + Selbstverweise: "."
+
+   
+
