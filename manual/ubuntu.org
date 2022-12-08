@@ -30,3 +30,12 @@
    + settings -> Appearance -> Dock -> Autohide Dock
    + settings -> display -> nightlight
    + settings -> background -> new Wallpaper 
+
+** Commands
+   + rm -r and rmdir -> both rm directories 
+   + ls -> list
+   + mv -> rename or move 
+   + cp -> copy 
+   + mkdir -> create directory  
+   + find
+   + man -> open manual (flag(keywords): -k)
