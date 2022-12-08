@@ -43,6 +43,11 @@
    + sort -> sorts content of file
    + ./a.out | sort > Outfile (output is sorted and put into Outfile)
 
+** Navigation commands
+   + grep to find files
+
+
+
 ** Path
    + Rückverweise: ".."
    + Selbstverweise: "."
