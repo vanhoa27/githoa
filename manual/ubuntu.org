@@ -39,6 +39,9 @@
    + mkdir -> create directory  
    + find
    + man -> open manual (flag(keywords): -k)
+   + cat -> shows content of file
+   + sort -> sorts content of file
+   + ./a.out | sort > Outfile (output is sorted and put into Outfile)
 
 ** Path
    + Rückverweise: ".."
