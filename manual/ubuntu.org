@@ -2,7 +2,7 @@
 
 ** You can remove a directory by writing:
    + rm -fr <filename>
-   + rm -r <filename>
+   + rm -r <** alternativesfilename>
 
 ** Uninstall programs by running:
    + sudo apt remove - <program>
@@ -26,6 +26,14 @@
    + tab -> autocomplete filename
    + tab tab -> show file list
 
+** Alternatives
+| keymaps     | shortcuts     |
+|-------------+---------------|
+| M-w         | delte a line  |
+| M-backspace | delete a word |
+|             |               |
+
+
 ** Appearance 
    + settings -> Appearance -> Dock -> Autohide Dock
    + settings -> display -> nightlight
@@ -45,8 +53,6 @@
 
 ** Navigation commands
    + grep to find files
-
-
 
 ** Path
    + Rückverweise: ".."
