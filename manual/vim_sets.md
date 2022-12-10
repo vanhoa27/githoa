@@ -16,3 +16,8 @@ you can uphold your overview over everything. This is extremely useful.
 To effectively write Latex in Vim you should download this plugin and preferably a snippet
 manager to define your own snippets and write Latex faster. This will speed up your writing
 ability tremendously and turn Latex and Vim into an extremely fast note taking duo
+
+## Vim and Neovim, default keymaps
+
+- gf -> open file command
+- map gf :edit <cedit><cr> (opens the files even if is doesn't exist)

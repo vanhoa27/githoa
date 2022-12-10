@@ -66,10 +66,32 @@ snippet box "Box"
 $0
 endsnippet
 
-### insert an environment
+### insert an environment 
 snippet beg "begin{} / end{}" bA
 \begin{$1}
 	$0
 \end{$1}
 endsnippet
+
+### flags
+* b snippet will only expand at beginning
+* A autoexpand
+* $1, $2 ...$0 (places to jump to with tab, $0 is the last place)
+
+### most used snippets
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+
+
+
+
+
 
