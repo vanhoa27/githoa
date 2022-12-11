@@ -21,3 +21,8 @@ ability tremendously and turn Latex and Vim into an extremely fast note taking d
 
 - gf -> open file command
 - map gf :edit <cedit><cr> (opens the files even if is doesn't exist)
+
+## Remove Neovim 
+
+- if build from source remove Neovim by running:
+- rm -f $(which nvim)
