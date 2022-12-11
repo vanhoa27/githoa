@@ -10,6 +10,7 @@ keymap("n", "<space>", "<nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 keymap("n", "<leader>;", ":Alpha<CR>", opts)
+keymap("i", "<m-BS>", "<c-w>", opts)
 
 -- modes
 --   normal_mode = "n",
@@ -18,6 +19,11 @@ keymap("n", "<leader>;", ":Alpha<CR>", opts)
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
+--
+
+-- compile and run code
+keymap("n", "<f8>", ":!gcc % -o %< && ./%< <CR>", opts)
+keymap("n", "<leader>z", ":ZenMode<CR>", opts)
 
 -- better window navigation
 keymap("n", "<c-h>", "<c-w>h", opts)
@@ -44,8 +50,8 @@ keymap("n", "<leader>lw", ":loadview<CR>", opts)
 -- tabs
 keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and tabnew are similiar
 keymap("n", "<leader>tc", ":tabclose<cr>", opts) --close current tab
--- keymap("n", "<tab>", "<cmd>bufferlinecyclenext<cr>", {}) --scroll forward
--- keymap("n", "<s-tab>", "<cmd>bufferlinecycleprev<cr>", {}) --scroll backward
+keymap("n", "<M-l>", "<cmd>BufferLineCycleNext<cr>", opts) --scroll forward
+keymap("n", "<M-h>", "<cmd>BufferLineCyclePrev<cr>", opts) --scroll backward
 
 -- paste/hightlight/yank
 keymap("n", "x", '"_x', opts) -- do not yank with x
@@ -88,3 +94,9 @@ keymap("n", "<c-right>", ":vertical resize +19<cr>", opts)
 -- stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- move text up and down
+keymap("x", "<M-j>", ":m '>+1<CR>gv-gv", opts)
+keymap("n", "<M-j>", ":m .+1<CR>==", opts)
+keymap("x", "<M-k>", ":m '<lt>-2<CR>gv-gv", opts)
+keymap("n", "<M-k>", ":m .-2<CR>==", opts)

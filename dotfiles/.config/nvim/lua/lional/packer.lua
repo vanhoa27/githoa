@@ -44,13 +44,12 @@ packer.init({
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim") -- Packer can manage itself, Plug-Installer
 
-	--treesitter highlighting
+	-- treesitter highlighting
 	use({
-		"nvim-treesitter/nvim-treesitter", -- Syntax highlighting
+		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
 	use("p00f/nvim-ts-rainbow") -- rainbow brackets, extension to treesitter
-	use("nvim-treesitter/nvim-treesitter-angular")
 
 	-- perfomance booster(faster runtime)
 	use("lewis6991/impatient.nvim")
@@ -59,7 +58,6 @@ return require("packer").startup(function(use)
 	use("folke/tokyonight.nvim") --colorscheme tokyonight
 	use("gruvbox-community/gruvbox") -- colorscheme gruvbox
 	use("Mofiqul/dracula.nvim") -- colorscheme dracula
-	use("krivahtoo/nightfly.nvim") -- colorscheme nightfly
 	use("catppuccin/nvim") -- catppuccin
 	use("sainnhe/sonokai") -- sonokai
 
@@ -75,7 +73,7 @@ return require("packer").startup(function(use)
 	use("tpope/vim-surround") --Surrounding ysw)
 
 	-- snippets
-	use("L3MON4D3/LuaSnip") -- snippet engine
+	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
 	use("rafamadriz/friendly-snippets") -- useful snippets
 
@@ -147,24 +145,3 @@ return require("packer").startup(function(use)
 		end,
 	})
 end)
-
--- ou must run this or `packersync` whenever you make changes to your plugin configuration
--- regenerate compiled loader file
--- :packercompile
-
--- remove any disabled or unused plugins
--- :packerclean
-
--- clean, then install missing plugins
--- :packerinstall
-
--- clean, then update and install plugins
--- supports the `--preview` flag as an optional first argument to preview updates
--- :packerupdate
-
--- perform `packerupdate` and then `packercompile`
--- supports the `--preview` flag as an optional first argument to preview updates
--- :packersync
-
--- loads opt plugin immediately
--- :packerload completion-nvim ale

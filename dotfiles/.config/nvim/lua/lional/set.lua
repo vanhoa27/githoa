@@ -6,21 +6,22 @@ local g = vim.g --:%s/<word>/<replacement>
 opt.nu = true
 opt.rnu = true
 opt.cul = false -- disable/enable cursorline
+opt.conceallevel = 2 -- will conceal conceallable text
 opt.mouse = "a"
 opt.signcolumn = "yes"
--- opt.colorcolumn = "80"
 opt.scrolloff = 8
 opt.sidescrolloff = 8
--- opt.wrap = true -- line wrap
+opt.fillchars = { eob = "~" }
 -- vim.cmd("set whichwrap+=<,>,[,],h,l")
 -- opt.linebreak = true -- wrap in a new line
 
 -- [ [ THEME ] ]
 opt.syntax = "ON"
 opt.termguicolors = true
-opt.guifont = "monospace:h17"
+opt.guifont = "Hack Nerd Font Mono h:16"
 opt.pumheight = 10 -- pop-up menu height
 opt.spelllang = "en"
+opt.showmode = false
 
 -- [ [ WHITESPACE ] ]
 opt.numberwidth = 4
@@ -33,10 +34,11 @@ opt.expandtab = true
 opt.smartindent = true
 opt.autoindent = true
 opt.breakindent = true -- preserve indentation in wraped text
+opt.linebreak = true
+opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
 opt.breakindentopt = { shift = 2 }
 opt.showbreak = "↳" -- character for line break
-opt.backspace = "start,eol,indent"
-
+-- opt.backspace = "start,eol,indent"
 -- [ [ SEARCH ] ]
 opt.hlsearch = true -- enable/disable highlightsearch
 opt.errorbells = false
@@ -56,6 +58,10 @@ opt.hidden = true
 -- [ [ SPLITS ] ]
 opt.splitright = true
 opt.splitbelow = true
+
+-- [ [ SPELLING ] ]
+-- opt.spell = true
+opt.spelllang = "en,de"
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.

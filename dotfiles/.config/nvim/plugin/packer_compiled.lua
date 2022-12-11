@@ -170,11 +170,6 @@ _G.packer_plugins = {
     path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["nightfly.nvim"] = {
-    loaded = true,
-    path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/nightfly.nvim",
-    url = "https://github.com/krivahtoo/nightfly.nvim"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -209,11 +204,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-treesitter-angular"] = {
-    loaded = true,
-    path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/nvim-treesitter-angular",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter-angular"
   },
   ["nvim-ts-rainbow"] = {
     loaded = true,
