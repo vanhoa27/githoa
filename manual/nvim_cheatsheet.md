@@ -196,7 +196,10 @@
 
 ---
 
-## [[COMMAND]
+## [[COMMANDS]
 
 - :w <CR> :!gcc % && ./a.out <CR> (save CompileandRun current code)
 - :w <CR> :!gcc % -o %< && ./%< <CR> (save CompileandRun current code)
+- echo "some Text" >> <some_file>
+- visual-mode, select text, :sw, <some_file>, <CR> -> save selected text in <some_file>
+- :r <some_file> -> paste the contents of this file

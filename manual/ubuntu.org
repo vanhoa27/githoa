@@ -57,6 +57,7 @@
 ** Path
    + Rückverweise: ".."
    + Selbstverweise: "."
+   + export path in your terminal so that binaries can be executed
 
    
 
