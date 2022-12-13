@@ -4,4 +4,4 @@
 
 - $ $ (Math_mode)
 - $$ $$ (Math_mode but more display space)
-- $ \left()\right $ (makes brackets bigger)
+- $ \left( \right) $ (makes brackets bigger)
