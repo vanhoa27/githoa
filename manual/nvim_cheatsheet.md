@@ -212,3 +212,15 @@
 
 - :noh -> clear hilighting
 - - -> highlight variable under cursor and all other and jumps to the next in the list
+
+---
+
+## [[VISUAL_LINE_MODE]]
+
+- <c-v> to enter visual line mode
+- changes on all lines take effect as soon as esc is entered
+- <c-v> I -> insert at all line beginning
+- <c-v> A -> append to all lines
+
+- <,>norm I: "<some_text>" -> insert at beginning
+- <,>norm A: "<some_text>" -> append at end
