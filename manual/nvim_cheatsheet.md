@@ -222,5 +222,5 @@
 - <c-v> I -> insert at all line beginning
 - <c-v> A -> append to all lines
 
-- <,>norm I: "<some_text>" -> insert at beginning
-- <,>norm A: "<some_text>" -> append at end
+- <,>norm I "<some_text>" -> insert at beginning
+- <,>norm A "<some_text>" -> append at end
