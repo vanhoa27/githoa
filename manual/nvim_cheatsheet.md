@@ -160,6 +160,8 @@
 
 - zf -> create fold
 - zd -> delete fold
+- zR -> open all folds
+- zM -> close all folds
 
 - zo -> open fold
 - zc -> close fold
