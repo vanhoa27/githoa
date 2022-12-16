@@ -12,8 +12,14 @@ opt.signcolumn = "yes"
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 opt.fillchars = { eob = "~" }
+opt.swapfile = false
 -- vim.cmd("set whichwrap+=<,>,[,],h,l")
--- opt.linebreak = true -- wrap in a new line
+
+-- [[FOLDMETHOD]]
+vim.opt.foldlevel = 20
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.cmd("set nofoldenable")
 
 -- [ [ THEME ] ]
 opt.syntax = "ON"
@@ -36,9 +42,11 @@ opt.autoindent = true
 opt.breakindent = true -- preserve indentation in wraped text
 opt.linebreak = true
 opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
+opt.wrap = false
 opt.breakindentopt = { shift = 2 }
 opt.showbreak = "↳" -- character for line break
--- opt.backspace = "start,eol,indent"
+-- opt.linebreak = true -- wrap in a new line
+
 -- [ [ SEARCH ] ]
 opt.hlsearch = true -- enable/disable highlightsearch
 opt.errorbells = false

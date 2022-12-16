@@ -256,6 +256,11 @@ _G.packer_plugins = {
     path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["true-zen.nvim"] = {
+    loaded = true,
+    path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/true-zen.nvim",
+    url = "https://github.com/Pocco81/true-zen.nvim"
+  },
   ["twilight.nvim"] = {
     loaded = true,
     path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/twilight.nvim",
@@ -265,6 +270,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
   },
   ["vim-be-good"] = {
     loaded = true,
@@ -280,11 +290,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
-  },
-  ["zen-mode.nvim"] = {
-    loaded = true,
-    path = "/home/vanhoa/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
-    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 

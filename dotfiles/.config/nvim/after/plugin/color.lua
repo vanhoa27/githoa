@@ -1,7 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
-local colorscheme = "dracula"
+local colorscheme = "sonokai"
 
 -- added colorschemes: gruvbox, tokyonight, dracula, nightfly, onedarker
 

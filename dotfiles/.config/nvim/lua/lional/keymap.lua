@@ -5,7 +5,7 @@ local term_opts = { silent = true }
 -- shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---remap space as leader key
+--Remap space as leader key
 keymap("n", "<space>", "<nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -79,6 +79,7 @@ keymap("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", opts) --netrw disabled, 
 
 -- quit and save like a normie
 keymap("n", "<c-q>", ":q<cr>", opts) -- ctrl q to exit
+keymap("n", "<leader>q", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts) -- ctrl s to save
 
 --increment
@@ -86,10 +87,10 @@ keymap("n", "+", "<c-a>", opts) --increment
 keymap("n", "-", "<c-x>", opts) --decrement
 
 -- visual --
-keymap("n", "<c-up>", ":resize +19<cr>", opts)
-keymap("n", "<c-down>", ":resize 15<cr>", opts)
-keymap("n", "<c-left>", ":vertical resize 15<cr>", opts)
-keymap("n", "<c-right>", ":vertical resize +19<cr>", opts)
+keymap("n", "<c-up>", ":resize -2<cr>", opts)
+keymap("n", "<c-down>", ":resize +2<cr>", opts)
+keymap("n", "<c-left>", ":vertical resize -2<cr>", opts)
+keymap("n", "<c-right>", ":vertical resize +2<cr>", opts)
 
 -- stay in indent mode
 keymap("v", "<", "<gv", opts)

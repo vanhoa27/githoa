@@ -101,9 +101,7 @@ return require("packer").startup(function(use)
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	-- fuzzyfinder telescope
 	use("nvim-telescope/telescope-file-browser.nvim")
-	-- use("nvim-lua/popup.nvim")
 
 	-- lua function that many plugins use
 	use("nvim-lua/plenary.nvim")
@@ -114,10 +112,13 @@ return require("packer").startup(function(use)
 	-- Toolbar
 	use("nvim-lualine/lualine.nvim") -- vim-airline successor
 
-	--Filexplorer
+	-- Filexplorer
 	use("nvim-tree/nvim-tree.lua")
 	use("nvim-tree/nvim-web-devicons")
 	use("LunarVim/Colorschemes")
+
+	-- Undotree
+	use("mbbill/undotree")
 
 	-- bufferline
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
@@ -131,7 +132,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Zenmode && Twillight
-	use("folke/zen-mode.nvim")
+	use("Pocco81/true-zen.nvim")
 	use("folke/twilight.nvim")
 
 	-- The Primeagen :VimBeGood
