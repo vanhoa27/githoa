@@ -59,5 +59,6 @@
    + Selbstverweise: "."
    + export path in your terminal so that binaries can be executed
 
-   
+** Debugging
+   + gcc -I./"<inputdirectoy>" "<bugged_file>" > error.log 2>&1
 
