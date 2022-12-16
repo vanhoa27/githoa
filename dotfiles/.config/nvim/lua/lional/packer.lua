@@ -92,8 +92,9 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
-	-- Gitsigns
+	-- Gitsigns && Git
 	use("lewis6991/gitsigns.nvim")
+	use("tpope/vim-fugitive")
 
 	-- TELESCOPE
 	use({

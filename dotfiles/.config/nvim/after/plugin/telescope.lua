@@ -132,7 +132,7 @@ end)
 vim.keymap.set("n", "<leader>fc", function() -- Git-branches
 	builtin.git_commits()
 end)
-vim.keymap.set("n", "<leader>.", function()
+vim.keymap.set("n", "<leader>fs", function()
 	telescope.extensions.file_browser.file_browser({
 		path = "%:p:h",
 		cwd = telescope_buffer_dir(),
