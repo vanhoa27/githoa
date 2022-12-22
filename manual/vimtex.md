@@ -84,13 +84,23 @@ endsnippet
 - A autoexpand
 - $1, $2 ...$0 (places to jump to with tab, $0 is the last place)
 
-### vimwiki 
+### vimwiki keymaps
 
 - Enter -> follow link
 - backspace -> go back
-- <leader>ww -> go to wiki_index
-- <leader>wr -> rename link
-- <leader>wd -> delete link
+- <leader> ww -> open wiki index
+- <leader> wt -> open wiki index file in new tab
+- <leader> ws -> list and select available wikis
+- <leader> wr -> rename wiki page 
+- <leader> wd -> delete wiki page
+- 
 - <C-space> -> check/uncheck box
+ 
+### vimwiki diary
+- <leader> wi -> open diary index file for wiki
+- <leader> w <leader> w -> open today's diary file for wiki
+- <leader> w <leader> t -> open today's diary file for wiki in new tab 
+- <C-up> -> open previous day's diary
+- <C-down> -> open next day's diary
 
 
