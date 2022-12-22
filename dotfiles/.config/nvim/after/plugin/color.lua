@@ -1,24 +1,36 @@
 local opt = vim.opt
 local g = vim.g
 
-local colorscheme = "sonokai"
+-- [[TRANSPARENT BACKGROUND]]
+require("rose-pine").setup({
+	disable_background = true,
+})
+require("tokyonight").setup({
+	transparent = true,
+})
+require("dracula").setup({
+	transparent_bg = true,
+})
+require("catppuccin").setup({
+	transparent_background = true,
+})
+require("gruvbox").setup({
+	transparent_mode = true,
+})
 
--- added colorschemes: gruvbox, tokyonight, dracula, nightfly, onedarker
-
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-	vim.notify("colorscheme " .. colorscheme .. " not found!")
-	return
-end
-
+-- [[BAGROUND]]
 opt.background = "dark"
 
-g.tokyonight_style = "night"
-g.tokyonight_italic_functions = true
-g.tokyonight_transparent = true
-g.tokyonight_transparent_sidebar = true
+function ColorMyPencils(color)
+	color = color or "rose-pine"
+	vim.cmd.colorscheme(color)
 
-g.transparent_background = false -- transparent background(Default: false)
+	vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
+	vim.api.nvim_set_hl(0, "Normalfloat", { bg = "None" })
+end
+
+ColorMyPencils("rose-pine")
+
 g.italic_comments = true -- italic comments(Default: true)
 g.italic_keywords = true -- italic keywords(Default: true)
 g.italic_functions = true -- italic functions(Default: false)

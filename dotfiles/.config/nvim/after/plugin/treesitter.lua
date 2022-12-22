@@ -9,6 +9,7 @@ require("orgmode").setup_ts_grammar()
 require("nvim-treesitter.configs").setup({
 	ensure_installed = { "markdown", "c", "lua", "rust", "python", "java", "org" }, -- write all insted of {""} to maintain all
 	sync_install = false,
+	auto_install = true,
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension

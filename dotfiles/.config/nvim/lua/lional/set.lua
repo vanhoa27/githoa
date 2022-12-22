@@ -1,19 +1,28 @@
 --[ [ ABBREVATIONS ] ]
-local opt = vim.opt --to make it concise
-local g = vim.g --:%s/<word>/<replacement>
+local opt = vim.opt
+local g = vim.g
 
 -- [ [ CONTEXT ] ]
 opt.nu = true
 opt.rnu = true
-opt.cul = false -- disable/enable cursorline
+opt.cul = true
+opt.cursorlineopt = "both" -- number: hl-nr, both: hl-nr&cursorline
 opt.conceallevel = 2 -- will conceal conceallable text
 opt.mouse = "a"
 opt.signcolumn = "yes"
 opt.scrolloff = 8
-opt.sidescrolloff = 8
+opt.sidescrolloff = 5
 opt.fillchars = { eob = "~" }
-opt.swapfile = false
+opt.colorcolumn = "0"
+opt.lazyredraw = true
+
 -- vim.cmd("set whichwrap+=<,>,[,],h,l")
+
+-- [[BACKUP]]
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
 -- [[FOLDMETHOD]]
 vim.opt.foldlevel = 20
@@ -26,8 +35,22 @@ opt.syntax = "ON"
 opt.termguicolors = true
 opt.guifont = "Hack Nerd Font Mono h:16"
 opt.pumheight = 10 -- pop-up menu height
-opt.spelllang = "en"
 opt.showmode = false
+
+-- [ [ SPELLING ] ]
+-- opt.spell = true
+opt.spelllang = "en,de"
+opt.spellsuggest = "best"
+
+function SpellToggle()
+	if vim.opt.spell:get() then
+		vim.opt_local.spell = false
+		vim.opt_local.spelllang = "en"
+	else
+		vim.opt_local.spell = true
+		vim.opt_local.spelllang = { "en_us", "de" }
+	end
+end
 
 -- [ [ WHITESPACE ] ]
 opt.numberwidth = 4
@@ -67,13 +90,6 @@ opt.hidden = true
 opt.splitright = true
 opt.splitbelow = true
 
--- [ [ SPELLING ] ]
--- opt.spell = true
-opt.spelllang = "en,de"
-
--- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
--- delays and poor user experience.
-
 -- [ [ QUALITY OF LIFE CHANGES ] ]
 opt.updatetime = 50
 opt.cmdheight = 1
@@ -88,4 +104,3 @@ g.localleader = " "
 
 -- Netrw Explorer
 g.netrw_banner = "0" -- Disables the banner
-g.netrw_liststyle = "3" -- Tree view

@@ -5,12 +5,11 @@ local term_opts = { silent = true }
 -- shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
+--remap space as leader key
 keymap("n", "<space>", "<nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-keymap("n", "<leader>;", ":Alpha<CR>", opts)
-keymap("i", "<m-BS>", "<c-w>", opts)
+keymap("i", "<m-bs>", "<c-w>", opts)
 
 -- modes
 --   normal_mode = "n",
@@ -19,11 +18,10 @@ keymap("i", "<m-BS>", "<c-w>", opts)
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
---
 
 -- compile and run code
-keymap("n", "<f8>", ":!gcc % -o %< && ./%< <CR>", opts)
-keymap("n", "<leader>z", ":ZenMode<CR>", opts)
+keymap("n", "<f6>", ":!gcc % -g -Wall -std=c11 -o %< && ./%< <cr>", opts)
+keymap("n", "<f8>", ":!gcc % -g -Wall -std=c11 -o %< <cr>", opts)
 
 -- better window navigation
 keymap("n", "<c-h>", "<c-w>h", opts)
@@ -31,42 +29,32 @@ keymap("n", "<c-j>", "<c-w>j", opts)
 keymap("n", "<c-k>", "<c-w>k", opts)
 keymap("n", "<c-l>", "<c-w>l", opts)
 
--- doom emacs window navigation
-keymap("n", "<leader>wh", "<c-w>h", opts)
-keymap("n", "<leader>wj", "<c-w>j", opts)
-keymap("n", "<leader>wk", "<c-w>k", opts)
-keymap("n", "<leader>wl", "<c-w>l", opts)
-keymap("n", "<leader>wl", "<c-w>l", opts)
-keymap("n", "<leader>ww", "<c-w>w", opts) -- go not next window
-
--- [[BUFFERS]]
-keymap("n", "<leader>bn", ":bn<CR>", opts) -- go to next buffer
-keymap("n", "<leader>bp", ":bp<CR>", opts) -- go to previous buffer
-keymap("n", "<leader>bw", ":bw<CR>", opts) -- wipe out current buffer
-
--- linting/formating/folding
-keymap("n", "<leader>lw", ":loadview<CR>", opts)
+-- [[buffers]]
+keymap("n", "<leader>bn", ":bn<cr>", opts) -- go to next buffer
+keymap("n", "<leader>bp", ":bp<cr>", opts) -- go to previous buffer
+keymap("n", "<leader>bb", ":bp<cr>", opts) -- go to previous buffer
+keymap("n", "<leader>bw", ":bw<cr>", opts) -- wipe out current buffer
 
 -- tabs
 keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and tabnew are similiar
 keymap("n", "<leader>tc", ":tabclose<cr>", opts) --close current tab
-keymap("n", "<M-l>", "<cmd>BufferLineCycleNext<cr>", opts) --scroll forward
-keymap("n", "<M-h>", "<cmd>BufferLineCyclePrev<cr>", opts) --scroll backward
+keymap("n", "<m-l>", "<cmd>BufferLineCycleNext<cr>", opts) --scroll forward
+keymap("n", "<m-h>", "<cmd>BufferLineCyclePrev<cr>", opts) --scroll backward
 
 -- paste/hightlight/yank
 keymap("n", "x", '"_x', opts) -- do not yank with x
 keymap("n", "db", 'vb"_d', opts) -- delete a word backwards (includes selected char)
 keymap("n", "<leader>y", '"+y', opts) -- yank into system clipboard
 keymap("v", "<leader>y", '"+y', opts) -- same but in visual_mode
-keymap("n", "<leader>d", '"_d', opts) -- delete without copying into clipboard
-keymap("v", "<leader>d", '"_d', opts) -- same but in visual_mode
 keymap("n", "<leader>p", '"+p', opts) -- paste from clipboard
-keymap("n", "<leader><leader>a", "gg<S-v>G", opts) --higlight all
+keymap("n", "<leader>P", '"+P', opts) -- paste from clipboard
+keymap("v", "<leader>p", '"+p', opts)
+keymap("n", "<leader>a", "gg<s-v>g", opts) --higlight all
 keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
 
--- split window
-keymap("n", "<leader>wv", ":vsplit<cr>", opts) --vertical split
-keymap("n", "<leader>ws", ":split<cr>", opts) --horizontal split
+-- split window (german-mode)
+keymap("n", "<leader>ä", ":vsplit<cr>", opts) --vertical split
+keymap("n", "<leader>ö", ":split<cr>", opts) --horizontal split
 keymap("n", "<leader>wc", ":close<cr>", opts) -- close current split
 keymap("n", "<leader>wo", "<c-w><c-o>", opts) -- close all splits
 
@@ -86,7 +74,7 @@ keymap("n", "<c-s>", ":w<cr>", opts) -- ctrl s to save
 keymap("n", "+", "<c-a>", opts) --increment
 keymap("n", "-", "<c-x>", opts) --decrement
 
--- visual --
+-- visual
 keymap("n", "<c-up>", ":resize -2<cr>", opts)
 keymap("n", "<c-down>", ":resize +2<cr>", opts)
 keymap("n", "<c-left>", ":vertical resize -2<cr>", opts)
@@ -97,7 +85,21 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- move text up and down
-keymap("x", "<M-j>", ":m '>+1<CR>gv-gv", opts)
-keymap("n", "<M-j>", ":m .+1<CR>==", opts)
-keymap("x", "<M-k>", ":m '<lt>-2<CR>gv-gv", opts)
-keymap("n", "<M-k>", ":m .-2<CR>==", opts)
+keymap("x", "<m-j>", ":m '>+1<cr>gv=gv", opts)
+keymap("n", "<m-j>", ":m .+1<cr>==", opts)
+keymap("x", "<m-k>", ":m '<lt>-2<cr>gv=gv", opts)
+keymap("n", "<m-k>", ":m .-2<cr>==", opts)
+
+-- [[NAVIGATION]]
+keymap("n", "<c-u>", "<c-u>zz", opts)
+keymap("n", "<c-d>", "<c-d>zz", opts)
+
+-- [[THEPRIMEAGEN]]
+vim.keymap.set("n", "<leader>s", ":%s/\\<<c-r><c-w>\\>/<c-r><c-w>/gi<left><left><left>")
+-- keymap("n", "<leader>x", "<cmd>!chmod +x %<cr>", opts)
+keymap("n", "J", "mzJ`z", opts)
+
+-- [[PLUGINS]]
+keymap("n", "<leader>u", ":undotreetoggle<cr>", opts)
+keymap("n", "<leader>gs", ":git<cr>", opts)
+keymap("n", "<leader>lm", ":MarkdownPreviewToggle<cr>", opts)

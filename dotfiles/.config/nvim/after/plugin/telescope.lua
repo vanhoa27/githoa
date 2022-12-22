@@ -10,6 +10,8 @@ local function telescope_buffer_dir()
 	return vim.fn.expand("%:p:h")
 end
 
+local themes = require("telescope.themes")
+
 telescope.load_extension("file_browser")
 
 telescope.setup({
@@ -101,7 +103,7 @@ telescope.setup({
 vim.keymap.set("n", "<leader>ff", function()
 	builtin.find_files({
 		no_ignore = false,
-		-- previewer = false,
+		previewer = false,
 		hidden = true,
 	})
 end)
@@ -132,7 +134,13 @@ end)
 vim.keymap.set("n", "<leader>fc", function() -- Git-branches
 	builtin.git_commits()
 end)
-vim.keymap.set("n", "<leader>fs", function()
+vim.keymap.set("n", "<leader>fs", function() -- Git-branches
+	builtin.lsp_document_symbols()
+end)
+vim.keymap.set("n", "<leader>fk", function() -- Git-branches
+	builtin.keymaps()
+end)
+vim.keymap.set("n", "<leader>fe", function()
 	telescope.extensions.file_browser.file_browser({
 		path = "%:p:h",
 		cwd = telescope_buffer_dir(),

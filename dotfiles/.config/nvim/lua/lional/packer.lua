@@ -55,18 +55,19 @@ return require("packer").startup(function(use)
 	use("lewis6991/impatient.nvim")
 
 	-- colorschemes
-	use("folke/tokyonight.nvim") --colorscheme tokyonight
-	use("gruvbox-community/gruvbox") -- colorscheme gruvbox
-	use("Mofiqul/dracula.nvim") -- colorscheme dracula
-	use("catppuccin/nvim") -- catppuccin
-	use("sainnhe/sonokai") -- sonokai
+	use("folke/tokyonight.nvim")
+	use("Mofiqul/dracula.nvim")
+	use("ellisonleao/gruvbox.nvim")
+	use("catppuccin/nvim")
+	use("lukas-reineke/onedark.nvim")
+	use("sainnhe/sonokai")
+	use("rose-pine/neovim")
 
 	-- autocompletion (RIP Conqueror of Completion)
 	use("hrsh7th/nvim-cmp") -- completion plugin
 	use("hrsh7th/cmp-buffer") -- source for text in buffer
 	use("hrsh7th/cmp-path") -- source for file system paths
 	use("windwp/nvim-autopairs") --automatically closes brackets
-	-- use({ "neoclide/coc.nvim", branch = "release" }) --autocompletiion
 
 	-- commentary
 	use("tpope/vim-commentary") --For Commenting gcc & gc
@@ -96,7 +97,7 @@ return require("packer").startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use("tpope/vim-fugitive")
 
-	-- TELESCOPE
+	-- TELESCOPE fzf
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
@@ -111,7 +112,7 @@ return require("packer").startup(function(use)
 	use("akinsho/toggleterm.nvim")
 
 	-- Toolbar
-	use("nvim-lualine/lualine.nvim") -- vim-airline successor
+	use("nvim-lualine/lualine.nvim")
 
 	-- Filexplorer
 	use("nvim-tree/nvim-tree.lua")
@@ -124,22 +125,33 @@ return require("packer").startup(function(use)
 	-- bufferline
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
-	-- dashboard
-	use({
-		"goolord/alpha-nvim",
-		config = function()
-			require("alpha").setup(require("alpha.themes.dashboard").config) -- dashboard, startify
-		end,
-	})
-
 	-- Zenmode && Twillight
-	use("Pocco81/true-zen.nvim")
+	use("folke/zen-mode.nvim")
 	use("folke/twilight.nvim")
 
-	-- The Primeagen :VimBeGood
-	use("ThePrimeagen/vim-be-good")
+	-- indent-blankline
+	use("lukas-reineke/indent-blankline.nvim")
 
-	-- Org-Mode
+	-- Note taking
+	use({
+		"vimwiki/vimwiki",
+		config = function()
+			vim.g.vimwiki_list = {
+				{
+					path = "/home/vanhoa/Documents/vimwiki",
+					syntax = "markdown",
+					ext = ".md",
+				},
+			}
+		end,
+	})
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 	use({
 		"nvim-orgmode/orgmode",
 		config = function()
