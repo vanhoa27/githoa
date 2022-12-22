@@ -88,5 +88,8 @@ endsnippet
 
 - Enter -> follow link
 - backspace -> go back
+- <leader>ww -> go to wiki_index
+- <leader>wr -> rename link
+- <leader>wd -> delete link
 
 
