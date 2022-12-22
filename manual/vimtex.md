@@ -84,13 +84,9 @@ endsnippet
 - A autoexpand
 - $1, $2 ...$0 (places to jump to with tab, $0 is the last place)
 
-### most used snippets
+### vimwiki 
 
-snippet mk "Math" wA
-$${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-    snip.rv = ' '
-else:
-    snip.rv = ''
-`$2
-endsnippet
+- Enter -> follow link
+- backspace -> go back
+
+
