@@ -91,5 +91,6 @@ endsnippet
 - <leader>ww -> go to wiki_index
 - <leader>wr -> rename link
 - <leader>wd -> delete link
+- <C-space> -> check/uncheck box
 
 
