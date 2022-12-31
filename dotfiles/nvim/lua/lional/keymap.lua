@@ -32,9 +32,10 @@ keymap("n", "<c-l>", "<c-w>l", opts)
 -- navigation tweaks (overriding defaults)
 -- use capital L or there will be a delay
 keymap("i", "<c-L>", "<esc>A", opts)
-keymap("i", "<c-H>", "<esc>I", opts)
+keymap("i", "<c-H>", "<c-w>", opts) -- backspace and <c-h> delete a whole word
 keymap("n", "<s-l>", "$", opts)
 keymap("n", "<s-h>", "^", opts)
+keymap("n", "Q", "<nop>", opts) -- unmap Q
 
 -- [[buffers]]
 keymap("n", "<leader>bn", ":bn<cr>", opts) -- go to next buffer
@@ -107,7 +108,7 @@ vim.keymap.set("n", "<leader>s", ":%s/\\<<c-r><c-w>\\>/<c-r><c-w>/gi<left><left>
 keymap("n", "J", "mzJ`z", opts)
 
 -- [[PLUGINS]]
-keymap("n", "<leader>u", ":undotreetoggle<cr>", opts)
+keymap("n", "<leader>u", ":UndotreeToggle<cr>", opts)
 keymap("n", "<leader>gs", ":Git<cr>", opts)
 -- keymap("i", "<c-L>", "<c-g>u<Esc>[s1z=`]a<c-g>u", opts)
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)

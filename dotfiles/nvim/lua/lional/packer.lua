@@ -72,6 +72,7 @@ return require("packer").startup(function(use)
 	-- commentary
 	use("tpope/vim-commentary") --For Commenting gcc & gc
 	use("tpope/vim-surround") --Surrounding ysw)
+    use("tpope/vim-repeat") -- vim repeat
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
@@ -133,6 +134,7 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 
     -- Note taking
+    use("lervag/vimtex")
     use({
         "vimwiki/vimwiki",
         config = function()
