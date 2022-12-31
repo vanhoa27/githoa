@@ -91,9 +91,3 @@ g.localleader = " "
 -- Netrw Explorer
 g.netrw_banner = "0" -- Disables the banner
 
--- [ [ Calcurse ] ]
-
-vim.cmd([[
-    autocmd BufRead,BufNewFile /tmp/calcurse*  set fileytpe=markdown,
-    autocmd BufRead,BufNewFile ~/.calcurse/notes/*  set filetype=markdown
-]])

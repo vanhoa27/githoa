@@ -138,7 +138,7 @@ return require("packer").startup(function(use)
         config = function()
             vim.g.vimwiki_list = {
                 {
-                    path = "/home/vanhoa/Sync/Uni/vimwiki",
+                    path = "/home/vanhoa/Reposetories/githoa/vimwiki",
                     syntax = "markdown",
                     ext = ".md",
                 },

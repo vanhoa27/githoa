@@ -20,20 +20,22 @@
 + <Space>-m-t-t -> mark as "TODO" item
 + <Space>-m-t -> to look for all options
 + <Space>-m-x or <C-c>-<C-c> to check a tick box
-   + [ ] Try HERE
+  + [ ] Try HERE
 + <C-c> <C-e> -> export current org file
 
-*** Notes
- | SHORTCUTS | meaning                      |
- |-----------+------------------------------|
- | <Space>nF | open Notefolder              |
- | <Space>nS | look for all Agenda headings |
- | <Space>is | insert snippets              |
- | <s<tab>   | insert source code snippet   |
- | <c<tab>   | insert comment snippet       |
- | <e<tab>   | insert example snippet       |
+*** Note Taking
+ | SHORTCUTS   | meaning                      |
+ |-------------+------------------------------|
+ | <Space>naif | open Notefolder              |
+ | <Space>NR   | look for all Agenda headings |
+ | <Space>is   | insert snippets              |
 
-
+ | Snippets | comment                    |
+ |----------+----------------------------|
+ | <s <tab> | insert source code snippet |
+ | <c <tab> | insert comment snippet     |
+ | <e <tab> | insert example snippet     |
+ |          |                            |
 *** Folds
 + <tab> close/open fold (zc/zo)
 + <S-tab> close/open all tabs (zr/zR)
