@@ -88,6 +88,10 @@ opt.iskeyword:append("-") --considers dash ("-") as part of word
 g.mapleadr = " "
 g.localleader = " "
 
--- Netrw Explorer
-g.netrw_banner = "0" -- Disables the banner
+-- disable automatic comment continuation of next line
+vim.api.nvim_create_autocmd('FileType',{
+    pattern = '*',
+    command = 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'
+})
+
 

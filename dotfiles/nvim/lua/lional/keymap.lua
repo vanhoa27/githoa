@@ -29,6 +29,13 @@ keymap("n", "<c-j>", "<c-w>j", opts)
 keymap("n", "<c-k>", "<c-w>k", opts)
 keymap("n", "<c-l>", "<c-w>l", opts)
 
+-- navigation tweaks (overriding defaults)
+-- use capital L or there will be a delay
+keymap("i", "<c-L>", "<esc>A", opts)
+keymap("i", "<c-H>", "<esc>I", opts)
+keymap("n", "<s-l>", "$", opts)
+keymap("n", "<s-h>", "^", opts)
+
 -- [[buffers]]
 keymap("n", "<leader>bn", ":bn<cr>", opts) -- go to next buffer
 keymap("n", "<leader>bp", ":bp<cr>", opts) -- go to previous buffer
@@ -43,16 +50,16 @@ keymap("n", "<m-h>", "<cmd>BufferLineCyclePrev<cr>", opts) --scroll backward
 
 -- paste/hightlight/yank
 keymap("n", "x", '"_x', opts) -- do not yank with x
+keymap("n", "X", '"_X', opts) -- do not yank with x
+keymap("n", "<s-s>", '"_S', opts) -- do not yank with 
 keymap("n", "db", 'vb"_d', opts) -- delete a word backwards (includes selected char)
-keymap("n", "<leader>y", '"+y', opts) -- yank into system clipboard
+keymap("n", "<leader>Y", '$y', opts) -- will work like D but for yank
 keymap("v", "<leader>y", '"+y', opts) -- same but in visual_mode
-keymap("n", "<leader>p", '"+p', opts) -- paste from clipboard
-keymap("n", "<leader>P", '"+P', opts) -- paste from clipboard
-keymap("v", "<leader>p", '"+p', opts)
+keymap("x", "<leader>p", '"_dP', opts)
 keymap("n", "<leader>a", "gg<s-v>g", opts) --higlight all
 keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
 
--- split window (german-mode)
+-- split window 
 keymap("n", "<leader>wv", ":vsplit<cr>", opts) --vertical split
 keymap("n", "<leader>ws", ":split<cr>", opts) --horizontal split
 keymap("n", "<leader>wc", ":close<cr>", opts) -- close current split
@@ -63,11 +70,11 @@ keymap("n", "<leader>fb", ":telescope buffers<cr>", opts) -- lists open buffers
 keymap("n", "<leader>bk", ":bw<cr>", opts) -- kills current buffer
 
 -- open explorer
-keymap("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", opts) --netrw disabled, if enabled: <:lex 25>
+keymap("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", opts) --netrw disabled, if enabled: <:Lex 25>
 
--- quit and save like a normie
-keymap("n", "<c-q>", ":q<cr>", opts) -- ctrl q to exit
-keymap("n", "<leader>q", ":q<cr>", opts)
+-- quit and save like a norme
+keymap("n", "<c-q>", ":q<Cr>", opts) -- Ctrl q to exit
+keymap("n", "<leader>q", ":q<Cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts) -- ctrl s to save
 
 --increment
@@ -92,7 +99,7 @@ keymap("n", "<m-k>", ":m .-2<cr>==", opts)
 
 -- [[NAVIGATION]]
 keymap("n", "<c-u>", "<c-u>zz", opts)
-keymap("n", "<c-d>", "<c-d>zz", opts)
+keymap("n", "<c-d>", "<c-d>z", opts)
 
 -- [[THEPRIMEAGEN]]
 vim.keymap.set("n", "<leader>s", ":%s/\\<<c-r><c-w>\\>/<c-r><c-w>/gi<left><left><left>")
@@ -102,6 +109,6 @@ keymap("n", "J", "mzJ`z", opts)
 -- [[PLUGINS]]
 keymap("n", "<leader>u", ":undotreetoggle<cr>", opts)
 keymap("n", "<leader>gs", ":Git<cr>", opts)
-keymap("i", "<c-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", opts)
+-- keymap("i", "<c-L>", "<c-g>u<Esc>[s1z=`]a<c-g>u", opts)
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 keymap("n", "<leader>lm", ":MarkdownPreviewToggle<cr>", opts)

@@ -3,8 +3,6 @@ if not status then
 	return
 end
 
-require("orgmode").setup_ts_grammar()
-
 ts.setup({
 	highlight = {
 		enable = true,
@@ -12,7 +10,9 @@ ts.setup({
 	},
 	require("nvim-treesitter.configs").setup({
 		highlight = {
-			-- ...
+            enable = true,
+            disable = {" "}, -- all disabled languages
+            additional_vim_regex_highlighting = true,
 		},
 		rainbow = {
 			enable = true,
@@ -25,9 +25,10 @@ ts.setup({
 	}),
 	indent = {
 		enable = true,
-		disable = {},
+		disable = {" "},
 	},
 	ensure_installed = {
+        "markdown",
 		"json",
 		"yaml",
 		"css",
@@ -37,12 +38,27 @@ ts.setup({
 		"c",
 		"java",
 	},
+    sync_install = false,
+    auto_install = true,
+    ignore_install = {""},
 	autotag = {
 		enable = true,
 	},
 })
 
-require("orgmode").setup({
-	org_agenda_files = { "~/Dropbox/org/*", "~/my-orgs/**/*" },
-	org_default_notes_file = "~/Dropbox/org/refile.org",
-})
+
+-- VIMTREE --> fold EXPRESSION
+
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+---WORKAROUND
+
+-- vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
+--   group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+--   callback = function()
+--     vim.opt.foldmethod     = 'expr'
+--     vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+--   end
+-- })
+
+---ENDWORKAROUND
