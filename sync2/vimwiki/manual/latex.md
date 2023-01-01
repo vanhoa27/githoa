@@ -27,6 +27,5 @@
 \usepackage{graphicx}
 
 \includegraphics[scale=0.5]{<image_name>}
-`
 
 - you could also use width instead of scale, but [] is optional

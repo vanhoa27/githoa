@@ -1,13 +1,22 @@
 # NVIM_CHEATSHEET
 
-## Important Note
+## Outline
+- [Important Notes](#important-notes)  
+- [Basics](#Basics)  
+- [Undo Redo](#Undo/Redo)  
+- [Motions](#Motions)
+- [YANK PASTE DELETE CHANGE](#YANK/PASTE/DELETE/CHANGE)
+- [Replace](#Replace)
+- [Useful](#Useful)
 
-- <C-i> and <tab> are stricly equivilant, overriding <tab>
-- as a keymap will disable <C-i>
+### Important Notes
+
+- <C-i> and <tab> are the same
+- <C-h> and <backspace> are the same
 
 ---
 
-## [[BASICS]]
+### BASICS
 
 - i -> enter insert mode before cursor
 - a -> enter insert mode behind cursor
@@ -25,14 +34,14 @@
 
 ---
 
-## [[UNDO/REDO]]
+### UNDO/REDO
 
 - u -> undo change
 - /<C-r> -> redo change
 
 ---
 
-## [[MOTIONS]]
+### MOTIONS
 
 - hjkl -> move left,up,down,right
 
@@ -57,7 +66,7 @@
 - L -> go to end of screen
 - zz -> center current line on screen
 
-## [[YANK/PASTE/DELETE/CHANGE]]
+### YANK/PASTE/DELETE/CHANGE
 
 - yy -> yank a line
 - yw -> yank a word
@@ -78,7 +87,7 @@
 
 ---
 
-## [[INSERTION-MODE SHORTCUTS]]
+### INSERTION-MODE SHORTCUTS
 
 - <C-w> -> delete word backwards
 - <C-u> -> delete upto cursor backwards
@@ -95,7 +104,7 @@
 
 ---
 
-## [[REPLACE]]
+### REPLACE
 
 - r<char> -> replace one char
 - x -> delete one char (keymap "x" to "\_x" to avoid pasting into clipboard)
@@ -108,7 +117,7 @@
 
 ---
 
-## [[USEFUL]]
+### USEFUL
 
 - viw -> select whole word (no matter cursor position)
 - diw -> delete whole word (no matter cursor position)
@@ -122,7 +131,7 @@
 
 ---
 
-## [[INCREMENT/DECREMENT/CAPITALISE/DECAPITALISE]]
+### INCREMENT/DECREMENT/CAPITALISE/DECAPITALISE
 
 - <C-a> -> increment
 - <C-x> -> decrement
@@ -135,7 +144,7 @@
 
 ---
 
-## [[REPEATING]]
+### REPEATING
 
 - ; -> repeats last motion
 - , -> repeats last motion in reverse
@@ -143,7 +152,7 @@
 
 ---
 
-## [[SCROLL SHORTCUTS]]
+### SCROLL SHORTCUTS
 
 - <C-e> -> scroll down one line
 - <C-y> -> scroll up one line
@@ -156,7 +165,7 @@
 
 ---
 
-## [[FOLDS]]
+### FOLDS
 
 - zf -> create fold
 - zd -> delete fold
@@ -171,7 +180,7 @@
 
 ---
 
-## [[SAVE/QUIT]]
+### SAVE/QUIT
 
 - ZZ -> quit and save (if modified)
 - ZQ -> quit and discard changes
@@ -179,7 +188,7 @@
 
 ---
 
-## [[INDENTATION]]
+### INDENTATION
 
 - <C-i> -> indent current line (insert mode)
 - <C-d> -> deindent current line (insert mode)
@@ -190,7 +199,7 @@
 
 ---
 
-## [[JUMPS]]
+### JUMPS
 
 - <C-o> -> jump back
 - <C-i> -> jump forward
@@ -198,7 +207,7 @@
 
 ---
 
-## [[COMMANDS]
+### COMMANDS
 
 - :w <CR> :!gcc % && ./a.out <CR> (save CompileandRun current code)
 - :w <CR> :!gcc % -o %< && ./%< <CR> (save CompileandRun current code)
@@ -208,14 +217,14 @@
 
 ---
 
-## [[HIGHLIGHTS]]
+### HIGHLIGHTS
 
 - :noh -> clear hilighting
 - - -> highlight variable under cursor and all other and jumps to the next in the list
 
 ---
 
-## [[VISUAL_LINE_MODE]]
+### VISUAL_LINE_MODE
 
 - <c-v> to enter visual line mode
 - changes on all lines take effect as soon as esc is entered

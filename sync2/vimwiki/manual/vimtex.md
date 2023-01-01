@@ -16,7 +16,7 @@
 
 - z= list correct suggesions
 
-- [[Disable File for differenet filetypes]]
+- Disable File for differenet filetypes
 - autocmd FileType python setlocal nospell
 
 ## Formating

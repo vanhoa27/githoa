@@ -1,6 +1,12 @@
-# [[VIMSETS]]
+# Neovim Settings 
 
-## Very useful sets for Markdown and Latex in Vim/Nvim
+- **Collision** between Vimwiki plugin and Luasnip
+- Vimwiki with markdown syntax will convert filename
+- **Solution:** rename markdown.lua folder into vimwiki.lua
+- 
+## VIMSETS
+
+### Very useful sets for Markdown and Latex in Vim/Nvim
 
 - vim.opt.conceallevel = 0 -> "nothing will be concealed"
 - vim.opt.conceallevel = 1 -> "conceals special characters but not the space they take up"
@@ -11,18 +17,18 @@ This helps you immensely because you can see immediate effects without hindering
 ability to modify the code. Less things going taking up space on the screen, the better
 you can uphold your overview over everything. This is extremely useful.
 
-## Vimtex and snippets
+### Vimtex and snippets
 
 To effectively write Latex in Vim you should download this plugin and preferably a snippet
 manager to define your own snippets and write Latex faster. This will speed up your writing
 ability tremendously and turn Latex and Vim into an extremely fast note taking duo
 
-## Vim and Neovim, default keymaps
+### Vim and Neovim, default keymaps
 
 - gf -> open file command
 - map gf :edit <cedit><cr> (opens the files even if is doesn't exist)
 
-## Remove Neovim 
+### Remove Neovim 
 
 - if build from source remove Neovim by running:
 - rm -f $(which nvim)
