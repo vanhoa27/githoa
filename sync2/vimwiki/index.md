@@ -3,6 +3,7 @@
 ## Personal Documentation
 
 - [Zsh](manual//zsh.md)  
+- [Note Taking](Note-Taking)
 - [Nvim_Setup](manual/Nvim_setup.md)  
 - [Nvim_Cheatsheet](manual/nvim_cheatsheet.md)  
 - [Vimtex](manual/vimtex.md)  

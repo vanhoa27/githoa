@@ -1,18 +1,12 @@
-# NVIM_CHEATSHEET
-
-## Outline
-- [Important Notes](#important-notes)  
-- [Basics](#Basics)  
-- [Undo Redo](#Undo/Redo)  
-- [Motions](#Motions)
-- [YANK PASTE DELETE CHANGE](#YANK/PASTE/DELETE/CHANGE)
-- [Replace](#Replace)
-- [Useful](#Useful)
+---
+title: "Nvim_Cheatsheet" 
+date: 2023-01-02
+---
 
 ### Important Notes
 
-- <C-i> and <tab> are the same
-- <C-h> and <backspace> are the same
+- C-i and tab are the same
+- C-h and backspace are the same
 
 ---
 

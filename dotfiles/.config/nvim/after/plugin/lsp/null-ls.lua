@@ -7,6 +7,7 @@ end
 -- for conciseness
 local formatting = null_ls.builtins.formatting -- to setup formatters
 local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+local completion = null_ls.builtins.completion.spell
 
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -17,6 +18,12 @@ null_ls.setup({
   sources = {
     --  to disable file types use
     --  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
+    completion.spell,
+    formatting.trim_whitespace,
+    formatting.markdownlint, -- markdonw linter
+    formatting.latexindent, -- latex formatter
+    formatting.clang_format, -- C/C++ formatter
+    formatting.black, -- python
     formatting.prettier, -- js/ts formatter
     formatting.stylua, -- lua formatter
     diagnostics.eslint_d.with({ -- js/ts linter

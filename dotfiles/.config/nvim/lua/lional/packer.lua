@@ -72,6 +72,7 @@ return require("packer").startup(function(use)
 	-- commentary
 	use("tpope/vim-commentary") --For Commenting gcc & gc
 	use("tpope/vim-surround") --Surrounding ysw)
+    use("tpope/vim-repeat") -- vim repeat
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
@@ -132,30 +133,25 @@ return require("packer").startup(function(use)
 	-- indent-blankline
 	use("lukas-reineke/indent-blankline.nvim")
 
-	-- Note taking
-	use({
-		"vimwiki/vimwiki",
-		config = function()
-			vim.g.vimwiki_list = {
-				{
-					path = "/home/vanhoa/Documents/vimwiki",
-					syntax = "markdown",
-					ext = ".md",
-				},
-			}
-		end,
-	})
-	-- install without yarn or npm
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
-	use({
-		"nvim-orgmode/orgmode",
-		config = function()
-			require("orgmode").setup({})
-		end,
-	})
+    -- Note taking
+    use("lervag/vimtex")
+    use({
+        "vimwiki/vimwiki",
+        config = function()
+            vim.g.vimwiki_list = {
+                {
+                    path = "/home/vanhoa/Reposetories/githoa/sync2/vimwiki",
+                    syntax = "markdown",
+                    ext = ".md",
+                },
+            }
+        end,
+    })
+    -- markdown-preview
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+    -- markdown tables
+    use({"dhruvasagar/vim-table-mode"})
 end)

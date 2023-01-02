@@ -125,20 +125,23 @@ end)
 vim.keymap.set("n", "<leader>fd", function()
 	builtin.diagnostics()
 end)
-vim.keymap.set("n", "<leader>fR", function() -- Register
+vim.keymap.set("n", "<leader>fR", function()
 	builtin.registers()
 end)
-vim.keymap.set("n", "<leader>fG", function() -- Git-branches
+vim.keymap.set("n", "<leader>fG", function()
 	builtin.git_branches()
 end)
-vim.keymap.set("n", "<leader>fc", function() -- Git-branches
+vim.keymap.set("n", "<leader>fc", function()
 	builtin.git_commits()
 end)
-vim.keymap.set("n", "<leader>fs", function() -- Git-branches
+vim.keymap.set("n", "<leader>fs", function()
 	builtin.lsp_document_symbols()
 end)
-vim.keymap.set("n", "<leader>fk", function() -- Git-branches
+vim.keymap.set("n", "<leader>fk", function()
 	builtin.keymaps()
+end)
+vim.keymap.set("n", "<leader>fT", function() -- filetype
+	builtin.filetypes()
 end)
 vim.keymap.set("n", "<leader>fe", function()
 	telescope.extensions.file_browser.file_browser({

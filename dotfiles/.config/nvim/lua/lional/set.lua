@@ -1,4 +1,4 @@
---[ [ ABBREVATIONS ] ]
+--[ [ ABBREVIATIONS ] ]
 local opt = vim.opt
 local g = vim.g
 
@@ -6,29 +6,28 @@ local g = vim.g
 opt.nu = true
 opt.rnu = true
 opt.cul = true
-opt.cursorlineopt = "both" -- number: hl-nr, both: hl-nr&cursorline
-opt.conceallevel = 2 -- will conceal conceallable text
+opt.cursorlineopt = "both" -- number: hl-Nr, both: hl-Nr&cursor line
+opt.conceallevel = 2 -- will conceal concealable text
 opt.mouse = "a"
 opt.signcolumn = "yes"
 opt.scrolloff = 8
 opt.sidescrolloff = 5
 opt.fillchars = { eob = "~" }
-opt.colorcolumn = "0"
+opt.colorcolumn = "80"
 opt.lazyredraw = true
 
--- vim.cmd("set whichwrap+=<,>,[,],h,l")
+-- vim.cpd("set which wrap+=<,>,[,],h,l")
 
 -- [[BACKUP]]
 opt.swapfile = false
 opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undodir = os.getenv("HOME") .. "/.vim/undo Dir"
 opt.undofile = true
 
--- [[FOLDMETHOD]]
+-- [[FOLD METHOD]]
 vim.opt.foldlevel = 20
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.cmd("set nofoldenable")
+vim.opt.foldexpr = "vim_tree sitter#folder()"
 
 -- [ [ THEME ] ]
 opt.syntax = "ON"
@@ -38,19 +37,14 @@ opt.pumheight = 10 -- pop-up menu height
 opt.showmode = false
 
 -- [ [ SPELLING ] ]
--- opt.spell = true
+
+vim.cmd[[
+    autocmd FileType md,tex,vimwiki setlocal spell
+    set spelllang=de,en_us
+    set spellsuggest=best
+]]
 opt.spelllang = "en,de"
 opt.spellsuggest = "best"
-
-function SpellToggle()
-	if vim.opt.spell:get() then
-		vim.opt_local.spell = false
-		vim.opt_local.spelllang = "en"
-	else
-		vim.opt_local.spell = true
-		vim.opt_local.spelllang = { "en_us", "de" }
-	end
-end
 
 -- [ [ WHITESPACE ] ]
 opt.numberwidth = 4
@@ -82,7 +76,7 @@ opt.path:append({ "**" }) -- Finding Files -> search down into subfolder
 opt.wildignore:append({ "*/.git/*", "*/node_modules/*" }) --list of patterns to ignore files for file name completion
 opt.wildmenu = true --command-line completion shows a list of matches (not very useful with lsp on)
 opt.wildignorecase = true --ignore case when completing files names
--- opt.wildmode = "list:longest,list:full" -- for <cmd> search
+-- opt.wildmode = "list:longest,list:full" -- for <cmd> searchj
 opt.complete:append({ ".", "w", "b", "u", "t", "kspell" }) -- prioritize completion
 opt.hidden = true
 
@@ -95,12 +89,14 @@ opt.updatetime = 50
 opt.cmdheight = 1
 opt.iskeyword:append("-") --considers dash ("-") as part of word
 
--- set to Systemclipboard
--- opt.clipboard:append("unnamedplus")
-
 -- Mapleader
 g.mapleadr = " "
 g.localleader = " "
 
--- Netrw Explorer
-g.netrw_banner = "0" -- Disables the banner
+-- disable automatic comment continuation of next line
+vim.api.nvim_create_autocmd('FileType',{
+    pattern = '*',
+    command = 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'
+})
+
+

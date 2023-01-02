@@ -130,6 +130,8 @@ alias nv="nvim"
 # [[KEYBINDINGS]]
 # e = emacs, v = vi
 bindkey -e
+bindkey "^ " autosuggest-accept
+bindkey "^h" backward-kill-word
 
 # Cargo
 export Path="/home/vanhoa/.config/.cargo/bin:$PATH"

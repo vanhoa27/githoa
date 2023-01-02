@@ -1,3 +1,6 @@
+# Alias Update
+alias update="sudo apt update && sudo apt-get update && sudo apt upgrade && sudo apt-get upgrade && sudo apt autoclean && sudo apt autoremove"
+alias q="exit"
 
 # LF
 export PATH="/home/vanhoa/.config/go/bin:$PATH"

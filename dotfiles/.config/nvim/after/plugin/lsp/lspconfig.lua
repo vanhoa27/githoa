@@ -83,6 +83,12 @@ lspconfig["html"].setup({
 	on_attach = on_attach,
 })
 
+-- configure markdown server
+lspconfig["marksman"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure  server
 lspconfig["clangd"].setup({
 	capabilities = capabilities,
