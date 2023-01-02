@@ -31,7 +31,7 @@ keymap("n", "<c-l>", "<c-w>l", opts)
 
 -- navigation tweaks (overriding defaults)
 -- use capital L or there will be a delay
-keymap("i", "<c-L>", "<esc>A", opts)
+keymap("i", "<c-L>", "<Esc>A", opts) -- backspace and <c-h> delete a whole word
 keymap("i", "<c-H>", "<c-w>", opts) -- backspace and <c-h> delete a whole word
 keymap("n", "<s-l>", "$", opts)
 keymap("n", "<s-h>", "^", opts)

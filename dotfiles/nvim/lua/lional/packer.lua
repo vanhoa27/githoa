@@ -140,7 +140,7 @@ return require("packer").startup(function(use)
         config = function()
             vim.g.vimwiki_list = {
                 {
-                    path = "/home/vanhoa/Reposetories/githoa/vimwiki",
+                    path = "/home/vanhoa/Reposetories/githoa/sync2/vimwiki",
                     syntax = "markdown",
                     ext = ".md",
                 },
@@ -152,4 +152,6 @@ return require("packer").startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+    -- markdown tables
+    use({"dhruvasagar/vim-table-mode"})
 end)

@@ -37,7 +37,12 @@ opt.pumheight = 10 -- pop-up menu height
 opt.showmode = false
 
 -- [ [ SPELLING ] ]
-opt.spell = true
+
+vim.cmd[[
+    autocmd FileType md,tex,vimwiki setlocal spell
+    set spelllang=de,en_us
+    set spellsuggest=best
+]]
 opt.spelllang = "en,de"
 opt.spellsuggest = "best"
 

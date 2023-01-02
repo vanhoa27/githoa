@@ -19,12 +19,33 @@ if vim.g.snippets == "luasnip" then
 	return
 end
 
-
 ls.config.set_config({
 	history = true,
 
 	-- dynamic snippets update as you type
 	updateevents = "TextChanged, TextChangedI",
+
+    -- expand or jump snippet (try out jk)
+    vim.keymap.set({"i", "s"}, "<c-f>", function()
+        if ls.expand_or_jumpable() then
+            ls.expand_or_jump()
+        end
+    end, { silent = true}),
+
+    -- jump backwards
+    vim.keymap.set({"i", "s"}, "<c-v>", function()
+        if ls.jumpable(-1) then
+            ls.jump(-1)
+        end
+    end, { silent = true}),
+
+    -- -- list snippets
+    -- vim.keymap.set("i", "<c-l>", function()
+    --     if ls.choice_active() then
+    --         ls.change_choice(1)
+    --     end
+    -- end),
+
 
 	-- Autotrigger Snippets:
 	enable_autosnippets = true,
@@ -39,5 +60,5 @@ ls.config.set_config({
 
 
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
-vim.keymap.set('n','<Leader>rs', '<Cmd>lua require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})<CR>')
+vim.keymap.set('n','<Leader>L', '<Cmd>lua require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})<CR>')
 

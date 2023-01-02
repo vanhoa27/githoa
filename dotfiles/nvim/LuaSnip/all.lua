@@ -13,4 +13,9 @@ return {
     { trig = "foo" },
     { t("Another snippet.") }
   ),
+
+  require("luasnip").snippet(
+    { trig = "fb" },
+    { t("Fizzbuzz") }
+  ),
 }
