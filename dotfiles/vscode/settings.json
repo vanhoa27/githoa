@@ -1,0 +1,166 @@
+{
+    "editor.lineNumbers": "relative",
+    "workbench.colorTheme": "One Dark Pro",
+    "oneDarkPro.vivid": true,
+
+    // vim search
+    "vim.ignorecase": true,
+    "vim.smartcase": true,
+    "vim.incsearch": true,
+    "vim.hlsearch": true,
+
+    "vim.easymotion": true,
+    // <leader><leader> w -> jump to specific word forward
+    // <leader><leader> b -> jump to specific word backwards
+
+    // <leader><leader> j -> jump to start of line  
+    // <leader><leader> k -> jump to start of line backwards
+
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.leader": "<space>",
+    "vim.inccommand": "replace", // show replace
+    "vim.autoindent": true,
+
+    // VIM Keybindings
+    "vim.normalModeKeyBindings": [
+
+        // open command palette 
+        {
+            "before": ["<leader>",":"],
+            "commands": [
+                "workbench.action.showCommands",
+            ],
+            "silent": true
+        },
+        // rename variable
+        {
+             "before": ["<leader>","r","n"],
+             "commands": ["editor.action.rename"],
+              "when": ["editorHasRenameProvider && editorTextFocus && !editorReadonly"] 
+        },
+
+        // open terminal
+        {
+             "before": ["<leader>","t","t"],
+             "commands": ["workbench.action.togglePanel"],
+        },
+
+        // Override H and L defaults
+        {
+             "before": ["<s-l>"],
+             "after": ["$"],
+        },
+        {
+             "before": ["<s-h>"],
+             "after": ["^"],
+        },
+
+        // disable hlsearch
+        {
+             "before": ["<leader>","h"],
+             "commands": [":noh"]
+        },
+
+        // toggle sidebar visibility
+        {
+             "before": ["<leader>","e"],
+             "commands": ["workbench.action.toggleSidebarVisibility"]
+       },
+
+        // splits 
+        {
+             "before": ["<leader>","w","s"],
+             "commands": ["workbench.action.splitEditor"]
+        },
+
+        // using to tabs to navigate through windows
+        {
+            "before": [
+                "<tab>"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "<S-tab>"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "z"
+            ],
+            "commands": [
+                "workbench.action.toggleZenMode"
+            ]
+        },
+    ],
+
+    // Insertmode bindings
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["<C-i>"],
+            "commands":  ["editor.action.indentLines"]
+        },
+        
+        // move to the end of the line in insert Mode
+        {
+            "before": ["<C-l>"],
+            "after":  ["<Esc>","A"]
+        },
+    ],
+
+    // lets you stay in visual mode when indenting
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [">"],
+            "after": [">", "g", "v"]
+        },
+        {
+        "before": ["<"],
+        "after": ["<", "g", "v"]
+        },
+    ],
+    
+    "vim.visualModeKeyBindingsNonRecursive": [
+
+            // paste without overriding clipboard
+            {
+                "before": [
+                    "p",
+                ],
+                "after": [
+                    "p",
+                    "g",
+                    "v",
+                    "y"
+                ]
+            },
+        ],
+
+        //
+        "vim.operatorPendingModeKeyBindings": [
+            {
+                "before": [
+                    "L"
+                ],
+                "after": [
+                    "$"
+                ]
+            },
+            {
+                "before": [
+                    "H"
+                ],
+                "after": [
+                    "^"
+                ]
+            }
+        ] 
+    }
