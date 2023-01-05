@@ -12,7 +12,7 @@
 - vim.opt.conceallevel = 1 -> "conceals special characters but not the space they take up"
 - vim.opt.conceallevel = 2 -> "conceals special characters and the space they take up"
 
-_boldening_ _italics_ etc are concealed, but not if you hover over them with your cursor.
+**boldenining** _italics_ etc are concealed, but not if you hover over them with your cursor.
 This helps you immensely because you can see immediate effects without hindering your
 ability to modify the code. Less things going taking up space on the screen, the better
 you can uphold your overview over everything. This is extremely useful.

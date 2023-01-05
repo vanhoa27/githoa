@@ -1,0 +1,88 @@
+{
+  "settings": {
+    "migrated": true,
+    "iconPacksPath": ".obsidian/plugins/obsidian-icon-folder/icons",
+    "fontSize": 16,
+    "iconColor": null,
+    "recentlyUsedIcons": [],
+    "recentlyUsedIconsSize": 5,
+    "rules": [
+      {
+        "rule": ".pdf",
+        "icon": "FasFilePdf",
+        "for": "files"
+      },
+      {
+        "rule": ".png",
+        "icon": "FasFileImage",
+        "for": "files"
+      },
+      {
+        "rule": ".AVI",
+        "icon": "FasFileVideo",
+        "for": "everything"
+      },
+      {
+        "rule": ".",
+        "icon": "📁",
+        "for": "folders"
+      },
+      {
+        "rule": "_B.md",
+        "icon": "FasUserGraduate",
+        "for": "files"
+      },
+      {
+        "rule": "Modules.md",
+        "icon": "FasSchool",
+        "for": "files"
+      },
+      {
+        "rule": "_M.md",
+        "icon": "FasGraduationCap",
+        "for": "files"
+      },
+      {
+        "rule": "diary.md",
+        "icon": "FasBookOpen",
+        "for": "files"
+      },
+      {
+        "rule": "index.md",
+        "icon": "SiHomeassistantWhite",
+        "for": "files"
+      },
+      {
+        "rule": "_idea.md",
+        "icon": "FarLightbulb",
+        "for": "files"
+      },
+      {
+        "rule": "_td.md",
+        "icon": "FasListCheck",
+        "for": "files"
+      },
+      {
+        "rule": "_rd.md",
+        "icon": "FasBook",
+        "for": "files"
+      },
+      {
+        "rule": "Template.md",
+        "icon": "FasFileArrowUp",
+        "for": "files"
+      },
+      {
+        "rule": ".md",
+        "icon": "FasFileLines",
+        "for": "everything"
+      }
+    ],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    }
+  }
+}

@@ -2,8 +2,8 @@
 
 ## Personal Documentation
 
-- [Zsh](manual//zsh.md)  
-- [Note Taking](Note-Taking)
+- [Zsh](manual/zsh.md)  
+- [Note Taking](manual/Note-Taking)
 - [Nvim_Setup](manual/Nvim_setup.md)  
 - [Nvim_Cheatsheet](manual/nvim_cheatsheet.md)  
 - [Vimtex](manual/vimtex.md)  
@@ -12,6 +12,5 @@
 - [Vscode](manual/Vscode.md)  
 
 ## Notes 
-
-
+[[binary trees]]
 
