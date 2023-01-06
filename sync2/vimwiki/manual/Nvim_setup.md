@@ -1,9 +1,18 @@
 # Neovim Settings 
 
+<!--toc:start-->
+- [Neovim Settings](#neovim-settings)
+  - [VIMSETS](#vimsets)
+    - [Very useful sets for Markdown and Latex in Vim/Nvim](#very-useful-sets-for-markdown-and-latex-in-vimnvim)
+    - [Vimtex and snippets](#vimtex-and-snippets)
+    - [Vim and Neovim, default keymaps](#vim-and-neovim-default-keymaps)
+    - [Remove Neovim](#remove-neovim)
+<!--toc:end-->
+
 - **Collision** between Vimwiki plugin and Luasnip
 - Vimwiki with markdown syntax will convert filename
 - **Solution:** rename markdown.lua folder into vimwiki.lua
-- 
+ 
 ## VIMSETS
 
 ### Very useful sets for Markdown and Latex in Vim/Nvim

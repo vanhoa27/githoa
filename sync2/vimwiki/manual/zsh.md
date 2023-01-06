@@ -1,5 +1,11 @@
 # ZSH 
 
+<!--toc:start-->
+- [ZSH](#zsh)
+  - [Oh-My-Zsh](#oh-my-zsh)
+    - [Configure Themes](#configure-themes)
+<!--toc:end-->
+
 ## Oh-My-Zsh
 
 ### Configure Themes

@@ -1,5 +1,11 @@
 # Notetaking in Neovim
 
+<!--toc:start-->
+- [Notetaking in Neovim](#notetaking-in-neovim)
+  - [Software used](#software-used)
+  - [Create Emojis](#create-emojis)
+<!--toc:end-->
+
 ## Software used
 - **TextEditor:** Neovim
 - **Plugins:** Vimwiki, MarkdownPreview, LuaSnip

@@ -1,4 +1,11 @@
-# WINDOWS SHORTSCUTS WITH CTRL 
+# WINDOWS SHORTCUTS
+
+<!--toc:start-->
+- [WINDOWS SHORTSCUTS WITH CTRL](#windows-shortscuts-with-ctrl)
+  - [WINDOWSKEY SHORTCUTS](#windowskey-shortcuts)
+<!--toc:end-->
+
+## WINDOWS SHORTSCUTS WITH CTRL 
 
 + <C-j> -> open download folder 
 + <C-h> -> open browser history
@@ -45,14 +52,14 @@
 
 ---
 
-META SHORTCUTS
+## META SHORTCUTS
 
 + <alt> <tab> -> navigate arround windows
 + <alt> (left, right arrow) -> go back/forth in history
 
 ---
 
-MISCELLEANEOUS SHORTSCUTS
+## MISCELLEANEOUS SHORTSCUTS
 
 + ctrl mouseclick ("select all files in between your clicks")
 + f11 -> toggle full screen mode
@@ -60,6 +67,6 @@ MISCELLEANEOUS SHORTSCUTS
 
 ---
 
-CREATE YOUR OWN SHORTSCUTS 
+## CREATE YOUR OWN SHORTSCUTS 
 
 

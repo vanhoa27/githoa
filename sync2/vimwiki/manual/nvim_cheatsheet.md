@@ -3,6 +3,27 @@ title: "Nvim_Cheatsheet"
 date: 2023-01-02
 ---
 
+<!--toc:start-->
+- [Important Notes](#important-notes)
+- [BASICS](#basics)
+- [UNDO/REDO](#undoredo)
+- [MOTIONS](#motions)
+- [YANK/PASTE/DELETE/CHANGE](#yankpastedeletechange)
+- [INSERTION-MODE SHORTCUTS](#insertion-mode-shortcuts)
+- [REPLACE](#replace)
+- [USEFUL](#useful)
+- [INCREMENT/DECREMENT/CAPITALISE/DECAPITALISE](#incrementdecrementcapitalisedecapitalise)
+- [REPEATING](#repeating)
+- [SCROLL SHORTCUTS](#scroll-shortcuts)
+- [FOLDS](#folds)
+- [SAVE/QUIT](#savequit)
+- [INDENTATION](#indentation)
+- [JUMPS](#jumps)
+- [COMMANDS](#commands)
+- [HIGHLIGHTS](#highlights)
+- [VISUAL_LINE_MODE](#visuallinemode)
+<!--toc:end-->
+
 ### Important Notes
 
 - C-i and tab are the same

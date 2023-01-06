@@ -12,5 +12,7 @@
 - [Vscode](manual/Vscode.md)  
 
 ## Notes 
-[[binary trees]]
+- [Lernmethoden](Notes/Lernmethoden)
+- [binary trees](Notes/binary trees)
+- [homework](Notes/homework/homework) 
 

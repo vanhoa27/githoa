@@ -13,9 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "manual/Vscode.md",
-                "mode": "preview",
-                "source": true
+                "file": "Notes/homework/08. Hausaufgabenblatt.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "5e4a88f3b6017ea3",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "manual/Vscode.md",
+                "file": "Notes/homework/08. Hausaufgabenblatt.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "manual/Vscode.md",
+                "file": "Notes/homework/08. Hausaufgabenblatt.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "manual/Vscode.md"
+                "file": "Notes/homework/08. Hausaufgabenblatt.md"
               }
             }
           }
@@ -146,15 +147,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dd647233ccc60e2a",
+  "active": "205380e2e805313d",
   "lastOpenFiles": [
+    "Notes/homework/homework.md",
+    "index.md",
+    "manual/Vscode.md",
     "manual/ubuntu.md",
     "manual/Nvim_setup.md",
     "manual/Note-Taking.md",
     "diary/2023-01-01.md",
     "diary/2022-12-31.md",
     "diary/2022-12-30.md",
-    "Notes/QuickNotes.md",
-    "Notes/TODO.md"
+    "Notes/QuickNotes.md"
   ]
 }

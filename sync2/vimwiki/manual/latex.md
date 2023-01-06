@@ -1,5 +1,12 @@
 # How to get started with Latex
 
+<!--toc:start-->
+- [How to get started with Latex](#how-to-get-started-with-latex)
+  - [Basic Syntax](#basic-syntax)
+  - [Tidy up your writing](#tidy-up-your-writing)
+  - [Include graphics](#include-graphics)
+<!--toc:end-->
+
 ## Basic Syntax
 
 - $ $ (Math_mode)

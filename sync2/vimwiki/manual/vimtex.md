@@ -1,5 +1,20 @@
 # VimTex
 
+<!--toc:start-->
+- [VimTex](#vimtex)
+  - [Spelling](#spelling)
+  - [Formating](#formating)
+    - [Conceal (will make \[, \], $, \in invisible )](#conceal-will-make-in-invisible)
+  - [Ultisnip](#ultisnip)
+    - [snippet for "Signature"](#snippet-for-signature)
+    - [dynamic snippets use `<text>`](#dynamic-snippets-use-text)
+    - [use pyhton on a snippet box](#use-pyhton-on-a-snippet-box)
+    - [insert an environment](#insert-an-environment)
+    - [flags](#flags)
+    - [vimwiki keymaps](#vimwiki-keymaps)
+    - [vimwiki diary](#vimwiki-diary)
+<!--toc:end-->
+
 ## Spelling
 
 - set spell

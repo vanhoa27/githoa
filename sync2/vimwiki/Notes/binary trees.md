@@ -1,5 +1,15 @@
 # Binary Trees
 
+<!--toc:start-->
+- [Binary Trees](#binary-trees)
+    - [Problems:](#problems)
+    - [Prerequisites](#prerequisites)
+    - [Properties](#properties)
+    - [Operations](#operations)
+    - [Defintion](#defintion)
+<!--toc:end-->
+
+
 ### Problems:
 - Data Structures too slow
 - Deleting, inserting, finding
@@ -21,4 +31,4 @@
 ### Defintion
 - structure in finite set
 - empty set = binary tree (leerer Baum)
-- 
+ 
