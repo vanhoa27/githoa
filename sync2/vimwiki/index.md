@@ -1,8 +1,7 @@
 # VimWiki
 
 ## Personal Documentation
-
-- [Zsh](manual/zsh.md)  
+- [Terminal](manual/terminal.md)  
 - [Note Taking](manual/Note-Taking)
 - [Nvim_Setup](manual/Nvim_setup.md)  
 - [Nvim_Cheatsheet](manual/nvim_cheatsheet.md)  
@@ -16,3 +15,8 @@
 - [binary trees](Notes/binary trees)
 - [homework](Notes/homework/homework) 
 
+## Lernplan
+- [IntroProg](Notes/Kurse/IntroProg)
+- [ROrg](Notes/Kurse/ROrg) 
+- [Anal1na](Notes/Kurse/Anal1na) 
+- [Infoprop](Notes/Kurse/Infoprop)
