@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/emacs --daemon
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=emacs deamon
+Name=Emacs Deamon
+Comment[en_US]=startup emacs server
+Comment=startup emacs server
