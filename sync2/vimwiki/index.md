@@ -1,7 +1,7 @@
 # VimWiki
 
 ## Personal Documentation
-- [Terminal](manual/terminal.md)  
+- [Ubuntu](manual/Ubuntu.md)  
 - [Note Taking](manual/Note-Taking)
 - [Nvim_Setup](manual/Nvim_setup.md)  
 - [Nvim_Cheatsheet](manual/nvim_cheatsheet.md)  
@@ -16,7 +16,9 @@
 - [homework](Notes/homework/homework) 
 
 ## Lernplan
+- [Learnplan](Notes/Learnplan)
 - [IntroProg](Notes/Kurse/IntroProg)
 - [ROrg](Notes/Kurse/ROrg) 
 - [Anal1na](Notes/Kurse/Anal1na) 
 - [Infoprop](Notes/Kurse/Infoprop)
+

@@ -1,8 +1,20 @@
 ---
-Title: Welcome to Epsilon Notes
-toc: Contents
-...
+title: Learning Guide For Real
+date: 06.01.2023
+---
 
-## Hello
+# Learning
 
-## Hi![IMG-20221227-WA0009](IMG-20221227-WA0009.jpg)
+## Active Learning
+- review slides
+- create Anki Flashcards
+- daily Anki review
+- practice tests/exams
+
+## Passive Learning 
+- watch 20-30 min videos (Playlist)
+- visualize material
+- Interleaving 
+- reflect about connections
+
+

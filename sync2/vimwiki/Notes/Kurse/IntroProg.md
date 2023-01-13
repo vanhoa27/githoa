@@ -11,4 +11,5 @@ title: IntroProg
 ## Themen
 ### C-Kurs
 ### Semester_Veranstaltungen
+- [09.Heap](09.Heap)
 

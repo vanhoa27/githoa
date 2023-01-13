@@ -1,0 +1,374 @@
+
+\documentclass{report}
+
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc} \usepackage[T1]{fontenc} \usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{{IV}}}}{=}}
+\newcommand\swapi{\stackrel{\mathclap{\normalfont\mbox{{I$\leftrightarrow$}II}}}{$\implies$}}
+
+% \author{\huge{Van Hoa Nguyen\\MN:0483979\\Tutor: Rohde-Gouromichos Victor Panos  }}
+\title{\Huge{Analysis 1 und Lineare Algebra}}
+\author{\huge{Van Hoa Nguyen}\\MN: 0483979}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+% \newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+% \pagebreak
+
+
+\chapter*{09. Hausaufgabenblatt}
+
+\section*{1. Aufgabe}
+\textbf{Zeigen Sie mit vollstandgier Induktion:}
+\subsection*{1.1 Aufgabe}
+Für alle natürlichen Zahlen $n \geq 1$ gilt.
+
+$$\sum_{k=1}^{n}k^{3} = \frac{n^{2}\cdot(n+1)^{2}}{4}$$
+
+\begin{enumerate}
+
+    \item \textbf{IA:} $n_0=1$ 
+        \[
+            \sum_{k=1}^{1}k^{3} = \frac{1^{2}\cdot(1+1)^{2}}{4}
+            \Rightarrow 1=\frac{1\cdot4}{1}
+            \Rightarrow 1=1
+        \]
+        $\rightarrow A(n_0)$ gilt
+    \item \textbf{IV:} Für ein beliebige, festes n gilt:
+        $$\sum_{k=1}^{n}k^{3} = \frac{n^{2}\cdot(n+1)^2}{4}$$
+
+    \item \textbf{IB:}  Dann gilt für n+1:
+        $$\sum_{k=1}^{n+1}k^{3} = \frac{(n+1)^{2}\cdot(((n+1)+1)^2}{4}$$
+        $$\Rightarrow\sum_{k=1}^{n+1}k^{3} = \frac{(n+1)^{2}\cdot(n+2)^2}{4}$$
+
+    \item \textbf{IS:}  
+        \[
+            \sum_{k=1}^{n+1}k^{3} \myeq \sum_{k=1}^{n}k^{3} + (n+1)^{3}
+        \]
+        $$\Rightarrow \sum_{k=1}^{n}k^{3}= \frac{n^{2} \cdot (n+1)^2}{4} + \frac{4(n+1)^{3}}{4}$$
+
+        $$\Rightarrow \sum_{k=1}^{n}k^{3}= \frac{n^{2} \cdot (n+1)^2+{4(n+1)^{3}}}{4}$$
+
+        $$\Rightarrow \sum_{k=1}^{n}k^{3}= \frac{(n+1)^{2}\cdot(n^2+4n+4))}{4}$$
+
+        $$\Rightarrow \sum_{k=1}^{n}k^{3}= \frac{(n+1)^{2}\cdot(n+2)^2}{4}$$
+
+        $\rightarrow$ Die Gleichung gilt für alle natürlichen Zahlen $n \geq 1$
+
+\end{enumerate}
+
+\subsection*{1.2 Aufgabe}
+Für all $n \in \mathbb N, n \geq 1,$ gilt dass $n^{2}+n$ gerade ist.
+
+\begin{enumerate}
+    \item \textbf{IA:} $n_0=1$ (funktioniert auch $n_0=0$, da 0 eine gerade Zahl ist)
+        $$1^{2}+1 = 2 $$ $\rightarrow$ ist gerade, $A(n_0)$ gilt 
+    \item \textbf{IV:} Für ein beliebiges, festes n gilt: $n^{2}+n$ ist 
+        gerade bzw. $$n^{2}+n = 2m; n, m \in \mathbb N$$
+    \item \textbf{IB:} Dann gilt für n+1:
+        \[
+            (n+1)^{2}+n+1 = 2m; m, n \in \mathbb N
+        \]
+    \item \textbf{IS:}
+        $$(n+1)^{2}+n+1 = n^{2}+n+2n+2$$
+        $$\Rightarrow \underline{n^{2}+n}+2n+2 \myeq \underline{2m}+2n+2$$
+        $$\Rightarrow 2m+2n+2=2m+2(n+1)$$
+        $$\Rightarrow 2m+2n+2=2[m+(n+1)]$$
+        $(m+n+1)$ substituieren wir mit $k \in \mathbb N$,
+        dann ergibt sich $2k$. Es gilt: eine natürliche Zahl
+        multipliziert mit 2 ist immer gerade. \newline 
+        $\rightarrow $ $n^{2}+n, $ ist gerade für alle $n\in \mathbb N, n\geq 1$
+
+\end{enumerate}
+
+\section*{2. Aufgabe}
+\begin{enumerate}
+    \item Der Nullvektor gehört zu T, $\vec{0} \in T$, 
+        denn die Null-Funktion erfüllt für alle x die Bedingung f(1)=0
+    \item Seien $f,g \in T$, dann muss auch gelten: $f+g \in T$
+        \newline $f(1)=0$ und $g(1)=0$ $\Rightarrow$ $f(1)+g(1)=0+0=0$ \newline
+        $(f+g)(1)= f(1)+g(1)= 0$ \newline
+        Somit gilt: $f+g \in T$ 
+    \item Seien $f \in T$ und $\lambda \in \mathbb R$, dann muss auch gelten: $\lambda f \in T$ \newline
+        $\lambda \cdot f(1) = \lambda \cdot 0 = 0$ \newline
+        $\lambda f$ erfüllt die Bedingung f(1) = 0 $\Rightarrow \lambda k \in T $ 
+\end{enumerate}
+T erfüllt all 3 Eigenschaften und ist somit ein Unterraum von V
+\section*{3. Aufgabe}
+$B_1=\{\vec{e_1},\vec{e_2},\vec{e_3}\}$ und $B_2=\{\vec{v_1}\vec{v_2}\vec{v_3}\}$
+
+$$
+\vec{v_1}= \begin{bmatrix}
+    1 \\
+    0 \\
+    0 \\
+    \end{bmatrix}, \vec{v_2}= \begin{bmatrix}
+    2 \\
+    1 \\
+    -1 \\
+    \end{bmatrix}, \vec{v_3}= \begin{bmatrix}
+    -2 \\
+    1 \\
+    4 \\
+\end{bmatrix}, 
+$$ 
+\subsection*{3.1 Aufgabe}
+\begin{enumerate}
+    \item Spalte von $f_{B_1,B_2}$
+        $$f_{B_1,B_2}(e_1) = K_{B_1}(f(K_{B_1}^{-1}(e_1))) $$
+        $$\Rightarrow f_{B_1,B_2}(e_1) = K_{B_1}(f(\begin{bmatrix}
+            1 \\
+            0 \\ 
+            0
+        \end{bmatrix})) $$
+        
+        $$\Rightarrow f_{B_1,B_2}(e_1) = K_{B_1}(\begin{bmatrix}
+            1 \\
+            0 \\ 
+            -1
+        \end{bmatrix}) $$
+
+        $$\Rightarrow f_{B_1,B_2}(e_1) = \begin{bmatrix}
+            1 \\
+            0 \\ 
+            -1
+        \end{bmatrix} $$
+        weil 
+        \[
+           \begin{bmatrix}
+           1 \\
+           0 \\
+           -1
+           \end{bmatrix} = 1 
+           \begin{bmatrix}
+              1 \\
+              0 \\
+              0
+           \end{bmatrix}   + 0 
+           \begin{bmatrix}
+              0 \\
+              1 \\
+              0
+           \end{bmatrix}   -1  
+           \begin{bmatrix}
+              0 \\
+              0 \\
+              1
+           \end{bmatrix}    
+        \] 
+
+    \item Spalte von $f_{B_1,B_2}$
+        $$f_{B_1,B_2}(e_2) = K_{B_1}(f(K_{B_1}^{-1}(e_2))) $$
+        $$\Rightarrow f_{B_1,B_2}(e_2) = K_{B_1}(f(\begin{bmatrix}
+            0 \\
+            1 \\ 
+            0
+        \end{bmatrix})) $$
+
+        $$\Rightarrow f_{B_1,B_2}(e_2) = K_{B_1}(\begin{bmatrix}
+            -2 \\
+            -1 \\ 
+            1
+        \end{bmatrix}) $$
+
+        $$\Rightarrow f_{B_1,B_2}(e_2) = \begin{bmatrix}
+        -2 \\
+            -1 \\ 
+            1
+        \end{bmatrix} $$
+
+        weil 
+        \[
+           \begin{bmatrix}
+            -2 \\
+            -1 \\
+            1 
+           \end{bmatrix} = -2 
+           \begin{bmatrix}
+              1 \\
+              0 \\
+              0
+           \end{bmatrix}   -1
+           \begin{bmatrix}
+              0 \\
+              1 \\
+              0
+           \end{bmatrix}   1  
+           \begin{bmatrix}
+              0 \\
+              0 \\
+              1
+           \end{bmatrix}    
+        \] 
+
+    \item Spalte von $f_{B_1,B_2}$
+        $$f_{B_1,B_2}(e_3) = K_{B_1}(f(K_{B_1}^{-1}(e_3))) $$
+
+        $$\Rightarrow f_{B_1,B_2}(e_3) = K_{B_1}(f(\begin{bmatrix}
+            0 \\
+            0 \\ 
+            1
+        \end{bmatrix})) $$
+
+        $$\rightarrow f_{b_1,b_2}(e_3) = k_{B_1}(\begin{bmatrix}
+           -2 \\
+            1 \\ 
+            4 
+        \end{bmatrix}) $$
+
+        $$\rightarrow f_{b_1,b_2}(e_3) = \begin{bmatrix}
+           -2 \\
+            1 \\ 
+            4 
+        \end{bmatrix} $$
+
+        weil 
+        \[
+           \begin{bmatrix}
+           -2 \\
+            1 \\
+            4 
+           \end{bmatrix} = -2 
+           \begin{bmatrix}
+              1 \\
+              0 \\
+              0
+           \end{bmatrix}   +1 
+           \begin{bmatrix}
+              0 \\
+              1 \\
+              0
+           \end{bmatrix}   +4 
+           \begin{bmatrix}
+              0 \\
+              0 \\
+              1
+           \end{bmatrix}    
+        \] 
+
+\end{enumerate}
+\[ \rightarrow f_{B_1, B_1} =
+   \begin{bmatrix}
+       1 & -2 & -2 \\
+       0 & -1 & 1 \\
+       -1 & 1 & 4
+   \end{bmatrix} 
+\]
+\subsection*{3.2 Aufgabe}
+\[
+    T_{B_2,B_1} = \left\lbrack K_{B_1}(\begin{bmatrix}
+        1 \\
+        0 \\
+        -1
+    \end{bmatrix}) K_{B_1}(\begin{bmatrix}
+        2 \\ 
+        1 \\
+        -1
+    \end{bmatrix}) K_{B_1}(\begin{bmatrix}
+        -2 \\
+        1 \\
+        4
+    \end{bmatrix})\right\rbrack = \begin{bmatrix}
+    1 & 2 & -2 \\
+    0 & 1 & 1 \\
+    -1 & -1 & 4
+    \end{bmatrix}
+\] 
+Weil wie wir gesehen haben, dass wenn die Basis des Koordinatenvektors
+die Standardbasis ist, gilt $K_{B_1}(\vec{v})=\vec{v}$
+
+\subsection*{3.3 Aufgabe}
+
+Für $T_{B_1,B_2}$ = $(T_{B_2,B_1})^{-1}$
+
+\[
+\begin{bmatrix}
+    1 & 2 & -2  &\bigm| & 1 & 0 & 0 \\
+    0 & 1 & 1   &\bigm| & 0 & 1 & 0 \\
+    -1 & -1 & 4  &\bigm| & 0 & 0 & 1 \\ 
+\end{bmatrix} \implies
+\begin{bmatrix}
+    1 & 0 & -4  &\bigm| & 1 & -2 & 0 \\
+    0 & 1 & 1   &\bigm| & 0 & 1 & 0 \\
+    -1 & -1 & 4  &\bigm| & 0 & 0 & 1 \\ 
+\end{bmatrix} 
+\]
+\[
+\implies\begin{bmatrix}
+    1 & 0 & -4  &\bigm| & 1 & -2 & 0 \\
+    0 & 1 & 1   &\bigm| & 0 & 1 & 0 \\
+    0 & -1 & 0  &\bigm| & 1 & -2 & 1 \\ 
+\end{bmatrix} \implies
+\begin{bmatrix}
+    1 & 0 & -4  &\bigm| & 1 & -2 & 0 \\
+    0 & -1 & 0  &\bigm| & 1 & -2 & 1 \\ 
+    0 & 1 & 1   &\bigm| & 0 & 1 & 0 \\
+\end{bmatrix}
+\]
+\[
+\implies\begin{bmatrix}
+    1 & 0 & -4  &\bigm| & 1 & -2 & 0 \\
+    0 & 1 & 0   &\bigm| & -1 & 2 & -1 \\
+    0 & 0 & 1  &\bigm| & 1 & -1 & 1 \\ 
+\end{bmatrix} \implies
+\begin{bmatrix}
+    1 & 0 & 0  &\bigm| & 5 & -6 & 4 \\
+    0 & 1 & 0  &\bigm| & -1 & 2 & -1 \\ 
+    0 & 0 & 1   &\bigm| & 1 & -1 & 1 \\
+\end{bmatrix}
+\]
+\[
+T_{B_1,B_2} = \begin{bmatrix}
+    5 & -6 & 4 \\
+    -1 & 2 & -1 \\
+    1 & -1 & 1 \\ 
+\end{bmatrix}
+\]
+
+Unterschritte:
+\begin{enumerate}
+    \item I-2II
+    \item III-I
+    \item II$\leftrightarrow$III
+    \item II+III und -1 * II
+    \item I + 4III
+\end{enumerate}
+
+\subsection*{3.4 Aufgabe}
+
+$f_{B_1,B_2} = id_{B_1,B_2} \cdot f_{B_1,B_1} \cdot id_{B_2,B_1}$
+\[
+    \begin{bmatrix}
+        5 & -6 & 4 \\
+        -1 & 2 & -1 \\
+        1 & -1 & 1
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+        1 & -2 & -2 \\
+        0 & -1 & 1 \\
+        -1 & 1 & 4
+    \end{bmatrix} \cdot 
+    \begin{bmatrix}
+        1 & 2 & -2 \\
+        0 & 1 & 1 \\
+        -1 & -1 & 4
+    \end{bmatrix} =
+    \begin{bmatrix}
+        1 & 2 & -2 \\
+        0 & -1 & -1 \\
+        -1 & -1 & 4 \\
+    \end{bmatrix}
+\]
+
+\section*{4. Aufgabe}
+
+
+
+\end{document}
+
