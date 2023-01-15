@@ -20,19 +20,6 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
 
-    // scroll down suggestion
-    {
-        "key": "tab",
-        "command": "selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-
-    // scroll up suggestion
-    {
-        "key": "shift+tab",
-        "command": "selectPrevSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
     {
         "key": "alt+x",
         "command": "workbench.action.showCommands"
@@ -44,22 +31,15 @@
       "command": "toggleVim",
     },
 
-    // hover
-    {
-      "key": "shift+k",
-      "command": "editor.action.showHover",
-      "when": "editorTextFocus"
-    },
-
     // navigate in command pallette 
     {
         "key": "ctrl+j",
-        "command": "workbench.action.quickOpenNavigateNext",
+        "command": "workbench.action.quickOpenSelectNext",
         "when": "inQuickOpen"
     },
     {
         "key": "ctrl+k",
-        "command": "workbench.action.quickOpenNavigatePrevious",
+        "command": "workbench.action.quickOpenSelectPrevious",
         "when": "inQuickOpen"
     },
     {
@@ -72,17 +52,17 @@
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
     },
-    // same for tab
-    {
-        "key": "tab",
-        "command": "selectNextSuggestion",
-        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-    },
-    {
-        "key": "shit+tab",
-        "command": "selectPrevSuggestion",
-        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-    },
+    // // same for tab
+    // {
+    //     "key": "tab",
+    //     "command": "selectNextSuggestion",
+    //     "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    // },
+    // {
+    //     "key": "shit+tab",
+    //     "command": "selectPrevSuggestion",
+    //     "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    // },
 
     //rename a file
     {

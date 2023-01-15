@@ -2,6 +2,8 @@
     "editor.lineNumbers": "relative",
     "workbench.colorTheme": "One Dark Pro",
     "oneDarkPro.vivid": true,
+    "editor.fontSize": 15,
+    // "editor.renderLineHighlight": "none"
 
     // vim search
     "vim.ignorecase": true,
@@ -24,82 +26,117 @@
 
     // VIM Keybindings
     "vim.normalModeKeyBindings": [
+      // LATEX WORKSHOP:
+      // compile pdf 
+      {
+        "before": ["<leader>", "l","l" ],
+        "commands": ["latex-workshop.build"],
+        "silent": true
+      },
+      // Kill compile 
+      {
+        "before": ["<leader>", "l","k" ],
+        "commands": ["latex-workshop.kill"],
+        "silent": true
+      },
+      // view pdf 
+      {
+        "before": ["<leader>", "l","v"],
+        "commands": ["latex-workshop.view"],
+        "silent": true
+      },
+      // Clean aux files 
+      {
+        "before": ["<leader>", "l","c"],
+        "commands": ["latex-workshop.clean"],
+        "silent": true
+      },
+      // Count words 
+      {
+        "before": ["<leader>", "l","w"],
+        "commands": ["latex-workshop.wordcount"],
+        "silent": true
+      },
 
-        // open command palette 
-        {
-            "before": ["<leader>",":"],
-            "commands": [
-                "workbench.action.showCommands",
-            ],
-            "silent": true
-        },
-        // rename variable
-        {
-             "before": ["<leader>","r","n"],
-             "commands": ["editor.action.rename"],
-              "when": ["editorHasRenameProvider && editorTextFocus && !editorReadonly"] 
-        },
 
-        // open terminal
-        {
-             "before": ["<leader>","t","t"],
-             "commands": ["workbench.action.togglePanel"],
-        },
+      // Hover
+      {
+        "before": ["<leader>","q"],
+        "after": [":","q","cr"]
+      },
 
-        // Override H and L defaults
-        {
-             "before": ["<s-l>"],
-             "after": ["$"],
-        },
-        {
-             "before": ["<s-h>"],
-             "after": ["^"],
-        },
+      // Hover
+      {
+        "before": ["<s-k>"],
+        "commands": ["editor.action.showHover"],
+        "when": ["editerTextFocus"]
+      },
 
-        // disable hlsearch
-        {
-             "before": ["<leader>","h"],
-             "commands": [":noh"]
-        },
+      // open command palette
+      {
+        "before": ["<leader>", ":"],
+        "commands": ["workbench.action.showCommands"],
+        "silent": true
+      },
 
-        // toggle sidebar visibility
-        {
-             "before": ["<leader>","e"],
-             "commands": ["workbench.action.toggleSidebarVisibility"]
-       },
+      // rename variable
+      {
+        "before": ["<leader>", "r", "n"],
+        "commands": ["editor.action.rename"],
+        "when": [
+          "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        ]
+      },
 
-        // splits 
-        {
-             "before": ["<leader>","w","s"],
-             "commands": ["workbench.action.splitEditor"]
-        },
+      // open terminal
+      {
+        "before": ["<leader>", "t", "t"],
+        "commands": ["workbench.action.togglePanel"]
+      },
 
-        // using to tabs to navigate through windows
-        {
-            "before": [
-                "<tab>"
-            ],
-            "commands": [
-                "workbench.action.nextEditor"
-            ]
-        },
-        {
-            "before": [
-                "<S-tab>"
-            ],
-            "commands": [
-                "workbench.action.previousEditor"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "z"
-            ],
-            "commands": [
-                "workbench.action.toggleZenMode"
-            ]
-        },
+      // Override H and L defaults
+      {
+        "before": ["<s-l>"],
+        "after": ["$"]
+      },
+      {
+        "before": ["<s-h>"],
+        "after": ["^"]
+      },
+
+      // disable hlsearch
+      {
+        "before": ["<leader>", "h"],
+        "commands": [":noh"]
+      },
+
+      // toggle sidebar visibility
+      {
+        "before": ["<leader>", "e"],
+        "commands": ["workbench.action.toggleSidebarVisibility"]
+      },
+
+      // splits
+      {
+        "before": ["<leader>", "w", "s"],
+        "commands": ["workbench.action.splitEditor"]
+      },
+
+      // using to tabs to navigate through windows
+      {
+        "before": ["<tab>"],
+        "commands": ["workbench.action.nextEditor"]
+      },
+      {
+        "before": ["<S-tab>"],
+        "commands": ["workbench.action.previousEditor"]
+      },
+
+      // zenmode
+      {
+        "before": ["<leader>", "z"],
+        "commands": ["workbench.action.toggleZenMode"]
+      }
     ],
 
     // Insertmode bindings
@@ -107,6 +144,10 @@
         {
             "before": ["<C-i>"],
             "commands":  ["editor.action.indentLines"]
+        },
+        {
+            "before": ["j", "k"],
+            "after":  ["<Esc>"]
         },
         
         // move to the end of the line in insert Mode
@@ -162,5 +203,8 @@
                     "^"
                 ]
             }
-        ] 
+        ],
+        "[jsonc]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
     }
