@@ -54,8 +54,10 @@ local on_attach = function(client, bufnr)
 	keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
 	keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 	keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-	keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
+    keymap("n", "<leader>o", "<cmd>Lspsaga termgoggle", opts)
 
+    -- Alternative clion command
+	keymap("n", "<m-cr>", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
 		keymap("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports

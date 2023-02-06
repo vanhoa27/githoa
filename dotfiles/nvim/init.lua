@@ -7,5 +7,8 @@ vim.cmd[[
     autocmd BufRead,BufNewFile ~/.calcurse/notes/* set filetype=vimwiki
 ]]
 
+
 -- Disable Vimwiki outside of wiki pages
--- let g:vimwiki_global_ext = 0
+vim.g.vimwiki_global_ext = 1
+
+-- Vimtex

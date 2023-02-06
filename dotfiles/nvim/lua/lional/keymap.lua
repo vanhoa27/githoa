@@ -6,7 +6,6 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --remap space as leader key
-keymap("n", "<space>", "<nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 keymap("i", "<m-bs>", "<c-w>", opts)
@@ -56,7 +55,8 @@ keymap("n", "<s-s>", '"_S', opts) -- do not yank with
 keymap("n", "db", 'vb"_d', opts) -- delete a word backwards (includes selected char)
 keymap("n", "<leader>Y", '$y', opts) -- will work like D but for yank
 keymap("v", "<leader>y", '"+y', opts) -- same but in visual_mode
-keymap("x", "<leader>p", '"_dP', opts)
+keymap("n", "<leader>p", '"+p', opts)
+keymap("x", "<leader>p", '"+p', opts)
 keymap("n", "<leader>a", "gg<s-v>g", opts) --higlight all
 keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
 
@@ -100,7 +100,7 @@ keymap("n", "<m-k>", ":m .-2<cr>==", opts)
 
 -- [[NAVIGATION]]
 keymap("n", "<c-u>", "<c-u>zz", opts)
-keymap("n", "<c-d>", "<c-d>z", opts)
+keymap("n", "<c-d>", "<c-d>zz", opts)
 
 -- [[THEPRIMEAGEN]]
 vim.keymap.set("n", "<leader>s", ":%s/\\<<c-r><c-w>\\>/<c-r><c-w>/gi<left><left><left>")
@@ -112,4 +112,4 @@ keymap("n", "<leader>u", ":UndotreeToggle<cr>", opts)
 keymap("n", "<leader>gs", ":Git<cr>", opts)
 -- keymap("i", "<c-L>", "<c-g>u<Esc>[s1z=`]a<c-g>u", opts)
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
-keymap("n", "<leader>lm", ":MarkdownPreviewToggle<cr>", opts)
+keymap("n", "<leader>mp", ":MarkdownPreviewToggle<cr>", opts)

@@ -36,6 +36,8 @@ cmp.setup({
 		["<C-e>"] = cmp.mapping.abort(), -- close completion window
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
 
+		["<tab>"] = cmp.mapping.select_next_item(), -- next suggestion
+        ["<S-tab>"] = cmp.mapping.select_prev_item(), -- previous suggestion
 		-- ["<Tab>"] = cmp.mapping(function(fallback)
 		-- 	if luasnip.expandable() then
 		-- 		luasnip.expand()

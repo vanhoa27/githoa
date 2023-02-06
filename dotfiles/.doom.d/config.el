@@ -55,7 +55,8 @@
 
 ;; [[GENERAL]]
 ;; resize font size
-(set-face-attribute 'default nil :height 140)
+(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 16))
+        ;; (set-face-attribute 'default nil :height 140)
 
 (add-hook 'window-setup-hook 'toggle-frame-maximized t)  ;; maximize screen on start up
 (setq scroll-margin 2)                                   ;; set scroll margin
@@ -63,13 +64,10 @@
 
 ;; [[org-mode]]
 (setq org-hide-emphasis-markers t)  ;; ormode hide bold/italic markers etc
-(setq org-hide-block-startup t)     ;; hide source-block
 (setq org-startup-folded t)         ;; start all org Headings folded
 ;; (setq org-pretty-entities t)     ;; display math and greek letters
-;; (setq org-cycle-hide-drawers t)  ;; show or hide property drawers
-(setq org-hide-block-startup t)     ;; codeblock startup
+(setq org-cycle-hide-block-startup t)     ;; codeblock startup
 (setq org-src-fontify-natively t)   ;; org mode fontify
-;; (setq org-ellipsis " ")         ;; set toggle symbol
 
 ;; hide source code
 ;; (let ((background-color (face-attribute 'default :background)))
@@ -91,24 +89,8 @@
   (setq org-bullets-bullet-list '("◉" "○" "✸" "◆" "✿"))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-;; latex preview
-(setq org-preview-latex-default-process 'dvipng)
-
-;; download and paste images
- ;; (use-package org-download
- ;;    :after org
- ;;    :defer nil
- ;;    :custom
- ;;    (org-download-method 'directory)
- ;;    (org-download-image-dir "Attachements")
- ;;    (org-download-heading-lvl nil)
- ;;    (org-download-timestamp "%Y%m%d-%H%M%S_")
- ;;    (org-image-actual-width 300)
- ;;    (org-download-screenshot-method "/usr/local/bin/pngpaste %s")
- ;;    :bind
- ;;    ("C-M-y" . org-download-screenshot)
- ;;    :config
- ;;    (require 'org-download))
+;; ;; latex preview
+;; (setq org-preview-latex-default-process 'dvipng)
 
 ;; ORG BABEL add c, mermaid language
 (org-babel-do-load-languages
@@ -118,8 +100,50 @@
       (python . t)
       (C . t)))
 
-;; Open HTML files in browser by default
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . browse-url-of-file))
-
 ;; Specify ob mermaid path
-(setq ob-mermaid-cli-path "~/node_modules/.bin/mmdc")
+(setq ob-mermaid-cli-path "/home/vanhoa/node_modules/.bin/mmdc")
+
+;; [[ORG ROAM]]
+(setq org-roam-directory "~/roam")
+(setq org-roam-graph-executable "/usr/bin/dot")
+(setq org-roam-graph-viewer nil)
+
+;; [[TREE-SITTER]]
+(use-package! tree-sitter
+  :config
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+;; [[PRETTIFY]]
+(defun display-code-block-vertically ()
+  "Display code blocks vertically using down and up arrows."
+  (setq-local prettify-symbols-alist
+              '(;; ("#+begin_src" . "▼")
+                ;; ("#+end_src" . "▲")
+                ;; ("#+BEGIN_SRC" . "▼")
+                ;; ("#+END_SRC" . "▲")
+                ("[ ]" . "☐")
+                ("[X]" . "☑")
+                ))
+  (prettify-symbols-mode))
+
+(add-hook 'org-mode-hook 'display-code-block-vertically)
+
+;; (setq org-ellipsis " ➤")         ;; set toggle symbol
+;; [[KEY-BINDINGS]]
+;; [ANKI]]
+(map! :leader
+      (:prefix ("l" . "custom")
+       :desc "anki-editor-insert-note"
+       "a i" #'anki-editor-insert-note
+       :desc "anki-editor-mode"
+       "a m" #'anki-editor-mode
+       :desc "anki-editor-push-notes"
+       "a p" #'anki-editor-push-notes
+       :desc "anki-editor-closz-dwim"
+       "a c" #'anki-editor-cloze-dwim
+       :desc "org-anki-sync-all"
+       "o s" #'org-anki-sync-all
+       :desc "org-anki-sync-all"
+       "o i" #'org-anki-import-deck))

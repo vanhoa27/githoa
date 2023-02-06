@@ -8,12 +8,13 @@ opt.rnu = true
 opt.cul = true
 opt.cursorlineopt = "both" -- number: hl-Nr, both: hl-Nr&cursor line
 opt.conceallevel = 2 -- will conceal concealable text
+opt.concealcursor = 'nc'
 opt.mouse = "a"
 opt.signcolumn = "yes"
 opt.scrolloff = 8
-opt.sidescrolloff = 5
+opt.sidescrolloff = 0
 opt.fillchars = { eob = "~" }
-opt.colorcolumn = "80"
+opt.colorcolumn = "0"
 opt.lazyredraw = true
 
 -- vim.cpd("set which wrap+=<,>,[,],h,l")
@@ -43,6 +44,7 @@ vim.cmd[[
     set spelllang=de,en_us
     set spellsuggest=best
 ]]
+
 opt.spelllang = "en,de"
 opt.spellsuggest = "best"
 
@@ -76,9 +78,9 @@ opt.path:append({ "**" }) -- Finding Files -> search down into subfolder
 opt.wildignore:append({ "*/.git/*", "*/node_modules/*" }) --list of patterns to ignore files for file name completion
 opt.wildmenu = true --command-line completion shows a list of matches (not very useful with lsp on)
 opt.wildignorecase = true --ignore case when completing files names
--- opt.wildmode = "list:longest,list:full" -- for <cmd> searchj
 opt.complete:append({ ".", "w", "b", "u", "t", "kspell" }) -- prioritize completion
 opt.hidden = true
+opt.omnifunc ="syntaxcomplete#Complete"
 
 -- [ [ SPLITS ] ]
 opt.splitright = true
@@ -99,4 +101,6 @@ vim.api.nvim_create_autocmd('FileType',{
     command = 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'
 })
 
-
+-- Vimtex
+vim.g_vimtex_view_method = 'zathura'
+vim.g_vimtex_quickfix_mode=0

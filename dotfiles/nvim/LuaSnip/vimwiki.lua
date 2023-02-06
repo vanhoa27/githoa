@@ -12,20 +12,6 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
     -- Expand boldening 
-    require("luasnip").snippet(
-        {
-            trig="**",
-            dscr="expands boldening characters automatically",
-            regTrig=false,
-            priority=100,
-            snippetType="autosnippet"
-        },
-        {
-            t("**"),
-            i(1),
-            t("**"),
-        }
-    ),
     -- Fenced block of code
     s({trig="CC", snippetType="autosnippet"},
         fmta(

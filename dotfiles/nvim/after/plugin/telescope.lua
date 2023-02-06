@@ -12,6 +12,8 @@ end
 
 local themes = require("telescope.themes")
 
+require('telescope').load_extension('vimwiki') -- Load vimwiki plugin
+
 telescope.load_extension("file_browser")
 
 telescope.setup({
@@ -103,7 +105,6 @@ telescope.setup({
 vim.keymap.set("n", "<leader>ff", function()
 	builtin.find_files({
 		no_ignore = false,
-		previewer = false,
 		hidden = true,
 	})
 end)
@@ -155,6 +156,8 @@ vim.keymap.set("n", "<leader>fe", function()
 		layout_config = { height = 40 },
 	})
 end)
+
+vim.keymap.set("n","<leader>fw",":Telescope vimwiki<cr>")
 
 -- -- vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- find files
 -- -- vim.keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- find word

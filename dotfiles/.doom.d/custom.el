@@ -3,12 +3,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   '("~/org/org_manage/todo.org" "/home/vanhoa/Agenda/weekly.org" "/home/vanhoa/Agenda/agenda22w02.org" "/home/vanhoa/Agenda/agenda22w01.org"))
+ '(org-safe-remote-resources
+   '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg\\.setup\\'"))
  '(package-selected-packages
-   '(ob-mermaid org-babel-eval-in-repl toc-org org-preview-html org-download org-attach-screenshot anki-editor anki-connect cdlatex mermaid-mode all-the-icons org-bullets))
- '(warning-suppress-log-types '((frameset) (frameset) (defvaralias)))
- '(warning-suppress-types '((frameset) (defvaralias))))
+   '(org-anki anki-editor anki-mode mip-mode mips-mode ob-mermaid dap-mode tree-sitter-langs tree-sitter org-roam projectile pdf-tools org-bullets))
+ '(warning-suppress-types
+   '(((defvaralias losing-value org-hide-block-startup))
+     (defvaralias))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
