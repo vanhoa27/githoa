@@ -1,3 +1,4 @@
+
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
@@ -36,7 +37,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type 'numbers)
+(setq display-line-numbers-type 'number)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;e-package'.
@@ -98,6 +99,8 @@
     '((mermaid . t)
       (scheme . t)
       (python . t)
+      (java . t)
+      (bash . t)
       (C . t)))
 
 ;; Specify ob mermaid path
@@ -134,7 +137,7 @@
 ;; [[KEY-BINDINGS]]
 ;; [ANKI]]
 (map! :leader
-      (:prefix ("l" . "custom")
+      (:prefix ("l" . "flashcards")
        :desc "anki-editor-insert-note"
        "a i" #'anki-editor-insert-note
        :desc "anki-editor-mode"
@@ -146,4 +149,33 @@
        :desc "org-anki-sync-all"
        "o s" #'org-anki-sync-all
        :desc "org-anki-sync-all"
-       "o i" #'org-anki-import-deck))
+       "o i" #'org-anki-import-deck)
+      (:prefix ("v" . "insert-images")
+       :desc "insert image"
+       "p " #'org-download-clipboard))
+
+;; [[DIRED]]
+(after! dired
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+
+;; [[ORG-DOWNLOAD]]
+(require 'org-download)
+
+;; Drag-and-drop to `dired'
+(add-hook 'dired-mode-hook 'org-download-enable)
+(setq-default
+ org-download-method 'directory
+ org-download-image-dir "attachements"
+ org-download-heading-lvl nil)
+
+;; [[ORG-EXPORT]]
+;; Foramt Source Code properly in PDF
+(add-to-list 'org-latex-packages-alist '("" "listings" nil))
+(setq org-latex-src-b t)
+
+(setq org-latex-listings-options '(("breaklines" "true")))
+
+;; [[DEFT]]
+(setq deft-directory "~/org/"
+      deft-extensions '("org", "txt")
+      deft-recursive t)

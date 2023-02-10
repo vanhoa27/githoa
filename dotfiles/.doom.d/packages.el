@@ -61,3 +61,4 @@
 ;; (package! tree-sitter-langs)
 (package! mips-mode)
 (package! dap-mode)
+(package! org-download)
