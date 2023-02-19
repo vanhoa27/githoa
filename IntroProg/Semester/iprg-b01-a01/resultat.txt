@@ -1,0 +1,8 @@
+Die Stadt München hat 1353186 Einwohner.
+Die Stadt Nürnberg hat 505664 Einwohner.
+Die Stadt Augsburg hat 264708 Einwohner.
+Die Stadt Regensburg hat 135520 Einwohner.
+Die Stadt Würzburg hat 133799 Einwohner.
+Die Stadt Ingolstadt hat 125088 Einwohner.
+Die Stadt Fürth hat 114628 Einwohner.
+Die Stadt Erlangen hat 105629 Einwohner.
