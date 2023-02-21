@@ -4,23 +4,29 @@
 
 int MAX_LAENGE = 1000;
 
-void insertion_sort(int array[], int len) {
-	int tempkey; //variables tempkey and counter are declared 
+void insertion_sort(int array[], int len) 
+{
+	int tempkey; 
 	int counter;
-	for (int j=1;j<len; j++) {
-		tempkey = array[j]; // tempkey stores the value of array[j]
-		counter=j-1;  // counter represent the incremented value of j
-		while (counter>-1 && array[counter]>tempkey) { //index has to be shifted by 1 
-			array[counter+1]=array[counter];
-			counter--; //counter incremented
+	for (int j=1; j<len; j++) 
+	{
+		tempkey = array[j]; 
+		counter= j-1;  
+
+		while (counter > -1 && array[counter] > tempkey) 
+		{ 
+			array[counter+1] = array[counter];
+			counter--; 
 		}
-		array[counter+1]=tempkey;
+		array[counter+1] = tempkey;
 	}
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) 
+{
 
-    if (argc < 2){
+    if (argc < 2)
+    {
         printf("Aufruf: %s <Dateiname>\n", argv[0]);
         printf("Beispiel: %s zahlen.txt\n", argv[0]);
         exit(1);

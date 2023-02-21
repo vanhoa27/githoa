@@ -1,9 +1,8 @@
 {
-    "editor.lineNumbers": "relative",
-    "workbench.colorTheme": "One Dark Pro",
-    "oneDarkPro.vivid": true,
-    "editor.fontSize": 15,
-    // "editor.renderLineHighlight": "none"
+    "editor.linenumbers": "on",
+    "onedarkpro.vivid": true,
+    "editor.fontsize": 15,
+    // "editor.renderlinehighlight": "none"
 
     // vim search
     "vim.ignorecase": true,
@@ -18,22 +17,22 @@
     // <leader><leader> j -> jump to start of line  
     // <leader><leader> k -> jump to start of line backwards
 
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
+    "vim.usesystemclipboard": true,
+    "vim.usectrlkeys": true,
     "vim.leader": "<space>",
     "vim.inccommand": "replace", // show replace
     "vim.autoindent": true,
 
-    // VIM Keybindings
-    "vim.normalModeKeyBindings": [
-      // LATEX WORKSHOP:
+    // vim keybindings
+    "vim.normalmodekeybindings": [
+      // latex workshop:
       // compile pdf 
       {
         "before": ["<leader>", "l","l" ],
         "commands": ["latex-workshop.build"],
         "silent": true
       },
-      // Kill compile 
+      // kill compile 
       {
         "before": ["<leader>", "l","k" ],
         "commands": ["latex-workshop.kill"],
@@ -45,37 +44,48 @@
         "commands": ["latex-workshop.view"],
         "silent": true
       },
-      // Clean aux files 
+      // clean aux files 
       {
         "before": ["<leader>", "l","c"],
         "commands": ["latex-workshop.clean"],
         "silent": true
       },
-      // Count words 
+      // count words 
       {
         "before": ["<leader>", "l","w"],
         "commands": ["latex-workshop.wordcount"],
         "silent": true
       },
 
+      // source code action
+      {
+        "before": ["<leader>","c","a"],
+        "commands": ["editor.action.sourceaction"],
+      },
 
-      // Hover
+      // toggle minimap 
+      {
+        "before": ["<leader>","t","m"],
+        "commands": ["editor.action.toggleminimap"],
+      },
+
+      // hover
+      {
+        "before": ["<s-k>"],
+        "commands": ["editor.action.showhover"],
+        "when": ["editertextfocus"]
+      },
+
+      // quit
       {
         "before": ["<leader>","q"],
         "after": [":","q","cr"]
       },
 
-      // Hover
-      {
-        "before": ["<s-k>"],
-        "commands": ["editor.action.showHover"],
-        "when": ["editerTextFocus"]
-      },
-
       // open command palette
       {
         "before": ["<leader>", ":"],
-        "commands": ["workbench.action.showCommands"],
+        "commands": ["workbench.action.showcommands"],
         "silent": true
       },
 
@@ -84,17 +94,17 @@
         "before": ["<leader>", "r", "n"],
         "commands": ["editor.action.rename"],
         "when": [
-          "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+          "editorhasrenameprovider && editortextfocus && !editorreadonly"
         ]
       },
 
       // open terminal
       {
         "before": ["<leader>", "t", "t"],
-        "commands": ["workbench.action.togglePanel"]
+        "commands": ["workbench.action.togglepanel"]
       },
 
-      // Override H and L defaults
+      // override h and l defaults
       {
         "before": ["<s-l>"],
         "after": ["$"]
@@ -113,52 +123,58 @@
       // toggle sidebar visibility
       {
         "before": ["<leader>", "e"],
-        "commands": ["workbench.action.toggleSidebarVisibility"]
+        "commands": ["workbench.action.togglesidebarvisibility"]
       },
 
       // splits
       {
         "before": ["<leader>", "w", "s"],
-        "commands": ["workbench.action.splitEditor"]
+        "commands": ["workbench.action.spliteditor"]
       },
 
       // using to tabs to navigate through windows
       {
         "before": ["<tab>"],
-        "commands": ["workbench.action.nextEditor"]
+        "commands": ["workbench.action.nexteditor"]
       },
       {
-        "before": ["<S-tab>"],
-        "commands": ["workbench.action.previousEditor"]
+        "before": ["<s-tab>"],
+        "commands": ["workbench.action.previouseditor"]
       },
 
       // zenmode
       {
         "before": ["<leader>", "z"],
-        "commands": ["workbench.action.toggleZenMode"]
-      }
+        "commands": ["workbench.action.togglezenmode"]
+      },
+
+      {
+        "before": ["<leader>", "f","f" ],
+        "commands": ["workbench.action.findinfiles"],
+      },
+      
     ],
 
-    // Insertmode bindings
-    "vim.insertModeKeyBindings": [
+    // insertmode bindings
+    "vim.insertmodekeybindings": [
         {
-            "before": ["<C-i>"],
-            "commands":  ["editor.action.indentLines"]
+            "before": ["<c-i>"],
+            "commands":  ["editor.action.indentlines"]
         },
         {
             "before": ["j", "k"],
-            "after":  ["<Esc>"]
+            "after":  ["<esc>"]
         },
         
-        // move to the end of the line in insert Mode
+        // move to the end of the line in insert mode
         {
-            "before": ["<C-l>"],
-            "after":  ["<Esc>","A"]
+            "before": ["<c-l>"],
+            "after":  ["<esc>","a"]
         },
     ],
 
     // lets you stay in visual mode when indenting
-    "vim.visualModeKeyBindings": [
+    "vim.visualmodekeybindings": [
         {
             "before": [">"],
             "after": [">", "g", "v"]
@@ -169,7 +185,7 @@
         },
     ],
     
-    "vim.visualModeKeyBindingsNonRecursive": [
+    "vim.visualmodekeybindingsnonrecursive": [
 
             // paste without overriding clipboard
             {
@@ -186,10 +202,10 @@
         ],
 
         //
-        "vim.operatorPendingModeKeyBindings": [
+        "vim.operatorpendingmodekeybindings": [
             {
                 "before": [
-                    "L"
+                    "l"
                 ],
                 "after": [
                     "$"
@@ -197,7 +213,7 @@
             },
             {
                 "before": [
-                    "H"
+                    "h"
                 ],
                 "after": [
                     "^"
@@ -205,6 +221,9 @@
             }
         ],
         "[jsonc]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-        }
+            "editor.defaultformatter": "esbenp.prettier-vscode"
+        },
+        "editor.inlinesuggest.enabled": true,
+        "editor.minimap.enabled": false,
+        "workbench.colortheme": "one dark pro"
     }

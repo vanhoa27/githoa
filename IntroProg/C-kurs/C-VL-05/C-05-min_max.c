@@ -11,6 +11,8 @@ int main()
     int array[] = {9, 4, 7, 8, 10, 5, 1, 6, 3, 2};
     int len = 10;
     int summe = 0;
+
+    printf("Array: ");
     print_array(array, len);
 
     sum(array, len, &summe);
