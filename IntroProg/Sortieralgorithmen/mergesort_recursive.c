@@ -2,7 +2,7 @@
 
 void megesort_recursive(int *array, int len);
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
     /* code */
     return 0;

@@ -1,10 +1,14 @@
 #include <stdio.h>
+#include "printarray"
 
 void mergesort_iterative(int *array, int len);
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
-    /* code */
+    int array[] = {10, 2, 3, 7, 9, 8};
+    int len = 6;
+    mergesort_iterative(array, len);
+    print_array(array, len);
     return 0;
 }
 
