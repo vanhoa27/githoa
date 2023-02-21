@@ -19,10 +19,9 @@ int main(int argc, char *argv[])
 
 void bubblesort(int *array, int len)
 {
-    int i, j;
-    for(i = 0; i < len - 1; i++)
+    for(int i = 0; i < len - 1; i++)
     {
-        for(j = 0; j < len - i - 1; j++)
+        for(int j = 0; j < len - i - 1; j++)
         {
             if(array[j] > array[j + 1])
             {
