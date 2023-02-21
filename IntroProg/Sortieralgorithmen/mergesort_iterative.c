@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "printarray"
+#include "printarray.c"
 
 void mergesort_iterative(int *array, int len);
 
