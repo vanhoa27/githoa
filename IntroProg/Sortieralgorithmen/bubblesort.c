@@ -1,33 +1,48 @@
 #include <stdio.h>
-#include "printarray.c"
 
-void bubblesort(int *array, int len);
+void print_array(int array[], int len);
+void swap(int *a, int *b);
+void bubblesort(int array[], int len);
 
-int main(int argc, char *argv[])
+int main(int argc, char const *argv[])
 {
-    int array[] = {5, 2, 4, 6, 1, 3};
-    int len = 6;
+    int array[] = { 18, 28 , 38 ,38 ,2};
+    int len = sizeof(array)/sizeof(int);
 
-    printf("Unsorted array: ");
-    print_array(array, len);
-    bubblesort(array, len);
     printf("Sorted array: ");
     print_array(array, len);
 
+    printf("Unsorted array: ");
+    bubblesort(array, len);
+    print_array(array, len);
     return 0;
 }
 
-void bubblesort(int *array, int len)
+void print_array(int array[], int len)
 {
-    for(int i = 0; i < len - 1; i++)
+    for (int i = 0; i < len; i++)
     {
-        for(int j = 0; j < len - i - 1; j++)
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+}
+
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void bubblesort(int array[], int len)
+{
+    for (int j = len; j > 0; j--)
+    {
+        for (int i = 0; i < j - 1; i++)
         {
-            if(array[j] > array[j + 1])
+            if (array[i] > array[i + 1])
             {
-                int temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
+                swap(&array[i + 1], &array[i]);
             }
         }
     }
