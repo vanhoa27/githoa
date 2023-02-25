@@ -1,127 +1,57 @@
 #include <stdio.h>
 
-void bubblesort(int array[], int len);
-void selectionsort(int array[], int len);
-void insertionsort(int array[], int len);
-void print_array(int array[], int len);
+void print_array(int *array, int len);
+void count_init(int input[], int count[], int len, int max);
+void count_sort_write(int count[], int output[], int len, int max);
 
-int getMax(int array[], int len);
-void count_init(int input[], int count[], int max_value, int len);
-void count_sort_write(int count[], int output[], int count_len);
-
-int main()
+int main(int argc, char const *argv[])
 {
-	int array[] = {18 , 2 ,3 , 34 , 9 , 43};
+	int array[] = {18, 29, 3, 23, 5};
 	int len = sizeof(array)/sizeof(int);
-	int max = getMax(array, len);
+	int max = 29;
 	int count[max + 1];
 
 	printf("Unsorted array: ");
 	print_array(array, len);
 
 	printf("Sorted array: ");
-	count_init(array, count, max, len);
-	count_sort_write(count, array, max);
+	count_init(array, count, len, max);
+	count_sort_write(count, array, len, max);
 	print_array(array, len);
-	
+	return 0;
 }
 
-void print_array(int array[], int len)
+void print_array(int *array, int len)
 {
-	for (int i = 0; i < len; i++)
-	{
-		printf("%d ", array[i]);
-	}
-	printf("\n");
+    for(int i = 0; i < len; i++)
+    {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
 }
 
-void bubblesort(int array[], int len)
+void count_init(int input[], int count[], int len, int max)
 {
-	for (int i = len; i > 0; i--)
-	{
-		for (int j = 0; j < i - 1; j++)
-		{
-			if (array[j] > array[j + 1])
-			{
-				int temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-			}
-		}
-	}
-}
-
-void selectionsort(int array[], int len)
-{
-	for (int i = 0; i < len -1; i++)
-	{
-		int min = i;
-		for (int j = i + 1; j < len; j++)
-		{
-			if(array[j] < array[min])
-			{
-				min = j;
-			}
-		}
-		int temp = array[i];
-		array[i] = array[min];
-		array[min] = temp;
-	}
-}
-
-void insertionsort(int array[], int len)
-{
-	for (int i = 0; i < len; i++)
-	{
-		int key = array[i];
-		int j = i - 1;
-
-		while (j >= 0 && array[j] > key)
-		{
-			array[j + 1] = array[j];
-			j--;
-		}
-		array[j + 1] = key;
-	}
-}
-
-int getMax(int array[], int len)
-{
-	int max = array[0];
-	for (int i = 0; i < len; i++)
-	{
-		if (array[i] > max)
-		{
-			max = array[i];
-		}
-	}
-	return max;
-}
-void count_init(int input[], int count[], int max_value, int len)
-{
-	for (int i = 0; i <= max_value; i++)
+	for (int i = 0; i <= max; i++)
 	{
 		count[i] = 0;
 	}
 
 	for (int j = 0; j < len; j++)
 	{
-		count[input[j]]++;
+		++count[input[j]];
 	}
-	
 }
-void count_sort_write(int count[], int output[], int count_len)
+
+void count_sort_write(int count[], int output[], int len, int max)
 {
 	int k = 0;
-	for (int i = 0; i <= count_len; i++)
+	for (int j = 0; j <= max; j++)
 	{
-		for (int j = 0; j < count[i]; ++j)
+		for (int i = 0; i < count[j]; i++)
 		{
-			output[k] = i;
+			output[k] = j;
 			k++;
-		} 
+		}
 	}
 }
-
-
-
