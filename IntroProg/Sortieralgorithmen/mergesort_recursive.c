@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "printarray.c"
+#include "printarray.h"
 
 void merge(int *array, int p, int q, int r);
 void mergesort_recursive(int *array, int p, int r);

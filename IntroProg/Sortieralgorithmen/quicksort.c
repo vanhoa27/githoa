@@ -1,7 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "printarray.c"
 
-void quicksort(int *array, int len);
+void swap(int *x, int *y);
+void quicksort(int array[], int length);
+void quicksort_recursion(int array[], int low, int high);
+int partition(int array[], int low, int high);
 
 int main(int argc, char const *argv[])
 {
@@ -12,39 +17,47 @@ int main(int argc, char const *argv[])
     print_array(array, len);
     quicksort(array, len);
     printf("Sorted array: ");
+    quicksort(array, len);
     print_array(array, len);
 
     return 0;
 }
 
-void quicksort(int *array, int len)
+void swap(int *x, int *y)
 {
-    // implement quicksort
-    int i, j, p, t;
-    if(len < 2)
-    {
-        return;
-    }
-    p = array[len / 2];
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+} 
 
-    for(i = 0, j = len - 1;; i++, j--)
+void quicksort(int array[], int length)
+{
+    quicksort_recursion(array, 0, length - 1);
+}
+
+void quicksort_recursion(int array[], int low, int high)
+{
+    if (low < high)
     {
-        while(array[i] < p)
+        int pivot = partition(array, low, high);
+        quicksort_recursion(array, low, pivot - 1);
+        quicksort_recursion(array, pivot + 1, high);
+    }
+}
+
+int partition(int array[], int low, int high)
+{
+    int pivot = array[high];
+    int i = low - 1;
+
+    for (int j = low; j < high; j++)
+    {
+        if (array[j] < pivot)
         {
             i++;
+            swap(&array[i], &array[j]);
         }
-        while(p < array[j])
-        {
-            j--;
-        }
-        if(i >= j)
-        {
-            break;
-        }
-        t = array[i];
-        array[i] = array[j];
-        array[j] = t;
     }
-    quicksort(array, i);
-    quicksort(array + i, len - i);
+    swap(&array[i + 1], &array[high]);
+    return i + 1;
 }

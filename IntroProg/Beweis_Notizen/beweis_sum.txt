@@ -1,0 +1,70 @@
+
+B(i) = (rest = sum_{k=i+1}^A k)
+
+
+== Versuch 1 – Sanity Check beim ersten Wert ==
+
+B(i) = (rest = sum_{k=i}^A k)
+
+i = A-1
+
+rest = sum_{k=A-1}^A
+rest = A-1 + A
+
+== Sanity Check beim ersten Wert nicht bestanden ==
+
+
+
+== Versuch 2 – Sanity Check beim ersten Wert ==
+
+B(i) = (rest = sum_{k=i+1}^A k)
+
+i = A-1
+
+rest = sum_{k=(A-1)+1}^A k
+rest = sum_{k=A}^A k
+rest = A
+
+== Sanity Check beim ersten Wert bestanden ==
+
+
+== Versuch 2 – Sanity Check beim letzten Wert ==
+
+B(i) = (rest = sum_{k=i+1}^A k)
+
+i = 0
+
+rest = sum_{k=0+1}^A k
+rest = 1 + 2 + ... + A
+
+== Sanity Check beim letzten Wert bestanden ==
+
+
+
+== Beweis ==
+
+==== I.A ====
+i0 = A-1. Wir sind noch vor der Schleife.
+
+rest = A
+
+rest = sum_{k=i0+1}^A
+
+
+==== I.S ====
+
+Wir nehmen B(i0) an.
+B(i0) = (rest = sum_{k=i0+1}^A k)
+
+i0 = i
+rest = sum_{k=i0+1}^A
+
+Nach Durchführung von Zeile 5:
+rest = rest + i0
+rest = sum_{k=i0+1}^A + i0
+rest = sum_{k=i0}^A
+
+rest = sum_{k=(i0-1) + 1 }^A
+
+B(i0-1) wurde bewiesen.
+

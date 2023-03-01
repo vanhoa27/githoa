@@ -1,0 +1,23 @@
+
+=====
+[ -40|  20|  38|   3| -80|   5]
+Länge der Sequenz beträgt 6 Elemente.
+=====
+Die Differenz nach Süden beträgt 158 Meter.
+
+
+
+Verschlüsselt mit Geheimnis 20.
+
+=====
+[ -60|   0|  18| -17|-100| -15]
+Länge der Sequenz beträgt 6 Elemente.
+=====
+
+
+Entschlüsselt mit Geheimnis 20.
+
+=====
+[ -40|  20|  38|   3| -80|   5]
+Länge der Sequenz beträgt 6 Elemente.
+=====

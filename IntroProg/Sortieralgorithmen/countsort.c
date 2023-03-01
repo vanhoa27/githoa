@@ -1,7 +1,6 @@
 #include <stdio.h>
+#include "printarray.h"
 
-
-void print_array(int array[], int len);
 int getMax(int array[], int len);
 void count_init(int input_array[], int count_array[], int max_value, int len);
 void count_sort_write(int a_in[], int a_out[], int len);
@@ -15,22 +14,12 @@ int main()
 
 	printf("Unsorted array: ");
 	print_array(array, len);
-
 	
 	printf("Sorted array: ");
 	count_init(array, count_array, max, len);
 	count_sort_write(count_array, array, max);
 	print_array(array, len);
 
-}
-
-void print_array(int array[], int len)
-{
-	for (int i = 0; i < len; i++)
-	{
-		printf("%d ", array[i]);
-	}
-	printf("\n");
 }
 
 int getMax(int array[], int len)

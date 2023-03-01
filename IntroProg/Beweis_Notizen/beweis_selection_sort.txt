@@ -1,0 +1,171 @@
+
+Äußere Invariante
+
+B(i) = (1 <= k <= i-2 => A[k] <= A[k+1])
+C(i) = (i > 1 => (i <= k <= n => A[i-1] <= A[k]))
+
+Interpretationen:
+- [1,i-1] ist richtig sortiert.
+- i ist kleiner als alle danach
+
+
+
+*************************
+*** Äußere Invariante ***
+*************************
+*************************
+
+=========================
+===== Sanity Checks =====
+=========================
+
+Ausdrucksdesign
+
+===== Sanity Check von B(i) – am Anfang =====
+A[i-1]/A[i]?
+- Vor dem ersten Durchlauf, also anfangs des ersten, i = 1
+B(i) wird dann zu
+(1 <= k <= 1-2 => A[k] <= A[k+1])
+(1 <= k <= -1 => A[k] <= A[k+1])
+(FALSE => A[k] <= A[k+1]),
+was sowieso wahr ist.
+
+Der Ausdruck ist nur wahr wg. eher arbitrarischen Logikregeln, was uns wenig Intuition liefert.
+Wir proben also weiter.
+
+
+- Nach dem ersten Durchlauf, also anfangs des zweiten, i = 2
+B(i) wird dann zu
+(1 <= k <= 2-2 => A[k] <= A[k+1])
+(1 <= k <= 0 => A[k] <= A[k+1])
+(FALSE => A[k] <= A[k+1]),
+was sowieso wahr ist.
+
+Der Ausdruck ist nur wahr wg. eher arbitrarischen Logikregeln, was uns wenig Intuition liefert.
+Wir proben also weiter.
+
+
+- Nach dem zweiten Durchlauf, also anfangs des dritten, i = 3
+B(i) wird dann zu
+(1 <= k <= 3-2 => A[k] <= A[k+1])
+(1 <= k <= 1 => A[k] <= A[k+1])
+was sowieso wahr ist: an der Stelle wurden zwei Minima nach vorne verschoben und sind dann zugeordnet.
+
+Der Ausdruck ist jetzt wahr auf einer intuitiven Art und Weise. Das gibt uns genug Zuversicht.
+
+-> B(i) _scheint_, richtig zu sein. <-
+
+
+
+===== Sanity Check von C(i) – am Anfang =====
+- Vor dem ersten Durchlauf, also anfangs des ersten, i = 1
+C(i) wird dann zu
+(i > 1 => (i <= k <= n => A[i-1] <= A[k]))
+(FALSE => (i <= k <= n => A[i-1] <= A[k])),
+was sowieso wahr ist,
+
+Der Ausdruck ist nur wahr wg. eher arbitrarischen Logikregeln, was uns wenig Intuition liefert.
+Wir proben also weiter.
+
+
+- Nach dem ersten Durchlauf, also anfangs des zweiten, i = 2
+C(i) wird dann zu
+(i > 1 => (i <= k <= n => A[2-1] <= A[k]))
+(TRUE => (i <= k <= n => A[2-1] <= A[k]))
+(i <= k <= n => A[2-1] <= A[k]),
+(i <= k <= n => A[1] <= A[k]),
+was sowieso wahr ist, da A[1] das ausgewählte Minimum ist.
+
+Der Ausdruck ist jetzt wahr auf einer intuitiven Art und Weise. Das gibt uns genug Zuversicht.
+
+-> C(i) _scheint_, richtig zu sein. <-
+
+
+
+===== Sanity Check von B(i) und C(i) – am Ende =====
+- nach dem letzten Durchlauf: i = n
+B(i) und C(i) werden dann zu
+
+(1 <= k <= n-2 => A[k] <= A[k+1])
+(n > 1 => (n <= k <= n => A[n-1] <= A[k]))
+
+(1 <= k <= n-2 => A[k] <= A[k+1])
+(n <= k <= n => A[n-1] <= A[k])
+
+Damit hätten wir unsere Korrektheitsbedingung.
+(1 <= k <= n-1 => A[k] <= A[k+1])
+-> B(i) und C(i) _scheinen_, nützlich zu sein.
+
+
+
+=========================
+===== Sanity Checks =====
+=========================
+
+Jetzt müssen wir B(i) und C(i) beweisen.
+
+
+==== Induktionsanfang (I.A) ====
+i0 = 1
+
+Äußere Invarianete
+1. B(i) gilt (siehe Sanity-Check)
+2. C(i) gilt (siehe Sanity-Check)
+
+
+
+==== Induktionsschluss (I.S) ====
+
+i0 = i
+Wir nehmen B(i0) an:
+
+B(i0) = (1 <= k <= i0-2 => A[k] <= A[k+1])
+C(i0) = (i0 > 1 => (i0 <= k <= n => A[i0-1] <= A[k]))
+
+Wir wollen B(i0+1) beweisen.
+
+
+Der sortierte Teil deckt das Intervall bis i0-1 soweit.
+Der unsortierte Teil deckt das Intervall von i0 abwärts.
+
+Nach einem Durchlauf der inneren Schleife ist das Minimum im nicht sortierten Teil direkt nach dem sortierten Teil, und zwar an der Stelle i0.
+D.h., k >= i0+1 => A[i0] <= A[k]
+Damit haben wir C(i0+1)
+((i0+1) > 1 => ((i0+1) <= k <= n => A[(i0+1)-1] <= A[k]))
+((i0+1) <= k <= n => A[(i0+1)-1] <= A[k])
+((i0+1) <= k <= n => A[i0] <= A[k])
+
+Da das Minimum aus dem vorherig unsortierten Teil gezogen wurde, wo alle Werte größer als im vorherig sortierten Teil sind, ist das Minimum immer noch größer als das letzte Element im vorherig sortierten Teil.
+D.h., A[i0-1] <= A[i0] und A[i0] ist jetzt richtig sortiert.
+Damit haben wir B(i0+1)
+(1 <= k <= (i0+1)-2 => A[k] <= A[k+1])
+(1 <= k <= i0-1 => A[k] <= A[k+1])
+
+
+
+==== Food for thought ====
+Was, wenn die Schleife endlos wäre?
+While True...
+-> Wird nicht in unserem Beweis in Betracht gezogen
+=> Terminierung beweisen
+
+
+
+
+*************************
+*** Äußere Invariante ***
+*************************
+*************************
+
+Innere Invariante
+D(j) = (i <= k <= j => A[min] <= A[k])
+
+D.h., das aktuelle Minimum ist der kleinste Wert soweit, in dem Subintervall bis jetzt durchgegangen auf dem ex-unsortierten Teil.
+
+
+==== Induktionsanfang (I.A) ====
+Ergibt sich aus der initialen Zuweisung.
+
+
+==== Induktionsschluss (I.S) ====
+Das aktuelle Minimum wird nur dann ersetzt, wenn wir an der aktuellen Stelle einen neuen kleinsten Wert gefundenn haben.
