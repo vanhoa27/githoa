@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -10,17 +8,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 keymap("i", "<m-bs>", "<c-w>", opts)
 
--- modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
 -- compile and run code
-keymap("n", "<f6>", ":!gcc % -g -Wall -std=c11 -o %< && ./%< <cr>", opts)
-keymap("n", "<f8>", ":!gcc % -g -Wall -std=c11 -o %< <cr>", opts)
+keymap("n", "<f8>", ":w<cr>:!gcc % -g -Wall -std=c11 -o %< && ./%< <cr>", opts)
+keymap("n", "<f9>", ":!./%<<cr>", opts)
 
 -- better window navigation
 keymap("n", "<c-h>", "<c-w>h", opts)
@@ -40,7 +30,7 @@ keymap("n", "Q", "<nop>", opts) -- unmap Q
 keymap("n", "<leader>bn", ":bn<cr>", opts) -- go to next buffer
 keymap("n", "<leader>bp", ":bp<cr>", opts) -- go to previous buffer
 keymap("n", "<leader>bb", ":bp<cr>", opts) -- go to previous buffer
-keymap("n", "<leader>bw", ":bw<cr>", opts) -- wipe out current buffer
+keymap("n", "<leader>bw", ":bw!<cr>", opts) -- wipe out current buffer
 
 -- tabs
 keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and tabnew are similiar
@@ -51,8 +41,8 @@ keymap("n", "<m-h>", "<cmd>BufferLineCyclePrev<cr>", opts) --scroll backward
 -- paste/hightlight/yank
 keymap("n", "x", '"_x', opts) -- do not yank with x
 keymap("n", "X", '"_X', opts) -- do not yank with x
-keymap("n", "<s-s>", '"_S', opts) -- do not yank with 
-keymap("n", "db", 'vb"_d', opts) -- delete a word backwards (includes selected char)
+
+-- keymap("n", "db", 'vb"_d', opts) -- delete a word backwards (includes selected char)
 keymap("n", "<leader>Y", '$y', opts) -- will work like D but for yank
 keymap("v", "<leader>y", '"+y', opts) -- same but in visual_mode
 keymap("n", "<leader>p", '"+p', opts)
@@ -68,14 +58,13 @@ keymap("n", "<leader>wo", "<c-w><c-o>", opts) -- close all splits
 
 -- buffers
 keymap("n", "<leader>fb", ":telescope buffers<cr>", opts) -- lists open buffers
-keymap("n", "<leader>bk", ":bw<cr>", opts) -- kills current buffer
+keymap("n", "<leader>bk", ":bw!<cr>", opts) -- kills current buffer
 
 -- open explorer
 keymap("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", opts) --netrw disabled, if enabled: <:Lex 25>
 
 -- quit and save like a norme
 keymap("n", "<c-q>", ":q<Cr>", opts) -- Ctrl q to exit
-keymap("n", "<leader>q", ":q<Cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts) -- ctrl s to save
 
 --increment
