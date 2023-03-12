@@ -8,9 +8,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 keymap("i", "<m-bs>", "<c-w>", opts)
 
--- compile and run code
-keymap("n", "<f8>", ":w<cr>:!gcc % -g -Wall -std=c11 -o %< && ./%< <cr>", opts)
-keymap("n", "<f9>", ":!./%<<cr>", opts)
 
 -- better window navigation
 keymap("n", "<c-h>", "<c-w>h", opts)
@@ -30,7 +27,7 @@ keymap("n", "Q", "<nop>", opts) -- unmap Q
 keymap("n", "<leader>bn", ":bn<cr>", opts) -- go to next buffer
 keymap("n", "<leader>bp", ":bp<cr>", opts) -- go to previous buffer
 keymap("n", "<leader>bb", ":bp<cr>", opts) -- go to previous buffer
-keymap("n", "<leader>bw", ":bw!<cr>", opts) -- wipe out current buffer
+keymap("n", "<leader>bw", ":bw<cr>", opts) -- wipe out current buffer
 
 -- tabs
 keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and tabnew are similiar
@@ -50,7 +47,7 @@ keymap("x", "<leader>p", '"+p', opts)
 keymap("n", "<leader>a", "gg<s-v>g", opts) --higlight all
 keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
 
--- split window 
+-- split window
 keymap("n", "<leader>wv", ":vsplit<cr>", opts) --vertical split
 keymap("n", "<leader>ws", ":split<cr>", opts) --horizontal split
 keymap("n", "<leader>wc", ":close<cr>", opts) -- close current split
@@ -65,7 +62,6 @@ keymap("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", opts) --netrw disabled, 
 
 -- quit and save like a norme
 keymap("n", "<c-q>", ":q<Cr>", opts) -- Ctrl q to exit
-keymap("n", "<c-s>", ":w<cr>", opts) -- ctrl s to save
 
 --increment
 keymap("n", "+", "<c-a>", opts) --increment
@@ -102,3 +98,7 @@ keymap("n", "<leader>gs", ":Git<cr>", opts)
 -- keymap("i", "<c-L>", "<c-g>u<Esc>[s1z=`]a<c-g>u", opts)
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 keymap("n", "<leader>mp", ":MarkdownPreviewToggle<cr>", opts)
+
+-- [[QUICKFIX MENU]]
+keymap("n", "<C-n>", "<cmd>cnext<CR>zz", opts)
+keymap("n", "<C-p>", "<cmd>cprev<CR>zz", opts)

@@ -107,7 +107,9 @@ vim.g_vimtex_quickfix_mode=0
 
 -- Make 
 
--- vim.cmd [[
+-- vim.api.nvim_create_autocmd("localmake", {
 --     autocmd FileType c setlocal makeprg=gcc\ %\ -g\ -Wall\ -std=c11\ -o\ %< 
 --     autocmd FileType cpp setlocal makeprg=g\+\+\ %\ \-g\ \-std\=c\+\+17\ \-Wall
--- ]]
+-- })
+
+

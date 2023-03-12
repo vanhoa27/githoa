@@ -1,0 +1,13 @@
+
+"better navigation movements
+nnoremap <c-d> <c-d>zz
+nnoremap <c-u> <c-u>zz
+
+"delete a whole world in insert mode like normal
+inoremap <C-h> <C-w>
+
+nnoremap <space>bn :bnext<CR>
+nnoremap <space>bp :bprevious<CR>
+
+"wipe out current buffer
+nnoremap <space>bw :bdelete<CR>
