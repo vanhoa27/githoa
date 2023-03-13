@@ -3,19 +3,19 @@ local g = vim.g
 
 -- [[TRANSPARENT BACKGROUND]]
 require("rose-pine").setup({
-	disable_background = true,
+	disable_background = false,
 })
 require("tokyonight").setup({
-	transparent = true,
+	transparent = false,
 })
 require("dracula").setup({
-	transparent_bg = true,
+	transparent_bg = false,
 })
 require("catppuccin").setup({
-	transparent_background = true,
+	transparent_background = false,
 })
 require("gruvbox").setup({
-	transparent_mode = true,
+	transparent_mode = false,
 })
 
 -- [[BAGROUND]]
@@ -25,11 +25,11 @@ function ColorMyPencils(color)
 	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
-	vim.api.nvim_set_hl(0, "Normalfloat", { bg = "None" })
+	-- vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
+	-- vim.api.nvim_set_hl(0, "Normalfloat", { bg = "None" })
 end
 
-ColorMyPencils("tokyonight-moon")
+ColorMyPencils("oxocarbon")
 
 g.italic_comments = true -- italic comments(Default: true)
 g.italic_keywords = true -- italic keywords(Default: true)

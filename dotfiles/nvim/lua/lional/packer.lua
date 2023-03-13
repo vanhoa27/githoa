@@ -56,23 +56,27 @@ return require("packer").startup(function(use)
 
     -- colorschemes
     use("folke/tokyonight.nvim")
+    use("projekt0n/github-nvim-theme")
     use("Mofiqul/dracula.nvim")
     use("ellisonleao/gruvbox.nvim")
+    use {'nyoom-engineering/oxocarbon.nvim'}
     use("catppuccin/nvim")
     use("lukas-reineke/onedark.nvim")
     use("sainnhe/sonokai")
     use("rose-pine/neovim")
 
-    -- autocompletion (RIP Conqueror of Completion)
     use("hrsh7th/nvim-cmp") -- completion plugin
     use("hrsh7th/cmp-buffer") -- source for text in buffer
     use("hrsh7th/cmp-path") -- source for file system paths
     use("windwp/nvim-autopairs") --automatically closes brackets
 
     -- commentary
-    use("tpope/vim-commentary") --For Commenting gcc & gc
-    use("tpope/vim-surround") --Surrounding ysw)
-    use("tpope/vim-repeat") -- vim repeat
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 
     -- snippets
     use({ "L3MON4D3/LuaSnip" }) -- snippet engine
@@ -137,7 +141,7 @@ return require("packer").startup(function(use)
     use("folke/twilight.nvim")
 
     -- indent-blankline
-    use("lukas-reineke/indent-blankline.nvim")
+    -- use("lukas-reineke/indent-blankline.nvim")
 
     -- Note taking
     use("lervag/vimtex")

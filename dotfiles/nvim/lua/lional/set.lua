@@ -11,7 +11,7 @@ opt.conceallevel = 2 -- will conceal concealable text
 opt.concealcursor = 'nc'
 opt.mouse = "a"
 opt.signcolumn = "yes"
-opt.scrolloff = 8
+opt.scrolloff = 2
 opt.sidescrolloff = 0
 opt.fillchars = { eob = "~" }
 opt.colorcolumn = "0"
@@ -76,8 +76,8 @@ opt.path:append({ "**" }) -- Finding Files -> search down into subfolder
 
 -- [ [ COMPLETION ] ]
 opt.wildignore:append({ "*/.git/*", "*/node_modules/*" }) --list of patterns to ignore files for file name completion
-opt.wildmenu = true --command-line completion shows a list of matches (not very useful with lsp on)
-opt.wildignorecase = true --ignore case when completing files names
+opt.wildmenu = true 
+opt.wildignorecase = true 
 opt.complete:append({ ".", "w", "b", "u", "t", "kspell" }) -- prioritize completion
 opt.hidden = true
 opt.omnifunc ="syntaxcomplete#Complete"
@@ -104,3 +104,12 @@ vim.api.nvim_create_autocmd('FileType',{
 -- Vimtex
 vim.g_vimtex_view_method = 'zathura'
 vim.g_vimtex_quickfix_mode=0
+
+-- Make 
+
+-- vim.api.nvim_create_autocmd("localmake", {
+--     autocmd FileType c setlocal makeprg=gcc\ %\ -g\ -Wall\ -std=c11\ -o\ %< 
+--     autocmd FileType cpp setlocal makeprg=g\+\+\ %\ \-g\ \-std\=c\+\+17\ \-Wall
+-- })
+
+

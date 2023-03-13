@@ -6,12 +6,12 @@ end
 zen.setup({
 	window = {
 		backdrop = 0.95,
-		width = 90,
+		width = 120,
 		height = 1,
 		options = {
 			signcolumn = "no", -- disable signcolumn
-			number = true, -- disable number column
-			relativenumber = true, -- disable relative numbers
+			number = false, -- disable number column
+			relativenumber = false, -- disable relative numbers
 			cursorline = false, -- disable cursorline
 			-- cursorcolumn = false, -- disable cursor column
 			-- foldcolumn = "0", -- disable fold column
@@ -27,9 +27,9 @@ zen.setup({
 		twilight = { enabled = true },
 		gitsigns = { enabled = false },
 		tmux = { enabled = false },
-		kitty = {
-			enabled = false,
-			font = "+4",
+		alacritty = {
+			enabled = true,
+			font = "13",
 		},
 	},
 	on_open = function(win) end,
