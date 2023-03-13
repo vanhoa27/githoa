@@ -27,14 +27,12 @@ void swap(int *a, int *b)
 
 void bubblesort(int array[], int len)
 {
-    for (int j = len; j > 0; j--)
+    for (int i = len; i > 0; --i)
     {
-        for (int i = 0; i < j - 1; i++)
+        for (int j = 0; j < len - 1; j++)
         {
-            if (array[i] > array[i + 1])
-            {
-                swap(&array[i + 1], &array[i]);
-            }
+            if (array[j] > array[j + 1])
+                swap(&array[j], &array[j + 1]);
         }
     }
 }
