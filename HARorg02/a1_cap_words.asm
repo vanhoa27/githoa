@@ -55,4 +55,3 @@ test_string: .asciiz "Nur aNfangsbuchstaben ZAEhlen als gROss geschrieben"
 cap_words:
 
 	jr $ra
-	
