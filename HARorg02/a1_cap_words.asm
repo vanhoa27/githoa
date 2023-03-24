@@ -48,7 +48,7 @@ main:
 	
 .data
 
-# test_string: .asciiz "Nur aNfangsbuchstaben ZAEhlen als gROss geschrieben" 
+test_string: .asciiz "Nur aNfangsbuchstaben ZAEhlen als gROss geschrieben" 
 
 # test_string: .asciiz "hier sind nur Substantive gross: Affe, Banane, Clown, denken"
 # test_string: .asciiz "eins 1, Zwei 2, Drei 3, A, B, C"
@@ -74,34 +74,34 @@ while:
 	beq $t0, $zero, endwhile  # if (string[i] == '\0'), goto endwhile
 
 	beq $s1, $zero, if    # if (i == 0), goto if
-	lb $t1, -1($a0)       # lade string[i-1] 
+	lb $t1, -1($a0)       # $t1 = string[i-1] 
 	bne $t1, ' ', else    # if (string[i-1] != ' '), goto else 
 
 if:	
 	blt  $t0, 'A', else_if # if (string[i] < 'Z'), goto else_if
 	bgt  $t0, 'Z', else_if # if (string[i] > 'A'), goto else_if
-	addi $s0, $s0, 1      # increment cap_count
+	addi $s0, $s0, 1      # cap_count++
 
-	j next                # goto next iteration
+	j else                # goto else 
 
 else_if:
-	bge $t0, 'A' next     # if (string[i] >= 'Z'), goto next
-	blt $t0, 'Z' next     # if (string[i] < 'A'), goto next
+	bge $t0, 'A' else     # if (string[i] >= 'Z'), goto else
+	blt $t0, 'Z' else     # if (string[i] < 'A'), goto else
 	addi $s0, $s0, 1      # increment cap_count
 
-	j next                # goto next iteration
+	j else                # goto else
 
 else:
-	j next                # goto next iteration
-
-next:
-	addi $a0, $a0, 1      # string pointer inkrementieren 
-	addi $s1, $s1, 1      # i++ 
+	addi $a0, $a0, 1      # string pointer inkrementieren (string[i] = string[i+1])
+  	addi $s1, $s1, 1      # i++ 
+  	
 	j while               # goto while
 
 endwhile:
 	add $v0, $s0, $zero   # return cap_count
+
 	lw $s0, 0($sp)        # cap_count ($s0) widerherstellen 
 	lw $s1, 4($sp)        # i ($s1) widerherstellen
 	addi $sp, $sp, 8      # stackpointer wiederherstellen 
+
 	jr $ra                # Ruecksprung zu main 

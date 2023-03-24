@@ -115,5 +115,16 @@ test_perm: .byte 0, 1, 2, 3
 .text
 
 permnext:
-	
+	addi $sp, $sp, -20 # reserviere Platz auf dem Stack
+	sw $ra, 16($sp)    # speichere $ra auf dem Stack
+	sw $s0, 12($sp)    # speichere  $s0 (i)
+	sw $s1, 8($sp)     # speichere $s1 (j) 
+	sw $s2, 4($sp)     # speichere $s2 (k) 
+	sw $s3, 0($sp)     # speichere $s3 (l) 
+
+	addi $s0, $a1, -2  # i = length - 2 
+	addi $s1, $zero, 0 # j = 0
+	addi $s2, $zero, 0 # k = 0
+	addi $s3, $zero, 0 # l = 0
+
 	jr $ra
