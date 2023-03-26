@@ -48,7 +48,7 @@ main:
 	
 .data
 
-test_string: .asciiz "Nur aNfangsbuchstaben ZAEhlen als gROss geschrieben" 
+# test_string: .asciiz "Nur aNfangsbuchstaben ZAEhlen als gROss geschrieben" 
 
 # test_string: .asciiz "hier sind nur Substantive gross: Affe, Banane, Clown, denken"
 # test_string: .asciiz "eins 1, Zwei 2, Drei 3, A, B, C"
