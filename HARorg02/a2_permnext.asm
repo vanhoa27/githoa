@@ -102,7 +102,7 @@ swap:
 
 	# Vorname: Van Hoa
 	# Nachname: Nguyen
-	# Matrikelnummer: 483979
+	# Matrikelnummer: 0483979
 	
 	#+ Loesungsabschnitt
 	#+ -----------------
@@ -134,16 +134,11 @@ permnext:
 	# Schritt 1: Finde groesste k sodass perm[k] < perm[k + 1]
 	while_1:
 		addi $t0, $s2, 0        # $t0 = k
-		addi $t1, $s2, 1 	    # $t1 = k + 1
 
 		add  $t0, $t0, $a0      # $t0 = &perm[k]
-		add  $t1, $t1, $a0      # $t1 = &perm[k + 1]
-		
-		sll  $t0, $t0, 0        # $t0 = k*1 (kein offset, da byte array)
-		sll  $t1, $t1, 0        # $t1 = (k + 1)*1 (kein offset)
 		
 		lb $t2, 0($t0)          # $t2 = permk[k]
-		lb $t3, 0($t1)          # $t3 = permk[k + 1]
+		lb $t3, 1($t0)          # $t3 = permk[k + 1]
 		
 		blt $t2, $t3, endwhile_1  # if (perm[k] < perm[k + 1]) goto endwhile_1
 		
@@ -151,20 +146,16 @@ permnext:
 		
 		j while_1               # goto while_1
 		
-	endwhile_1:
-		# ble $s2, $zero, while_1    # if (k <= 0) goto while_1 
+	endwhile_1: 
 		blt $s2, $zero, return_0   # if (k < 0) goto end
 		
-	# Schirtte 2: Finde groesste l sodass perm[k] < perm[l]
+	# Schirtte 2: Finde das groesste l sodass perm[k] < perm[l]
 	while_2:
 		addi $t0, $s2, 0    # $t0 = k
 		addi $t1, $s3, 0    # $t1 = l
 		
 		add  $t0, $t0, $a0  # $t0 = &perm[k]
 		add  $t1, $t1, $a0  # $t1 = &perm[l]
-		
-		sll  $t0, $t0, 0    # $t0 = k*1 (kein offset)
-		sll  $t1, $t1, 0    # $t1 = l*1 (kein offset)
 		
 		lb  $t2, 0($t0)    # $t2 = permk[k]
 		lb  $t3, 0($t1)    # $t3 = perm[l]
@@ -178,15 +169,15 @@ permnext:
 	endwhile_2:
 		
 	# Schritt 3: Vertausche perm[k] und perm[l]
-	add $a0, $zero, $s4  # $a0 = perm
-	add $a1, $zero, $s2  # $a1 = k
-	add $a2, $zero, $s3  # $a2 = l
+	add $a0, $zero, $s4    # $a0 = perm
+	add $a1, $zero, $s2    # $a1 = k
+	add $a2, $zero, $s3    # $a2 = l
 	
 	jal swap
 		
-	# Schritt 4: Drehe die Reihenfolge perm[k + 1] bis perm[length - 1]
-	addi $s0, $s2, 1   # i = k + 1
-	addi $s1, $s5, -1  # j = length - 1
+	# Schritt 4: Drehe die Reihenfolge perm[k + 1] bis perm[length - 1] um
+	addi $s0, $s2, 1         # i = k + 1
+	addi $s1, $s5, -1        # j = length - 1
 	reverse:
 		bge $s0, $s1, return_1  # if (i >= j) goto end
 		
@@ -202,11 +193,11 @@ permnext:
 		j reverse
 			
 	return_0:
-		addi $v0, $zero, 0      # return 0 
+		addi $v0, $zero, 0   # return 0 
 		j end
 
 	return_1:
-		addi $v0, $zero, 1      # return 1
+		addi $v0, $zero, 1   # return 1
 		j end
 		
 	end:
@@ -219,6 +210,7 @@ permnext:
 	lw   $s4, 4($sp)    # $s4 (perm) widerherstellen
 	lw   $s5, 0($sp)    # $s5 (length) widerherstellen
 	
-	addi $sp, $sp, 28   # Stack widerherstellen
+	addi $sp, $sp, 28   # stackpointer widerherstellen
 	
-	jr $ra
+	jr $ra              # Ruckkehr zum Aufrufer 
+
