@@ -193,12 +193,12 @@ permnext:
 		j reverse
 			
 	return_0:
-		addi $v0, $zero, 0   # return 0 
-		j end
+	 	addi $v0, $zero, 0   # return 0 
+	 	j end
 
 	return_1:
-		addi $v0, $zero, 1   # return 1
-		j end
+	 	addi $v0, $zero, 1   # return 1
+	 	j end
 		
 	end:
 	

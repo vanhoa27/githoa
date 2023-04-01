@@ -22,7 +22,7 @@ int permnext(unsigned char* perm, int length);
 int main() {
     printf("Das Programm ruft die Funktion permnext auf und zeigt Iterationsnummer und die neu gebildete Permutation an.\n");
 
-    unsigned char test_perm[] = {0, 1, 2, 3, 4};
+    unsigned char test_perm[] = {0, 1, 2, 3};
     int test_perm_length = sizeof(test_perm) / sizeof(test_perm[0]);
 
     int i = 0;
