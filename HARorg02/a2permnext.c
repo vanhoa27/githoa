@@ -43,6 +43,76 @@ int main() {
     return 0;
 }
 
+<<<<<<< HEAD
+// int permnext(unsigned char* perm, int length) {
+// 	// Save to stack
+//     int i = length - 2;
+// 	int j = 0;
+// 	int k = 0;
+// 	int l = 0;
+
+//     while (i >= 0 && perm[i] >= perm[i + 1]) {
+//         i--;
+//     }
+
+//     if (i < 0) {
+//         return 0;
+//     }
+
+//     j = length - 1;
+
+//     while (perm[i] >= perm[j]) {
+//         j--;
+//     }
+
+//     swap(perm, i, j);
+
+//     k = i + 1;
+//     l = length - 1;
+
+//     while (k < l) {
+//         swap(perm, k, l);
+//         k++;
+//         l--;
+//     }
+//     return 1;
+// }
+
+int permnext(unsigned char* perm, int length) {
+    int i = length - 2;
+    int j = 0;
+    int k = 0;
+    int l = 0;
+
+    // Find the largest i such that perm[i] < perm[i+1]
+    while (i >= 0 && perm[i] >= perm[i + 1]) {
+        i--;
+    }
+
+    // If no such i exists, then the permutation is the last one
+    if (i < 0) {
+        return 0;
+    }
+
+    // Find the largest j such that perm[i] < perm[j]
+    j = length - 1;
+    while (perm[i] >= perm[j]) {
+        j--;
+    }
+
+    // Swap perm[i] and perm[j]
+    swap(perm, i, j);
+
+    // Reverse the sequence from i+1 to the end of the sequence
+    k = i + 1;
+    l = length - 1;
+    while (k < l) {
+        swap(perm, k, l);
+        k++;
+        l--;
+    }
+
+=======
 int permnext(unsigned char *perm, int length) {
     int k = length - 2; // largest index k such that perm[k] < perm[k+1]
     int l = length - 1; // largest index l such that perm[k] < perm[l]
@@ -76,5 +146,6 @@ int permnext(unsigned char *perm, int length) {
     }
 
     // We have generated the next permutation successfully
+>>>>>>> 7f286bdecc5fc450283882f3f736966c2e388452
     return 1;
 }

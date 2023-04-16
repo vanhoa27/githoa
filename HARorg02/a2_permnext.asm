@@ -115,6 +115,85 @@ test_perm: .byte 0, 1, 2, 3
 .text
 
 permnext:
+<<<<<<< HEAD
+	addi $sp, $sp, -20   # reserve space on the stack
+
+	sw $ra, 16($sp)      # store $ra on the stack
+	sw $s0, 12($sp)      # store $s0 (i)
+	sw $s1, 8($sp)       # store $s1 (j)
+	sw $s2, 4($sp)       # store $s2 (k)
+	sw $s3, 0($sp)       # store $s3 (l)
+
+	addi $s0, $a1, -2    # i = length - 2
+	addi $s1, $zero, 0   # j = 0
+	addi $s2, $zero, 0   # k = 0
+	addi $s3, $zero, 0   # l = 0
+
+while:
+	move $t0, $s0         # $t0 = i
+	sll $t0, $t0, 2       # $t0 = 4 * i
+	add $t0, $t0, $a0     # $t0 = &perm[i]
+
+	lw $t1, 0($t0)        # $t1 = perm[i]
+	lw $t2, 4($t0)        # $t2 = perm[i+1]
+
+	bge $t1, $t2, if      # if (perm[i] >= perm[i+1]) goto if
+
+	addi $s1, $a1, -1     # j = length - 1
+
+if:
+	addi $s0, $s0, -1     # i--
+	bge $s0, $zero, while # if (i >= 0) goto while
+	addi $v0, $zero, 0    # return 0
+	j end
+
+while2:
+	sll $t1, $s0, 2       # $t1 = 4 * i
+	add $t1, $t1, $a0     # $t1 = &perm[i]
+	lw $t2, 0($t1)        # $t2 = perm[i]
+
+	sll $t3, $s1, 2       # $t3 = 4 * j
+	add $t3, $t3, $a0     # $t3 = &perm[j]
+	lw $t4, 0($t3)        # $t4 = perm[j]
+
+	bge $t2, $t4, endwhile2     # if (perm[i] >= perm[j]) goto if
+
+	j while2
+
+if2:
+	addi $s1, $s1, -1      # j--
+	bge $s1, $zero, while2 # if (j >= 0) goto while2
+
+endwhile2:
+	addi $a0, $a0, 0      # $a0 = perm[]
+	addi $a1, $s0, 0      # $a1 = i
+	addi $a2, $s1, 0      # $a2 = j
+	jal swap
+
+	addi $s2, $s0, 1      # k = i + 1
+	addi $s3, $a1, -1     # l = length - 1
+
+	reverse:
+		jal swap
+		addi $s2, $s2, 1   # k++
+		addi $s3, $s3, -1  # l--
+		
+		addi $v0, $zero, 1 # return 1
+		blt $s2, $s3, end  # if (k >= l) goto end 
+
+		j reverse          # goto reverse
+
+	end:
+		lw $ra, 16($sp)    # $ra widerherstellen 
+		lw $s0, 12($sp)    # $s0 (i) widerherstellen
+		lw $s1, 8($sp)     # $s1 (j) widerherstellen
+		lw $s2, 4($sp)     # $s2 (k) widerherstellen
+		lw $s3, 0($sp)     # $s3 (l) widerherstellen
+
+		addi $sp, $sp, 20  # Stackpointer wiederherstellen
+
+	jr $ra          # Rueckkehr zum Aufrufer
+=======
 	addi $sp, $sp, -28   # Reserviere Platz auf den Stack
 	
 	sw   $ra, 24($sp)    # sichere $ra (Rueckkehraddesse) auf dem Stack
@@ -214,3 +293,4 @@ permnext:
 	
 	jr $ra              # Ruckkehr zum Aufrufer 
 
+>>>>>>> 7f286bdecc5fc450283882f3f736966c2e388452
