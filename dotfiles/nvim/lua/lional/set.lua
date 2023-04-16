@@ -76,8 +76,8 @@ opt.path:append({ "**" }) -- Finding Files -> search down into subfolder
 
 -- [ [ COMPLETION ] ]
 opt.wildignore:append({ "*/.git/*", "*/node_modules/*" }) --list of patterns to ignore files for file name completion
-opt.wildmenu = true 
-opt.wildignorecase = true 
+opt.wildmenu = true
+opt.wildignorecase = true
 opt.complete:append({ ".", "w", "b", "u", "t", "kspell" }) -- prioritize completion
 opt.hidden = true
 opt.omnifunc ="syntaxcomplete#Complete"
@@ -89,7 +89,7 @@ opt.splitbelow = true
 -- [ [ QUALITY OF LIFE CHANGES ] ]
 opt.updatetime = 50
 opt.cmdheight = 1
-opt.iskeyword:append("-") --considers dash ("-") as part of word
+-- opt.iskeyword:append("-") --considers dash ("-") as part of word
 
 -- Mapleader
 g.mapleadr = " "

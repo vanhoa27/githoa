@@ -30,6 +30,7 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils("oxocarbon")
+-- oxocarbon
 
 g.italic_comments = true -- italic comments(Default: true)
 g.italic_keywords = true -- italic keywords(Default: true)

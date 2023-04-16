@@ -39,26 +39,26 @@ cmp.setup({
 		-- ["<tab>"] = cmp.mapping.select_next_item(), -- next suggestion
         -- ["<S-tab>"] = cmp.mapping.select_prev_item(), -- previous suggestion
 
-		["<Tab>"] = cmp.mapping(function(fallback)
-			if luasnip.expandable() then
-				luasnip.expand()
-			elseif cmp.visible() then
-				cmp.select_next_item()
-			elseif luasnip.jumpable(1) then
-				luasnip.jump(1)
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
-		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
+	-- 	["<Tab>"] = cmp.mapping(function(fallback)
+	-- 		if luasnip.expandable() then
+	-- 			luasnip.expand()
+	-- 		elseif cmp.visible() then
+	-- 			cmp.select_next_item()
+	-- 		elseif luasnip.jumpable(1) then
+	-- 			luasnip.jump(1)
+	-- 		else
+	-- 			fallback()
+	-- 		end
+	-- 	end, { "i", "s" }),
+	-- 	["<S-Tab>"] = cmp.mapping(function(fallback)
+	-- 		if cmp.visible() then
+	-- 			cmp.select_prev_item()
+	-- 		elseif luasnip.jumpable(-1) then
+	-- 			luasnip.jump(-1)
+	-- 		else
+	-- 			fallback()
+	-- 		end
+	-- 	end, { "i", "s" }),
 	}),
 	-- sources for autocompletion
 	sources = cmp.config.sources({
