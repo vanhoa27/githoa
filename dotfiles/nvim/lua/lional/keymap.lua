@@ -8,17 +8,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 keymap("i", "<m-bs>", "<c-w>", opts)
 
-
--- better window navigation
-keymap("n", "<c-h>", "<c-w>h", opts)
-keymap("n", "<c-j>", "<c-w>j", opts)
-keymap("n", "<c-k>", "<c-w>k", opts)
-keymap("n", "<c-l>", "<c-w>l", opts)
-
--- navigation tweaks (overriding defaults)
--- use capital L or there will be a delay
 keymap("i", "<c-L>", "<Esc>A", opts) -- backspace and <c-h> delete a whole word
-keymap("i", "<c-H>", "<c-w>", opts) -- backspace and <c-h> delete a whole word
+keymap("i", "<c-h>", "<c-w>", opts) -- backspace and <c-h> delete a whole word
 keymap("n", "<s-l>", "$", opts)
 keymap("n", "<s-h>", "^", opts)
 keymap("n", "Q", "<nop>", opts) -- unmap Q
@@ -32,8 +23,6 @@ keymap("n", "<leader>bw", ":bw<cr>", opts) -- wipe out current buffer
 -- tabs
 keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and tabnew are similiar
 keymap("n", "<leader>tc", ":tabclose<cr>", opts) --close current tab
-keymap("n", "<m-l>", "<cmd>BufferLineCycleNext<cr>", opts) --scroll forward
-keymap("n", "<m-h>", "<cmd>BufferLineCyclePrev<cr>", opts) --scroll backward
 
 -- paste/hightlight/yank
 keymap("n", "x", '"_x', opts) -- do not yank with x
@@ -95,10 +84,10 @@ keymap("n", "J", "mzJ`z", opts)
 -- [[PLUGINS]]
 keymap("n", "<leader>u", ":UndotreeToggle<cr>", opts)
 keymap("n", "<leader>gs", ":Git<cr>", opts)
--- keymap("i", "<c-L>", "<c-g>u<Esc>[s1z=`]a<c-g>u", opts)
-vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 keymap("n", "<leader>mp", ":MarkdownPreviewToggle<cr>", opts)
 
 -- [[QUICKFIX MENU]]
 keymap("n", "<C-n>", "<cmd>cnext<CR>zz", opts)
 keymap("n", "<C-p>", "<cmd>cprev<CR>zz", opts)
+
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)

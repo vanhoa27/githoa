@@ -1,5 +1,5 @@
 -- use to enable disable filetypes
-vim.g.copilot_filetypes = {C = true, java = true, python = true}
+vim.g.copilot_filetypes = { ["*"]= true, java = true, python = true, C = true}
 
 -- copilot tabmap disable
 -- vim.g.copilot_no_tab_map = true
@@ -11,4 +11,5 @@ vim.g.copilot_filetypes = {C = true, java = true, python = true}
 -- <M-[>
 -- Dismiss current suggestion 
 -- <C-]>
+
 

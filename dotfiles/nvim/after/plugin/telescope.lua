@@ -13,6 +13,7 @@ end
 local themes = require("telescope.themes")
 
 require('telescope').load_extension('vimwiki') -- Load vimwiki plugin
+require'telescope'.load_extension('projects')
 
 telescope.load_extension("file_browser")
 
@@ -144,6 +145,9 @@ end)
 vim.keymap.set("n", "<leader>fk", function()
 	builtin.keymaps()
 end)
+vim.keymap.set("n", "<leader>fj", function()
+	builtin.jumplist()
+end)
 vim.keymap.set("n", "<leader>fT", function() -- filetype
 	builtin.filetypes()
 end)
@@ -162,9 +166,15 @@ end)
 
 vim.keymap.set("n","<leader>fw",":Telescope vimwiki<cr>")
 
--- -- vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- find files
--- -- vim.keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- find word
--- -- vim.keymap.set("n", "<leader>fb", builtin.buffers, {}) -- look for current open buffers
--- -- vim.keymap.set("n", "<leader>fh", builtin.help_tags, {}) -- search for help
--- -- vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {}) -- search for recently used files
--- -- vim.keymap.set("n", "<leader>fs", ":Telescope file_browser<CR>") -- browse through files in your current directory
+vim.keymap.set("n", "<leader>fP", ":Telescope projects<cr>")
+
+-- lua
+require("nvim-tree").setup({
+  sync_root_with_cwd = true,
+  respect_buf_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true
+  },
+})
+

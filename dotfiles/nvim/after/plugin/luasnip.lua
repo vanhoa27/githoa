@@ -26,14 +26,14 @@ ls.config.set_config({
 	updateevents = "TextChanged, TextChangedI",
 
     -- expand or jump snippet (try out jk)
-    vim.keymap.set({"i", "s"}, "<c-f>", function()
+    vim.keymap.set({"i", "s"}, "<C-f>", function()
         if ls.expand_or_jumpable() then
             ls.expand_or_jump()
         end
     end, { silent = true}),
 
     -- jump backwards
-    vim.keymap.set({"i", "s"}, "<c-v>", function()
+    vim.keymap.set({"i", "s"}, "<C-v>", function()
         if ls.jumpable(-1) then
             ls.jump(-1)
         end

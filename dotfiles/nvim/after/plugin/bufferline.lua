@@ -38,5 +38,3 @@ bufferline.setup({
 	-- },
 })
 
--- vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", {}) --scroll forward
--- vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {}) --scroll backward

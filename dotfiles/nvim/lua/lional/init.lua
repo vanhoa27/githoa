@@ -1,3 +1,3 @@
 require("lional.keymap")
 require("lional.set")
-require("lional.packer")
+require("lional.plugins")

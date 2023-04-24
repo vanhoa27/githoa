@@ -3,9 +3,11 @@ local opt = vim.opt
 local g = vim.g
 
 -- [ [ CONTEXT ] ]
+vim.opt.guicursor = ""
 opt.nu = true
 opt.rnu = true
 opt.cul = true
+opt.cc = "80"
 opt.cursorlineopt = "both" -- number: hl-Nr, both: hl-Nr&cursor line
 opt.conceallevel = 2 -- will conceal concealable text
 opt.concealcursor = 'nc'
@@ -14,10 +16,7 @@ opt.signcolumn = "yes"
 opt.scrolloff = 2
 opt.sidescrolloff = 0
 opt.fillchars = { eob = "~" }
-opt.colorcolumn = "0"
-opt.lazyredraw = true
-
--- vim.cpd("set which wrap+=<,>,[,],h,l")
+opt.lazyredraw = false
 
 -- [[BACKUP]]
 opt.swapfile = false
@@ -38,7 +37,6 @@ opt.pumheight = 10 -- pop-up menu height
 opt.showmode = false
 
 -- [ [ SPELLING ] ]
-
 vim.cmd[[
     autocmd FileType md,tex,vimwiki setlocal spell
     set spelllang=de,en_us
@@ -63,8 +61,6 @@ opt.linebreak = true
 opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
 opt.wrap = false
 opt.breakindentopt = { shift = 2 }
-opt.showbreak = "↳" -- character for line break
--- opt.linebreak = true -- wrap in a new line
 
 -- [ [ SEARCH ] ]
 opt.hlsearch = true -- enable/disable highlightsearch
@@ -89,27 +85,12 @@ opt.splitbelow = true
 -- [ [ QUALITY OF LIFE CHANGES ] ]
 opt.updatetime = 50
 opt.cmdheight = 1
--- opt.iskeyword:append("-") --considers dash ("-") as part of word
 
 -- Mapleader
 g.mapleadr = " "
 g.localleader = " "
 
--- disable automatic comment continuation of next line
-vim.api.nvim_create_autocmd('FileType',{
-    pattern = '*',
-    command = 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'
-})
-
 -- Vimtex
 vim.g_vimtex_view_method = 'zathura'
 vim.g_vimtex_quickfix_mode=0
-
--- Make 
-
--- vim.api.nvim_create_autocmd("localmake", {
---     autocmd FileType c setlocal makeprg=gcc\ %\ -g\ -Wall\ -std=c11\ -o\ %< 
---     autocmd FileType cpp setlocal makeprg=g\+\+\ %\ \-g\ \-std\=c\+\+17\ \-Wall
--- })
-
 
