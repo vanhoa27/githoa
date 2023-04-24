@@ -1,6 +1,6 @@
 #!/bin/bash
 
-noteFilename="$HOME/Reposetories/githoa/sync2/vimwiki/diary/$(date +%Y-%m-%d).md"
+noteFilename="$HOME/Sync/Uni/vimwiki/diary/$(date +%Y-%m-%d).md"
 
 if [ ! -f $noteFilename ]; then
     echo "# Notes for $(date +%Y-%m-%d)" > $noteFilename
