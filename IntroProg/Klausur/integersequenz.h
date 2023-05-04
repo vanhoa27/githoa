@@ -1,3 +1,4 @@
+#include <stddef.h>
 typedef struct _integersequenz integersequenz;
 
 struct _integersequenz {

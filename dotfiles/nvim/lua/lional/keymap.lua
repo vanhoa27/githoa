@@ -28,29 +28,22 @@ keymap("n", "<leader>tc", ":tabclose<cr>", opts) --close current tab
 keymap("n", "x", '"_x', opts) -- do not yank with x
 keymap("n", "X", '"_X', opts) -- do not yank with x
 
--- keymap("n", "db", 'vb"_d', opts) -- delete a word backwards (includes selected char)
-keymap("n", "<leader>Y", '$y', opts) -- will work like D but for yank
-keymap("v", "<leader>y", '"+y', opts) -- same but in visual_mode
-keymap("n", "<leader>p", '"+p', opts)
-keymap("x", "<leader>p", '"+p', opts)
-keymap("n", "<leader>a", "gg<s-v>g", opts) --higlight all
-keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], opts)
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], opts)
+vim.keymap.set("n", "<leader>Y", [["+Y]], opts)
 
--- split window
-keymap("n", "<leader>wv", ":vsplit<cr>", opts) --vertical split
-keymap("n", "<leader>ws", ":split<cr>", opts) --horizontal split
-keymap("n", "<leader>wc", ":close<cr>", opts) -- close current split
-keymap("n", "<leader>wo", "<c-w><c-o>", opts) -- close all splits
+keymap("x", "<leader>p", [["_dP]], opts)
+
+keymap("n", "<leader>h", ":noh<cr>", opts) --clear all hightlighting until next search
 
 -- buffers
 keymap("n", "<leader>fb", ":telescope buffers<cr>", opts) -- lists open buffers
 keymap("n", "<leader>bk", ":bw!<cr>", opts) -- kills current buffer
 
 -- open explorer
-keymap("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", opts) --netrw disabled, if enabled: <:Lex 25>
-
--- quit and save like a norme
-keymap("n", "<c-q>", ":q<Cr>", opts) -- Ctrl q to exit
+-- open in relative path
+keymap("n", "<leader><leader>", ":Neotree toggle %:p:h:h float reveal_force_cwd<cr>", opts)
+keymap("n", "<leader>e", ":Neotree toggle left reveal_force_cwd<cr>", opts)
 
 --increment
 keymap("n", "+", "<c-a>", opts) --increment
@@ -77,7 +70,6 @@ keymap("n", "<c-u>", "<c-u>zz", opts)
 keymap("n", "<c-d>", "<c-d>zz", opts)
 
 -- [[THEPRIMEAGEN]]
-vim.keymap.set("n", "<leader>s", ":%s/\\<<c-r><c-w>\\>/<c-r><c-w>/gi<left><left><left>")
 -- keymap("n", "<leader>x", "<cmd>!chmod +x %<cr>", opts)
 keymap("n", "J", "mzJ`z", opts)
 
@@ -90,4 +82,10 @@ keymap("n", "<leader>mp", ":MarkdownPreviewToggle<cr>", opts)
 keymap("n", "<C-n>", "<cmd>cnext<CR>zz", opts)
 keymap("n", "<C-p>", "<cmd>cprev<CR>zz", opts)
 
-vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
+keymap("n", "<leader>n", "<cmd>lnext<CR>zz", opts)
+keymap("n", "<leader>p", "<cmd>lprev<CR>zz", opts)
+
+keymap("i", "<C-k>", "<Up>", opts)
+keymap("i", "<C-j>", "<Down>", opts)
+
+vim.keymap.set("n", "<leader>cr", ":!./%<cr>", opts)

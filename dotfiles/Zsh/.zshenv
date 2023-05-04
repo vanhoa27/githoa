@@ -3,9 +3,55 @@ alias update="sudo apt update && sudo apt-get update && sudo apt upgrade && sudo
 alias q="exit"
 alias lv="lvim"
 
+export OPENAI_API_KEY="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"
+
+# Keyboard
+setxkbmap us
+
+# ThePrimeagen Keyboard layout
+# xmodmap /home/vanhoa/.config/xmodmap/xmodmap
+# setxkbmap -layout us -variant dvp -option ctrl:nocaps
+
+# ls Alias
+alias ls='exa --icons'
+alias terminal='alacritty'
+
+# Editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+# Gradle Path
+export PATH=$PATH:/opt/gradle-7.2/bin
+
+# AppImage
+export PATH="$HOME/AppImages:$PATH"
+
+# Change Directory FZF
+alias fd="\$(find * -type d | fzf)"
+vff() {cd $HOME && fzf --preview="sed 30q $LINES {}" | xargs -r -I % $EDITOR % ;}
+vf() {fzf --preview="sed 30q $LINES {}" | xargs -r -I % $EDITOR % ;}
+
+# Change Directory with lf 
+lfcd () {
+    tmp="$(mktemp -uq)"
+    trap 'rm -f $tmp >/dev/null 2>&1 && trap - HUP INT QUIT TERM PWR EXIT' HUP INT QUIT TERM PWR EXIT
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+
+# ETC
+export TERMINAL="alacritty" 
+
+# Geany
+alias ge="geany"
+
+# Xmodmap
+# [[ -f ~/.Xmodmap ]] && xmomap ~/.Xmodmap
 # LF
 export PATH="/home/vanhoa/.config/go/bin:$PATH"
-export EDITOR="nvim" 
 export LF_ICONS="\
 tw=:\
 st=:\

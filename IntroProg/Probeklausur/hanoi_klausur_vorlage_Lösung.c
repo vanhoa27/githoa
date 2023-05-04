@@ -20,8 +20,6 @@ void stack_push(stack* tower, int value)
     tower->top_of_stack++;
 
     //TODO: hier implementieren
-
-
 }
 
 /*

@@ -3,10 +3,10 @@ local opt = vim.opt
 local g = vim.g
 
 -- [ [ CONTEXT ] ]
-vim.opt.guicursor = ""
+opt.guicursor = ""
 opt.nu = true
 opt.rnu = true
-opt.cul = true
+opt.cul = false
 opt.cc = "80"
 opt.cursorlineopt = "both" -- number: hl-Nr, both: hl-Nr&cursor line
 opt.conceallevel = 2 -- will conceal concealable text
@@ -37,8 +37,9 @@ opt.pumheight = 10 -- pop-up menu height
 opt.showmode = false
 
 -- [ [ SPELLING ] ]
-vim.cmd[[
-    autocmd FileType md,tex,vimwiki setlocal spell
+
+vim.cmd [[
+    autocmd FileType md,tex setlocal spell
     set spelllang=de,en_us
     set spellsuggest=best
 ]]
@@ -76,7 +77,7 @@ opt.wildmenu = true
 opt.wildignorecase = true
 opt.complete:append({ ".", "w", "b", "u", "t", "kspell" }) -- prioritize completion
 opt.hidden = true
-opt.omnifunc ="syntaxcomplete#Complete"
+opt.omnifunc = "syntaxcomplete#Complete"
 
 -- [ [ SPLITS ] ]
 opt.splitright = true
@@ -92,5 +93,5 @@ g.localleader = " "
 
 -- Vimtex
 vim.g_vimtex_view_method = 'zathura'
-vim.g_vimtex_quickfix_mode=0
+vim.g_vimtex_quickfix_mode = 0
 

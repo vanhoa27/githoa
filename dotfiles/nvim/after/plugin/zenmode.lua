@@ -6,16 +6,17 @@ end
 zen.setup({
 	window = {
 		backdrop = 0.95,
-		width = 120,
+		width = 90,
 		height = 1,
 		options = {
 			signcolumn = "no", -- disable signcolumn
 			number = false, -- disable number column
 			relativenumber = false, -- disable relative numbers
 			cursorline = false, -- disable cursorline
-			-- cursorcolumn = false, -- disable cursor column
+			cursorcolumn = false, -- disable cursor column
 			-- foldcolumn = "0", -- disable fold column
 			-- list = false, -- disable whitespace characters
+            -- numberwidth = 5
 		},
 	},
 	plugins = {
@@ -24,12 +25,12 @@ zen.setup({
 			ruler = false,
 			showcmd = false,
 		},
-		twilight = { enabled = true },
+		twilight = { enabled = false },
 		gitsigns = { enabled = false },
-		tmux = { enabled = false },
+		tmux = { enabled = true },
 		alacritty = {
 			enabled = true,
-			font = "13",
+			font = "9",
 		},
 	},
 	on_open = function(win) end,
@@ -40,3 +41,6 @@ vim.keymap.set("n", "<leader>zz", function()
 	require("zen-mode").toggle()
 	vim.wo.wrap = false
 end)
+
+
+
