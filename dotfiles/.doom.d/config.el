@@ -56,7 +56,7 @@
 
 ;; [[GENERAL]]
 ;; resize font size
-(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 16))
+(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 19))
         ;; (set-face-attribute 'default nil :height 140)
 
 (add-hook 'window-setup-hook 'toggle-frame-maximized t)  ;; maximize screen on start up

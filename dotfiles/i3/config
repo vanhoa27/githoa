@@ -39,10 +39,11 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # Handle backlight.
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 # increase screen brightness
@@ -53,9 +54,6 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# move workspace
-bindsym $mod+Next workspace next
-bindsym $mod+Prior workspace prev
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -65,7 +63,7 @@ bindsym Mod1+F4 kill
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+# bindcode $mod+65 exec "rofi -modi drun,run -show drun"
 # bindcode $mod+65 exec "rofi -modi drun,run -show drun"
 bindcode $mod+65 exec "ulauncher"
 
@@ -218,6 +216,9 @@ bar {
 # exec --no-startup-id ~/.config/i3/scripts/keyboard.sh
 exec_always --no-startup-id setxkbmap -layout us
 
+# Remap to Caps Lock to Ctrl
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+
 # Zathura as PDF Viewer
 exec_always --no-startup-id xdg-mime default org.pwmt.zathura.desktop application/pdf
 
@@ -226,7 +227,7 @@ for_window [ title="notetaker_window" ] floating enable, resize set 900 600 , po
 
 # Keybindings
 ## with alacritty -e has to be the last command
-bindsym $mod+n exec alacritty -t notetaker_window -e /home/vanhoa/.config/i3/scripts/notetaker.sh 
+# bindsym $mod+n exec alacritty -t notetaker_window -e /home/vanhoa/.config/i3/scripts/notetaker.sh 
 
 ## Set Wallpaper
 exec --no-startup-id ~/.config/i3/scripts/wallpaper.sh 
@@ -244,7 +245,20 @@ include $HOME/.config/i3/workspaces.conf
 set $primary eDP
 set $secondary HDMI-A-0
 
-# configure display layout
+# move workspace
+bindsym $mod+Next workspace next
+bindsym $mod+Prior workspace prev
+
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
+
+# Show all windows
+bindsym $mod+Tab exec --no-startup-id rofi -show window 
+
+# Editor 
+set $VISUAL nvim
+set $EDITOR nvim
+
 ## Primary Monitor ##
 workspace 1 output $primary
 workspace 2 output $primary
@@ -258,5 +272,20 @@ workspace 9 output $primary
 
 workspace 10 output $secondary
 
+# keybinding to lock screen
+bindsym Control+$mod+Shift+l exec "i3lock -c 000000"
+
 # add HDMI-A-0 as a secondary monitor to the right of eDP
 exec --no-startup-id xrandr --output HDMI-A-0 --auto --right-of eDP
+
+# Screenshots
+bindsym Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh -c
+bindsym Shift+Print exec --no-startup-id ~/.config/i3/scripts/select_screenshot.sh -c
+
+# Redshift
+# exec_always --no-startup-id redshift -P -O 3500
+bindsym $mod+Shift+n exec redshift -P -O 3500
+bindsym $mod+n exec redshift -P -x
+
+
+

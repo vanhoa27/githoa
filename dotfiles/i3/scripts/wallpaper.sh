@@ -1,3 +1,7 @@
 #!/bin/bash
 
-feh --bg-scale /home/vanhoa/Documents/images/wallpapers/crown-blackhole.png
+feh --bg-scale /home/vanhoa/Pictures/wallpapers/waifus/crown-blackhole.png
+
+
+
+

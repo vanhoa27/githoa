@@ -53,7 +53,6 @@
 (package! vterm)
 (package! ob-mermaid)
 (package! org-anki)
-(package! org-mode)
 (package! org-bullets)
 (package! pdf-tools)
 (package! projectile)

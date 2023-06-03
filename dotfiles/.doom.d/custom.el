@@ -27,6 +27,7 @@
  '(pdf-view-midnight-colors (cons "#CEDBE5" "#0D0E16"))
  '(rustic-ansi-faces
    ["#0D0E16" "#D83441" "#79D836" "#D8B941" "#3679D8" "#8041D8" "#36D8BD" "#CEDBE5"])
+ '(send-mail-function 'mailclient-send-it)
  '(vc-annotate-background "#0D0E16")
  '(vc-annotate-color-map
    (list
