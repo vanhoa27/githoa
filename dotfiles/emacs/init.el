@@ -9,10 +9,10 @@
 (setq display-line-numbers-type 'relative) ; line numbers
 (global-display-line-numbers-mode)
 
-;; [[Orgmode]]
-(setq org-startup-indented t) ; Org Indent
+;; [[Orgbabel]]
 (org-babel-do-load-languages
- 'org-babel-load-languages '((C . t)))
+ 'org-babel-load-languages '((C . t)
+							 (python . t)))
 
 ;; [[Minimal C-Setup]]
 (setq-default tab-width 4)
@@ -49,11 +49,24 @@
   :ensure t
   :config
   (yas-global-mode 1))
-(use-package org)
 (use-package company
   :ensure t
   :init
   (add-hook 'after-init-hook 'global-company-mode))
+
+;; Org mode setup
+(defun efs/org-mode-setup ()
+  (org-indent-mode)
+  (variable-pitch-mode 1)
+  (visual-line-mode 1))
+
+(use-package org
+  :hook (org-mode . efs/org-mode-setup))
+(use-package org-bullets
+  :after org
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
 ;; Keymaps
 (global-set-key "\C-c\c" 'compile)  ; Compile
@@ -71,7 +84,7 @@
  ;; If there is more than one, they won't work right.
  '(ispell-dictionary nil)
  '(package-selected-packages
-   '(org-babel-eval-in-repl yasnippet-snippets vertico-prescient use-package projectile popup lsp-mode company command-log-mode)))
+   '(org-bullets org-babel-eval-in-repl yasnippet-snippets vertico-prescient use-package projectile popup lsp-mode company command-log-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
