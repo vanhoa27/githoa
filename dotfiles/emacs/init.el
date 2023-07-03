@@ -1,4 +1,4 @@
-;; [[GENERAL SETTINGS]]
+; [[GENERAL SETTINGS]]
 (setq inhibit-sartup-message t)
 (setq inhibit-splash-screen t)
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-12")
@@ -108,8 +108,10 @@ nn                vterm-mode-hook
 (use-package projectile ; projectile
   :ensure t
   :config
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
   (projectile-mode +1))
+(use-package magit   ; Version Control
+  :ensure t)
 
 ;; [[Python setup]]
 ;; (use-package lsp-pyright    ; lsp-pyhon
@@ -179,7 +181,7 @@ nn                vterm-mode-hook
  '(jdee-db-spec-breakpoint-face-colors (cons "#fcfbf9" "#9E9A95"))
  '(objed-cursor-color "#8F5652")
  '(package-selected-packages
-   '(marginalia vertico swiper which-key projectile evil-mode evil move-text dumb-jump treemacs-evil treemacs eww-lnum doom-themes tree-sitter-langs tree-sitter lsp-pyright yasnippet-snippets vterm use-package org-bullets gruber-darker-theme company auctex))
+   '(magit marginalia vertico swiper which-key projectile evil-mode evil move-text dumb-jump treemacs-evil treemacs eww-lnum doom-themes tree-sitter-langs tree-sitter lsp-pyright yasnippet-snippets vterm use-package org-bullets gruber-darker-theme company auctex))
  '(pdf-view-midnight-colors (cons "#605A52" "#FCFBF9"))
  '(rustic-ansi-faces
    ["#FCFBF9" "#8F5652" "#747B4D" "#886A44" "#556995" "#83577D" "#477A7B" "#605A52"])
