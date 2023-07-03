@@ -59,12 +59,16 @@
 (require 'use-package) ; package manager
 (setq use-package-always-ensure t)
 
-(use-package gruber-darker-theme) ; Theme
+(use-package gruber-darker-theme) ; Themes
 (use-package doom-themes)
+
 (use-package vertico ; mode-line completion
   :ensure t
   :init
   (vertico-mode))
+(use-package savehist ; remeber most recent vertico commands
+  :init
+  (savehist-mode))
 (use-package marginalia ; provide extra information for vertico
   :after vertico
   :ensure t
