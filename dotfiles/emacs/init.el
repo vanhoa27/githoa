@@ -1,5 +1,3 @@
-
-
 ;; [[GENERAL SETTINGS]]
 (setq inhibit-sartup-message t)
 (setq inhibit-splash-screen t)
@@ -15,7 +13,7 @@
 (setq display-line-numbers-type 'relative) ; line numbers
 (global-display-line-numbers-mode)
 (dolist (mode '(term-mode-hook
-                vterm-mode-hook
+nn                vterm-mode-hook
                 shell-mode-hook
                 treemacs-mode-hook
                 eshell-mode-hook))
@@ -110,7 +108,7 @@
 (use-package projectile ; projectile
   :ensure t
   :config
-  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
 
 ;; [[Python setup]]
