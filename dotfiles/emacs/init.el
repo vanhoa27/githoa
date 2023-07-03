@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ; [[GENERAL SETTINGS]]
+=======
+;; [[GENERAL SETTINGS]]
+>>>>>>> d05dff2 (test)
 (setq inhibit-sartup-message t)
 (setq inhibit-splash-screen t)
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-12")
@@ -108,7 +112,7 @@ nn                vterm-mode-hook
 (use-package projectile ; projectile
   :ensure t
   :config
-  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
 (use-package magit   ; Version Control
   :ensure t)
