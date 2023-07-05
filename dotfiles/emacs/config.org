@@ -1,3 +1,4 @@
+
 #+TITLE: Emacs Config
 #+AUTHOR: Van Hoa Nguyen
 #+DATE: 2023-07-05 
@@ -18,7 +19,7 @@
   (setq inhibit-sartup-message t) ; inhibit startup screen
   (setq inhibit-splash-screen t) 
 #+end_src
-** Initialize Use-package
+** Use-package
 #+begin_src emacs-lisp
   (require 'package) ; Initialize package sources
   (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -44,7 +45,7 @@
     (load-theme 'gruber-darker t)) ; Themes
   (use-package doom-themes)
 #+end_src
-** Minimal settings for C
+** Settings for C
 #+begin_src emacs-lisp
   (setq-default tab-width 4)
   (setq c-default-style "linux"		   
@@ -67,7 +68,7 @@
 
   (setq backup-directory-alist '(("." . "~/.emacs_saves/"))) ; save directory
 #+end_src
-** Load Languages for Org-Babel
+** Org-Babel
 #+begin_src 
 (org-babel-do-load-languages
     'org-babel-load-languages
@@ -77,7 +78,7 @@
       (C . t)))
 (setq org-babel-python-command "python3")  
 #+end_src
-** Mode-line Completion with vertico
+** Vertico
 #+begin_src emacs-lisp
   (use-package vertico ; mode-line completion
     :ensure t
@@ -94,7 +95,7 @@
     :init
     (marginalia-mode))
 #+end_src
-** Basic Auto-Completion and Snippets
+** Auto-Completion and Yasnippets
 #+begin_src emacs-lisp
   (use-package yasnippet ; snippets
     :ensure t
@@ -120,11 +121,6 @@
 #+end_src
 ** Whichkey, Projectile and Magit
 #+begin_src emacs-lisp
-  ;; (use-package dumb-jump ; jump 
-  ;;   :init
-  ;;   (setq xref-show-definitions-function #'xref-show-definitions-completing-read)
-  ;;   :config
-  ;;   (add-hook 'xref'backend-functions #'dumb-jump-xref-activate))
   (use-package which-key ; which-key
     :ensure t
     :config
@@ -137,7 +133,7 @@
   (use-package magit   ; Version Control
     :ensure t)
 #+end_src
-** Org-Mode setup
+** Org-Mode
 #+begin_src emacs-lisp
   (defun efs/org-mode-setup () ; startup with indent
     (org-indent-mode) 
@@ -154,7 +150,7 @@
     :custom
     (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))  
 #+end_src
-** V-term setup
+** V-term
 #+begin_src emacs-lisp
   (use-package vterm) ; shell
   (defun my/open-vterm-in-right-window ()
@@ -207,46 +203,6 @@
   (global-set-key (kbd "C-c m r") 'recompile) ; recompile
   (global-set-key (kbd "C-c m c") 'compile-next-makefile) ; makefile
 #+end_src
-** Flycheck
-#+begin_src emacs-lisp
-  ;; (use-package flycheck
-  ;;   :ensure t
-  ;;   :init
-  ;;   (global-flycheck-mode t))
-#+end_src
-** Lsp-Mode
-#+begin_src emacs-lisp
-  ;; (use-package lsp-mode
-  ;; :commands (lsp lsp-deferred)
-  ;; :hook
-  ;; ((c-mode . lsp-deferred)
-  ;;  (c++-mode . lsp-deferred))
-  ;; :init
-  ;; (setq lsp-keymap-prefix "C-c l")
-  ;; :config
-  ;; (setq c-basic-offset 4) ; Set the indentation level for C language
-  ;; (lsp-enable-which-key-integration))
-#+end_src
-** Treesitter
-#+begin_src emacs-lisp
-  ;; (use-package tree-sitter ; tree-sitter
-  ;;   :ensure t
-  ;;   :hook
-  ;;   ((c-mode c++-mode) . tree-sitter-mode))
-  ;; (use-package tree-sitter-langs
-  ;;   :ensure t)
-#+end_src
-** Swiper and counsel-ag
-#+begin_src emacs-lisp
-  ;; (use-package swiper
-  ;;   :ensure t 
-  ;;   :config
-  ;;   (global-set-key (kbd "C-s") 'swiper))
-  ;; (use-package counsel
-  ;;     :ensure t
-  ;;     :config 
-  ;;     (global-set-key (kbd "C-c k") 'counsel-ag))
-#+end_src
 ** Undo-Tree
 #+begin_src emacs-lisp
   (use-package undo-tree
@@ -280,4 +236,36 @@
     (define-key evil-normal-state-map "u" 'undo-tree-undo)
     (define-key evil-normal-state-map "\C-r" 'undo-tree-redo))
 #+end_src
-
+** Swiper and counsel-ag
+#+begin_src emacs-lisp
+  ;; (use-package swiper
+  ;;   :ensure t 
+  ;;   :config
+  ;;   (global-set-key (kbd "C-s") 'swiper))
+  ;; (use-package counsel
+  ;;     :ensure t
+  ;;     :config 
+  ;;     (global-set-key (kbd "C-c k") 'counsel-ag))
+#+end_src
+** Treesitter
+#+begin_src emacs-lisp
+  ;; (use-package tree-sitter ; tree-sitter
+  ;;   :ensure t
+  ;;   :hook
+  ;;   ((c-mode c++-mode) . tree-sitter-mode))
+  ;; (use-package tree-sitter-langs
+  ;;   :ensure t)
+#+end_src
+** Lsp-Mode
+#+begin_src emacs-lisp
+  ;; (use-package lsp-mode
+  ;; :commands (lsp lsp-deferred)
+  ;; :hook
+  ;; ((c-mode . lsp-deferred)
+  ;;  (c++-mode . lsp-deferred))
+  ;; :init
+  ;; (setq lsp-keymap-prefix "C-c l")
+  ;; :config
+  ;; (setq c-basic-offset 4) ; Set the indentation level for C language
+  ;; (lsp-enable-which-key-integration))
+#+end_src
