@@ -265,6 +265,8 @@
     (evil-mode 1)
     ;; Make C-u work like in normal Vim in Evil's normal state
     (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+    ;; Fold Org headings in Evil's normal state
+    (define-key evil-normal-state-map (kbd "TAB") 'org-cycle)
     ;; Modify evil cursor behavior
     (setq evil-insert-state-cursor '((box . 5) "purple")
           evil-normal-state-cursor '(box "yellow"))
