@@ -1,0 +1,84 @@
+set clipboard+=unnamed
+set clipboard+=ideaput
+set commentary
+set incsearch
+
+set ignorecase
+set smartcase
+set scrolloff=2 
+set cul
+set signcolumn=yes
+set hlsearch
+set nu
+set rnu
+
+" Keymap
+
+let g:mapleader =' '
+
+"Completion keys
+
+inoremap <C-k> <Up>
+
+" Move lines
+nnoremap <m-j> :m .+1<cr>==
+xnoremap <m-j> :m '>+1<cr>gv=gv
+
+xnoremap <m-k> :m '<lt>-2<cr>gv=gv
+nnoremap <m-k> :m .-2<cr>==
+
+"Better Navigation
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+
+" Disable highlight 
+nnoremap <leader>h :noh<cr>
+
+" Distraction Free Mode
+nnoremap <leader>zz :action ToggleDistractionFreeMode<CR>
+
+"Terminal
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+nnoremap <c-\> :action ActivateTerminalToolWindow<CR>
+
+"NerdTree
+set NERDTree
+
+set ideajoin
+set idearefactormode=keep
+
+vnoremap < <gv
+vnoremap > >gv
+
+" Goto next/previous error
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+
+"Refactoring
+nnoremap <leader>lo :action OptimizeImports<CR>
+nnoremap <leader>oi :action OptimizeImports<CR>
+nnoremap <leader>lr :action RenameElement<CR>
+nnoremap <leader>lrf :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>ca :action Generate<CR>
+nnoremap <leader>la :action Generate<CR>
+
+nnoremap <leader>fs :action GotoSymbol<CR>
+nnoremap <leader>fc :action GotoClass<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+
+nnoremap <leader>gt :action GotoTest<CR>
+
+nnoremap <Leader>lf :action ReformatCode<CR>
+nnoremap <leader>d <Action>(Debug)
+nnoremap <leader>zz :action ToggleDistractionFreeMode<CR>
+
+nnoremap <leader>o :action FileStructurePopup<CR>
+nnoremap <leader>r :action Run<CR>
+nnoremap <Leader>a ggVG
+

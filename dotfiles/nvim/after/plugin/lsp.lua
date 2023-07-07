@@ -43,7 +43,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<CR>'] = cmp.mapping.confirm({ select = false }),
-    ["<M-Space>"] = cmp.mapping.complete(),
+    ["<C-Space>"] = cmp.mapping.complete(),
 
     ["<C-f>"] = cmp.mapping(function()
         if luasnip.expand_or_jumpable() then
@@ -59,11 +59,10 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
             cmp.mapping.select_prev_item()
         end
     end, { "i", "s" }),
-
 })
 
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+-- cmp_mappings['<Tab>'] = nil
+-- cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
@@ -95,7 +94,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
     vim.keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>", opts)
     vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
-    vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
+    vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)             -- show documentation for what is under cursor
     vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
     vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 

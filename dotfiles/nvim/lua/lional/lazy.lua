@@ -38,6 +38,7 @@ local plugins = ({
     "catppuccin/nvim",
     "lukas-reineke/onedark.nvim",
     "rose-pine/neovim",
+    "bluz71/vim-nightfly-colors",
 
     {
         "windwp/nvim-autopairs",
@@ -131,8 +132,8 @@ local plugins = ({
     ({ "akinsho/bufferline.nvim", tag = "v3.*", dependencies = "nvim-tree/nvim-web-devicons" }),
 
     -- Zenmode && Twillight
-    { "folke/zen-mode.nvim", lazy = true },
-    { "folke/twilight.nvim", lazy = true },
+    { "folke/zen-mode.nvim",                 lazy = true },
+    { "folke/twilight.nvim",                 lazy = true },
 
     -- Note taking
     { "lervag/vimtex" --[[ , lazy = true  ]] },
@@ -151,6 +152,13 @@ local plugins = ({
 
     -- Copilot
     'github/copilot.vim',
+
+    -- Tabnine
+    -- require("lazy").setup({
+    --     { 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
+    -- })
+
+    "ThePrimeagen/vim-be-good",
 })
 
 require("lazy").setup(plugins)

@@ -30,14 +30,14 @@ zen.setup({
 		tmux = { enabled = true },
 		alacritty = {
 			enabled = true,
-			font = "9",
+			font = "14",
 		},
 	},
 	on_open = function(win) end,
 	on_close = function() end,
 })
 
-vim.keymap.set("n", "<leader>zz", function()
+vim.keymap.set("n", "<leader>z", function()
 	require("zen-mode").toggle()
 	vim.wo.wrap = false
 end)

@@ -82,8 +82,8 @@ keymap("n", "<leader>mp", ":MarkdownPreviewToggle<cr>", opts)
 keymap("n", "<C-n>", "<cmd>cnext<CR>zz", opts)
 keymap("n", "<C-p>", "<cmd>cprev<CR>zz", opts)
 
-keymap("n", "<leader>n", "<cmd>lnext<CR>zz", opts)
-keymap("n", "<leader>p", "<cmd>lprev<CR>zz", opts)
+keymap("n", "<leader>j", "<cmd>lnext<CR>zz", opts)
+keymap("n", "<leader>k", "<cmd>lprev<CR>zz", opts)
 
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-j>", "<Down>", opts)

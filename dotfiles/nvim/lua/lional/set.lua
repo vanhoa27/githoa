@@ -7,9 +7,9 @@ opt.guicursor = ""
 opt.nu = true
 opt.rnu = true
 opt.cul = true
-opt.cc = "80"
-opt.cursorlineopt = "both" -- number: hl-Nr, both: hl-Nr&cursor line
-opt.conceallevel = 2 -- will conceal concealable text
+opt.cc = "88"
+opt.cursorlineopt = "number" -- number: hl-Nr, both: hl-Nr&cursor line
+opt.conceallevel = 1         -- will conceal concealable text
 opt.concealcursor = 'nc'
 opt.mouse = "a"
 opt.signcolumn = "yes"
@@ -17,6 +17,7 @@ opt.scrolloff = 2
 opt.sidescrolloff = 0
 opt.fillchars = { eob = "~" }
 opt.lazyredraw = false
+opt.autochdir = true
 
 -- [[BACKUP]]
 opt.swapfile = false
@@ -57,7 +58,7 @@ opt.expandtab = true
 -- [ [ Indentation ] ]
 opt.smartindent = true
 opt.autoindent = true
-opt.breakindent = true -- preserve indentation in wraped text
+opt.breakindent = true             -- preserve indentation in wraped text
 opt.linebreak = true
 opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
 opt.wrap = false
@@ -93,5 +94,7 @@ g.localleader = " "
 
 -- Vimtex
 vim.g_vimtex_view_method = 'zathura'
-vim.g_vimtex_quickfix_mode = 0
+vim.cmd [[
+    let g:vimtex_quickfix_mode = 0
+]]
 
