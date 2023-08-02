@@ -81,3 +81,4 @@ nnoremap <leader>zz :action ToggleDistractionFreeMode<CR>
 nnoremap <leader>o :action FileStructurePopup<CR>
 nnoremap <leader>r :action Run<CR>
 nnoremap <leader>a :action $SelectAll<CR>
+nnoremap <leader>ya :%y<cr> 

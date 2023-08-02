@@ -39,6 +39,7 @@ local plugins = ({
     "lukas-reineke/onedark.nvim",
     "rose-pine/neovim",
     "bluz71/vim-nightfly-colors",
+    { "blazkowolf/gruber-darker.nvim" },
 
     {
         "windwp/nvim-autopairs",
@@ -139,12 +140,12 @@ local plugins = ({
     { "lervag/vimtex" --[[ , lazy = true  ]] },
 
     -- markdown-preview
-    ({
-        "iamcco/markdown-preview.nvim",
-        config = function()
-            vim.fn["mkdp#util#install"]()
-        end,
-    }),
+    -- ({
+    --     "iamcco/markdown-preview.nvim",
+    --     config = function()
+    --         vim.fn["mkdp#util#install"]()
+    --     end,
+    -- }),
 
     'ThePrimeagen/harpoon',
     'mfussenegger/nvim-jdtls',
@@ -153,12 +154,11 @@ local plugins = ({
     -- Copilot
     'github/copilot.vim',
 
-    -- Tabnine
-    -- require("lazy").setup({
-    --     { 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
-    -- })
-
-    "ThePrimeagen/vim-be-good",
+    -- Clojure
+    "Olical/conjure",
+    "tpope/vim-dispatch",
+    "clojure-vim/vim-jack-in",
+    "radenling/vim-dispatch-neovim"
 })
 
 require("lazy").setup(plugins)

@@ -3,11 +3,12 @@ local opt = vim.opt
 local g = vim.g
 
 -- [ [ CONTEXT ] ]
-opt.guicursor = ""
+-- opt.guicursor = ""
+opt.clipboard = "unnamedplus"
 opt.nu = true
 opt.rnu = true
 opt.cul = true
-opt.cc = "88"
+opt.cc = "0"
 opt.cursorlineopt = "number" -- number: hl-Nr, both: hl-Nr&cursor line
 opt.conceallevel = 1         -- will conceal concealable text
 opt.concealcursor = 'nc'
@@ -96,5 +97,13 @@ g.localleader = " "
 vim.g_vimtex_view_method = 'zathura'
 vim.cmd [[
     let g:vimtex_quickfix_mode = 0
+]]
+
+vim.cmd[[
+" Disable line numbers in the terminal buffer
+augroup disable_terminal_line_numbers
+  autocmd!
+  autocmd TermOpen * setlocal nonumber norelativenumber
+augroup END
 ]]
 

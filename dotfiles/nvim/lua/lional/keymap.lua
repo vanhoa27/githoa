@@ -5,10 +5,25 @@ local keymap = vim.api.nvim_set_keymap
 
 --remap space as leader key
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 keymap("i", "<m-bs>", "<c-w>", opts)
 
-keymap("i", "<c-L>", "<Esc>A", opts) -- backspace and <c-h> delete a whole word
+-- [[Toggle line numbers]]
+function _TOGGLE_LINENUMBERS()
+    local number_state = vim.wo.number
+
+    if number_state == true then
+        vim.wo.number = false
+        vim.wo.rnu = false
+    else
+        vim.wo.number = true
+        vim.wo.rnu = true
+    end
+end
+
+keymap("n", "<F6>", "<cmd>lua _TOGGLE_LINENUMBERS()<CR>", opts)
+
+keymap("i", "<c-l>", "<right>", opts) -- backspace and <c-h> delete a whole word
 keymap("i", "<c-h>", "<c-w>", opts) -- backspace and <c-h> delete a whole word
 keymap("n", "<s-l>", "$", opts)
 keymap("n", "<s-h>", "^", opts)
@@ -19,10 +34,6 @@ keymap("n", "<leader>bn", ":bn<cr>", opts) -- go to next buffer
 keymap("n", "<leader>bp", ":bp<cr>", opts) -- go to previous buffer
 keymap("n", "<leader>bb", ":bp<cr>", opts) -- go to previous buffer
 keymap("n", "<leader>bw", ":bw<cr>", opts) -- wipe out current buffer
-
--- tabs
-keymap("n", "<leader>te", ":tabnew<cr>", opts) --open a new tab --tabedit and tabnew are similiar
-keymap("n", "<leader>tc", ":tabclose<cr>", opts) --close current tab
 
 -- paste/hightlight/yank
 keymap("n", "x", '"_x', opts) -- do not yank with x
@@ -42,8 +53,8 @@ keymap("n", "<leader>bk", ":bw!<cr>", opts) -- kills current buffer
 
 -- open explorer
 -- open in relative path
-keymap("n", "<leader><leader>", ":Neotree toggle %:p:h:h float reveal_force_cwd<cr>", opts)
 keymap("n", "<leader>e", ":Neotree toggle left reveal_force_cwd<cr>", opts)
+-- keymap("n", "<leader><leader>", ":Neotree toggle left reveal_force_cwd<cr>", opts)
 
 --increment
 keymap("n", "+", "<c-a>", opts) --increment
@@ -70,7 +81,6 @@ keymap("n", "<c-u>", "<c-u>zz", opts)
 keymap("n", "<c-d>", "<c-d>zz", opts)
 
 -- [[THEPRIMEAGEN]]
--- keymap("n", "<leader>x", "<cmd>!chmod +x %<cr>", opts)
 keymap("n", "J", "mzJ`z", opts)
 
 -- [[PLUGINS]]
@@ -84,8 +94,5 @@ keymap("n", "<C-p>", "<cmd>cprev<CR>zz", opts)
 
 keymap("n", "<leader>j", "<cmd>lnext<CR>zz", opts)
 keymap("n", "<leader>k", "<cmd>lprev<CR>zz", opts)
-
-keymap("i", "<C-k>", "<Up>", opts)
-keymap("i", "<C-j>", "<Down>", opts)
 
 vim.keymap.set("n", "<leader>cr", ":!./%<cr>", opts)
