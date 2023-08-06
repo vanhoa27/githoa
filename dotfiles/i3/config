@@ -62,10 +62,9 @@ bindsym Mod1+F4 kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-
 # bindcode $mod+65 exec "rofi -modi drun,run -show drun"
-# bindcode $mod+65 exec "rofi -modi drun,run -show drun"
-bindcode $mod+65 exec "ulauncher"
+bindcode $mod+65 exec --no-startup-id dmenu_run 
+# bindcode $mod+65 exec "ulauncher"
 
 # change focus
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -179,16 +178,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym odiaeresis resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym odiaeresis resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -202,10 +201,13 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    mode hide
+    # mode hide
     hidden_state hide
     modifier $mod
-    position top
+    position bottom
+
+    # i3 default Status Bar
+    status_command i3status 
 }
 
 #-------------
@@ -236,7 +238,7 @@ exec --no-startup-id ~/.config/i3/scripts/wallpaper.sh
 exec --no-startup-id picom -CGb
 
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # MONITORS 
 include $HOME/.config/i3/workspaces.conf
@@ -245,7 +247,7 @@ include $HOME/.config/i3/workspaces.conf
 set $primary eDP
 set $secondary HDMI-A-0
 
-# move workspace
+# navigate workspace
 bindsym $mod+Next workspace next
 bindsym $mod+Prior workspace prev
 
@@ -271,6 +273,8 @@ workspace 8 output $primary
 workspace 9 output $primary
 
 workspace 10 output $secondary
+
+exec --no-startup-id setxkbmap -option ctrl:nocaps 
 
 # keybinding to lock screen
 bindsym Control+$mod+Shift+l exec "i3lock -c 000000"

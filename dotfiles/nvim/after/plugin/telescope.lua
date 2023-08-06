@@ -26,8 +26,8 @@ telescope.setup({
 
         mappings = {
             i = {
-                ["<C-n>"] = actions.cycle_history_next,
-                ["<C-p>"] = actions.cycle_history_prev,
+                ["<C-n>"] = actions.move_selection_next,
+                ["<C-p>"] = actions.move_selection_previous,
 
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
@@ -116,7 +116,7 @@ vim.keymap.set("n", "<leader>fg", function()
 end)
 vim.keymap.set("n", "<leader>fb", function()
     builtin.buffers({
-        -- previewer = false,
+        layout_strategy = "vertical",
         initial_mode = "insert",
     })
 end)
@@ -196,3 +196,10 @@ vim.keymap.set("n", "<leader>fM", function()
         layout_strategy = "center",
     })
 end)
+
+vim.keymap.set("n", "<leader>;", function()
+    builtin.commands({
+        layout_strategy = "center",
+    })
+end)
+

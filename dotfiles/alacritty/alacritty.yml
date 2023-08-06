@@ -5,8 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.9
-
+  opacity: 1 
 scrolling:
   history: 10000
   multiplier: 3
@@ -24,8 +23,9 @@ font:
   bold_italic:
     family: mononoki Nerd Font 
     style: BoldItalic
-  size: 13 # use size 13 in Ubuntu
+  size: 15 
 draw_bold_text_with_bright_colors: true
+
 
 ### Blue color scheme ###
 # colors:
@@ -75,16 +75,40 @@ colors:
       cyan:    '0x00CCCC'
       white:   '0xFFFAFA'
 
+## Gruber Darker ##
+# colors:
+#   primary:
+#     background: '0x181818'
+#     foreground: '0xe4e4ef'
+#   normal:
+#     black:   '0x2E3436'
+#     red:     '0xa40000'
+#     green:   '0x4E9A06'
+#     yellow:  '0xC4A000'
+#     blue:    '0x3465A4'
+#     magenta: '0x75507B'
+#     cyan:    '0xce5c00'
+#     white:   '0xbabdb9'
+#   bright:
+#     black:   '0x555753'
+#     red:     '0xEF2929'
+#     green:   '0x8AE234'
+#     yellow:  '0xFCE94F'
+#     blue:    '0x729FCF'
+#     magenta: '0xAD7FA8'
+#     cyan:    '0xfcaf3e'
+#     white:   '0xEEEEEC'
+
 cursor:
   style:
     shape: Block
-    blinking: Always
-
+    blinking: On
+# Always
 selection:
   save_to_clipboard: true
 
 shell:
   program: /usr/bin/zsh
 
-  # key_bindings:
-  #   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
+key_bindings:
+  - { key: F11, action: ToggleFullScreen}

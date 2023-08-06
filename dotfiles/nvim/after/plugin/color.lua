@@ -29,7 +29,7 @@ function ColorMyPencils(color)
     -- vim.api.nvim_set_hl(0, "Normalfloat", { bg = "None" })
 end
 
-ColorMyPencils("dracula")
+ColorMyPencils("gruber-darker")
 
 g.italic_comments = true  -- italic comments(Default: true)
 g.italic_keywords = true  -- italic keywords(Default: true)

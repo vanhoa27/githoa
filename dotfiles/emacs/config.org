@@ -26,9 +26,10 @@
                            ("elpa" . "https://elpa.gnu.org/packages/")))
 
   (package-initialize) ; init packages
+
   (unless package-archive-contents
     (package-refresh-contents))
-
+  
   (unless (package-installed-p 'use-package) ; init use-package on on-Linux platforms
     (package-install 'use-package))
 
@@ -37,7 +38,7 @@
 #+end_src
 ** Theme & Font
 #+begin_src emacs-lisp
-  (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-14")
+  (set-face-attribute 'default nil :font "Iosevka-15")
   (use-package gruber-darker-theme
     :ensure t
     :config
@@ -61,6 +62,7 @@
   (dolist (mode '(term-mode-hook
                   vterm-mode-hook
                   shell-mode-hook
+                  cider-repl-mode-hook
                   eshell-mode-hook))
     (add-hook mode (lambda() (display-line-numbers-mode 0))))
 
@@ -92,6 +94,27 @@
     (marginalia-annotators '(marginalia-annotators-heavy maraginalia-annotators-light nil))
     :init
     (marginalia-mode))
+#+end_src
+** Counsel and Swiper
+#+begin_src emacs-lisp
+  ;;   (use-package ivy
+  ;;   :ensure t
+  ;;   :config
+  ;;   (ivy-mode 1))
+
+  ;; (use-package counsel
+  ;;   :ensure t
+  ;;   :config
+  ;;   ;; Configure keybindings (optional)
+  ;;   (global-set-key (kbd "C-c k") 'counsel-ag)
+  ;;   (global-set-key (kbd "M-x") 'counsel-M-x)
+  ;;   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+  ;;   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+
+  ;; (use-package swiper
+  ;;   :ensure t
+  ;;   :config
+  ;;   (global-set-key (kbd "C-s") 'swiper))
 #+end_src
 ** Auto-Completion and Yasnippets
 #+begin_src emacs-lisp
@@ -156,7 +179,7 @@
       :bind
       ("C-c n c" . org-roam-capture)
       ("C-c n l" . org-roam-buffer-toggle)
-      ("C-c n f" . org-roam-find-node)
+      ("C-c n f" . org-roam-node-find)
       ("C-c n i" . org-roam-node-insert))
 #+end_src
 ** V-term
@@ -174,10 +197,12 @@
 #+end_src
 ** Keybindings
 #+begin_src emacs-lisp
-  (global-set-key "\M-]" 'switch-to-next-buffer)  ; Switch Buffers
-  (global-set-key "\M-[" 'switch-to-prev-buffer)  
-  (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; 3 <esc>
+  (global-set-key "\M-]" 'switch-to-next-buffer)
+  (global-set-key "\M-[" 'switch-to-prev-buffer)
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
   (global-set-key (kbd "C-c p") 'find-file-at-point)
+  (global-set-key (kbd "C-x ;") 'comment-line)
+  (global-set-key (kbd "<f6>") 'global-display-line-numbers-mode)
 #+end_src
 ** Compiling Code
 #+begin_src emacs-lisp
@@ -211,18 +236,19 @@
       (compile compile-command)))
 
   (global-set-key "\C-c\C-m" 'compile) ; compile
+  (global-set-key (kbd "C-c m m ") 'compile) ; compile (for fortran)
   (global-set-key (kbd "C-c m r") 'recompile) ; recompile
   (global-set-key (kbd "C-c m c") 'compile-next-makefile) ; makefile
 #+end_src
 ** Undo-Tree
 #+begin_src emacs-lisp
-  (use-package undo-tree
-    :ensure t
-    :config
-    (global-undo-tree-mode)
-    (setq undo-tree-visualizer-diff t)
-    (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo-tree")))
-    (setq undo-tree-auto-save-history t))
+  ;; (use-package undo-tree
+  ;;   :ensure t
+  ;;   :config
+  ;;   (global-undo-tree-mode)
+  ;;   (setq undo-tree-visualizer-diff t)
+  ;;   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo-tree")))
+  ;;   (setq undo-tree-auto-save-history t))
 #+end_src
 ** Evil-Mode
 #+begin_src emacs-lisp
@@ -247,17 +273,6 @@
   ;;   (define-key evil-normal-state-map "u" 'undo-tree-undo)
   ;;   (define-key evil-normal-state-map "\C-r" 'undo-tree-redo))
 #+end_src
-** Swiper and counsel-ag
-#+begin_src emacs-lisp
-  ;; (use-package swiper
-  ;;   :ensure t 
-  ;;   :config
-  ;;   (global-set-key (kbd "C-s") 'swiper))
-  ;; (use-package counsel
-  ;;     :ensure t
-  ;;     :config 
-  ;;     (global-set-key (kbd "C-c k") 'counsel-ag))
-#+end_src
 ** Treesitter
 #+begin_src emacs-lisp
   ;; (use-package tree-sitter ; tree-sitter
@@ -273,13 +288,24 @@
   ;; :commands (lsp lsp-deferred)
   ;; :hook
   ;; ((c-mode . lsp-deferred)
-  ;;  (c++-mode . lsp-deferred))
+  ;;  (c++-mode . lsp-deferred)
+  ;;  (python-mode . lsp-deferred))
   ;; :init
   ;; (setq lsp-keymap-prefix "C-c l")
   ;; :config
   ;; (setq c-basic-offset 4) ; Set the indentation level for C language
   ;; (lsp-enable-which-key-integration))
 #+end_src
-
-
+* Emacs Language Specific setup
+** Clojure
+#+begin_src emacs-lisp
+  (use-package clojure-mode)
+  (use-package cider
+    :ensure t
+    :hook (cider-repl-mode . my-cider-repl-mode-hook)
+    :config
+    )
+  (defun my-cider-repl-mode-hook ()
+    (local-set-key (kbd "C-l") 'cider-repl-clear-buffer))
+#+end_src
 
