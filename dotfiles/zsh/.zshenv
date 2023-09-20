@@ -3,8 +3,6 @@ alias update="sudo apt update && sudo apt-get update && sudo apt upgrade && sudo
 alias q="exit"
 alias lv="lvim"
 
-export OPENAI_API_KEY="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"
-
 # Keyboard
 setxkbmap us
 
