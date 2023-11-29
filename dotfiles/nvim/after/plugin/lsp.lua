@@ -1,6 +1,7 @@
 local lsp = require("lsp-zero")
 local luasnip = require("luasnip")
 
+
 -- LSP Saga
 local saga_status, saga = pcall(require, "lspsaga")
 if not saga_status then
@@ -25,7 +26,6 @@ saga.setup({
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'tsserver',
     'rust_analyzer',
     'clangd',
 })
@@ -109,9 +109,10 @@ lsp.on_attach(function(client, bufnr)
     -- vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
     -- vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
     -- vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-    vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+    -- vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga rename<cr>", opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set("n", "<leader>lrr", function() vim.lsp.buf.references() end, opts)
+    -- vim.keymap.set("n", "<leader>lrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set('n', '<space>lf', function()
         vim.lsp.buf.format { async = true }
     end, opts)
