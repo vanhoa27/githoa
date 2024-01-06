@@ -1,0 +1,74 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x555753"
+blue = "0x729FCF"
+cyan = "0xfcaf3e"
+green = "0x8AE234"
+magenta = "0xAD7FA8"
+red = "0xEF2929"
+white = "0xEEEEEC"
+yellow = "0xFCE94F"
+
+[colors.normal]
+black = "0x2E3436"
+blue = "0x3465A4"
+cyan = "0xce5c00"
+green = "0x4E9A06"
+magenta = "0x75507B"
+red = "0xa40000"
+white = "0xbabdb9"
+yellow = "0xC4A000"
+
+[colors.primary]
+background = "0x181818"
+foreground = "0xe4e4ef"
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[font]
+size = 17
+
+[font.bold]
+family = "mononoki Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "mononoki Nerd Font"
+style = "BoldItalic"
+
+[font.italic]
+family = "mononoki Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "mononoki Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ToggleFullScreen"
+key = "F11"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+program = "/usr/bin/zsh"
+
+[window]
+opacity = 0.92
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 5
+y = 5
